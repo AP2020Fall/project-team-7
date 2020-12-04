@@ -37,9 +37,5 @@ public class CommandProcessor {
         }
     }
 
-    private static Matcher getMatcher(String string, String regex) {
-        Pattern tmp = Pattern.compile(regex);
-        return tmp.matcher(string);
-    }
 
 }

@@ -9,6 +9,8 @@ public abstract class Board {
         this.length = 8;
         this.width = 8;
         this.size = 64; //count the dots
+
+
     }
     //Board
     /*
