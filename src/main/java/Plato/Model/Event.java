@@ -9,6 +9,12 @@ public class Event {
     private int eventScore;
     private String eventId;
 
+    public Event(Game gameName, Date startDate, Date finishDate, int eventScore) {
+        this.gameName = gameName;
+        this.startDate = startDate;
+        this.finishDate = finishDate;
+        this.eventScore = eventScore;
+    }
 
     public void addEvent(Event event, Date startDate, Date finishDate){
 

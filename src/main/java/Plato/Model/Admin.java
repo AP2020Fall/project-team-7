@@ -9,8 +9,8 @@ public class Admin extends Person {
         super(firstName, lastName, username, id, password, email, phoneNumber);
     }
 
-    private void addEvent(Event event, Date start, Date finish){
-
+    private void addEvent(Game gameName, Date start, Date finish, int score){
+        Event event = new Event(gameName, start, finish, score);
     }
 
     private void deleteEvent(Event event){

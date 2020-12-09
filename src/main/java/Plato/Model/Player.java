@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Player extends Person{
-    private Date registeredDate;
+    private Date platoAge;
     private int score;
     private int cash;
     private GameLog gameLog;
@@ -21,7 +21,7 @@ public class Player extends Person{
     }
 
 
-    private void editProfile(){
+    public void editProfile(){
 
     }
 
@@ -45,7 +45,7 @@ public class Player extends Person{
 
     }
 
-    private void addFriend(){
+    private void addFriend(Player username){
 
     }
 
