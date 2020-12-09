@@ -1,4 +1,6 @@
 package Plato.View.Menu.LoginAndRegister;
 
-public class LoginPage {
+import Plato.View.Menu.MainMenu;
+
+public class LoginPage extends MainMenu {
 }

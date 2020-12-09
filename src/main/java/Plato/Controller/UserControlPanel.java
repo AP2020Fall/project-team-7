@@ -1,2 +1,4 @@
-package Plato.Controller;public class UserControllPanel {
+package Plato.Controller;
+
+public class UserControlPanel {
 }

@@ -3,7 +3,7 @@ package Game.DotsAndBoxes.View;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CommandProcessor {
+public class DotsAndBoxesCommandProcessor {
 
 
     public void processingCommand(String inputCommand) {
