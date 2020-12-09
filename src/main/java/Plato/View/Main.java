@@ -1,4 +1,4 @@
-package Game.DotsAndBoxes;
+package Plato.View;
 
 import java.util.Scanner;
 
