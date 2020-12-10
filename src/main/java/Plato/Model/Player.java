@@ -20,6 +20,9 @@ public class Player extends Person{
         super(firstName, lastName, username, id, password, email, phoneNumber);
     }
 
+    public Player(String username) {
+        super(username);
+    }
 
     public void editProfile(){
 

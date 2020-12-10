@@ -22,6 +22,10 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
+    public Person(String username) {
+        this.username = username;
+    }
+
     public String getFirstName() {
         return firstName;
     }
