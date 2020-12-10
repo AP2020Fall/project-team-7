@@ -1,8 +1,10 @@
 package Plato.Model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Admin extends Person {
+    private ArrayList<String> adminSuggestion;
 
     public Admin(String firstName, String lastName, String username, String id,
                  String password, String email, String phoneNumber) {
@@ -17,5 +19,11 @@ public class Admin extends Person {
 
     }
 
+    public ArrayList<String> getAdminSuggestion() {
+        return adminSuggestion;
+    }
 
+    public void setAdminSuggestion(ArrayList<String> adminSuggestion) {
+        this.adminSuggestion = adminSuggestion;
+    }
 }

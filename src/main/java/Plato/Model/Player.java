@@ -2,6 +2,7 @@ package Plato.Model;
 
 import Plato.View.UserView.Friend;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,8 +12,8 @@ public class Player extends Person{
     private int score;
     private int cash;
     private GameLog gameLog;
-    private List<Friend> friendList;
-    private List<Friend> requests;
+    private ArrayList<Friend> friendList;
+    private ArrayList<Friend> requests;
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
@@ -78,19 +79,19 @@ public class Player extends Person{
         this.gameLog = gameLog;
     }
 
-    public List<Friend> getFriendList() {
+    public ArrayList<Friend> getFriendList() {
         return friendList;
     }
 
-    public void setFriendList(List<Friend> friendList) {
+    public void setFriendList(ArrayList<Friend> friendList) {
         this.friendList = friendList;
     }
 
-    public List<Friend> getRequests() {
+    public ArrayList<Friend> getRequests() {
         return requests;
     }
 
-    public void setRequests(List<Friend> requests) {
+    public void setRequests(ArrayList<Friend> requests) {
         this.requests = requests;
     }
 
