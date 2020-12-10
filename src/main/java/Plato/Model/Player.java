@@ -14,6 +14,8 @@ public class Player extends Person{
     private List<Friend> friendList;
     private List<Friend> requests;
     private ArrayList<Game> gamesHistory;
+    private ArrayList<Game> favoriteGame;
+    private ArrayList<String> platoBotMessage;
 
     public Player(String firstName, String lastName, String username, String id,
                   String password, String email, String phoneNumber) {
@@ -52,7 +54,79 @@ public class Player extends Person{
 
     }
 
+    public int getScore() {
+        return score;
+    }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
 
+    public int getCash() {
+        return cash;
+    }
 
+    public void setCash(int cash) {
+        this.cash = cash;
+    }
+
+    public GameLog getGameLog() {
+        return gameLog;
+    }
+
+    public void setGameLog(GameLog gameLog) {
+        this.gameLog = gameLog;
+    }
+
+    public List<Friend> getFriendList() {
+        return friendList;
+    }
+
+    public void setFriendList(List<Friend> friendList) {
+        this.friendList = friendList;
+    }
+
+    public List<Friend> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(List<Friend> requests) {
+        this.requests = requests;
+    }
+
+    public ArrayList<Game> getGamesHistory() {
+        return gamesHistory;
+    }
+
+    public void setGamesHistory(ArrayList<Game> gamesHistory) {
+        this.gamesHistory = gamesHistory;
+    }
+
+    public ArrayList<Game> getFavoriteGame() {
+        return favoriteGame;
+    }
+
+    public void setFavoriteGame(ArrayList<Game> favoriteGame) {
+        this.favoriteGame = favoriteGame;
+    }
+
+    public ArrayList<String> getPlatoBotMessage() {
+        return platoBotMessage;
+    }
+
+    public void setPlatoBotMessage(ArrayList<String> platoBotMessage) {
+        this.platoBotMessage = platoBotMessage;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", Id='" + Id + '\'' +
+                ", Email='" + Email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }

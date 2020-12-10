@@ -13,7 +13,8 @@ public class PlatoBot {
         return platoBotMessage;
     }
 
-    public void addMessage(String message){
+    public void addMessage(Player player, String message){
         platoBotMessage.add(message);
+        player.setPlatoBotMessage(platoBotMessage);
     }
 }
