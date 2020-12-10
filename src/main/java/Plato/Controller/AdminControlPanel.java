@@ -1,5 +1,7 @@
 package Plato.Controller;
 
-public class AdminControlPanel {
+import Plato.Model.Admin;
 
+public class AdminControlPanel {
+    private Admin admin;
 }

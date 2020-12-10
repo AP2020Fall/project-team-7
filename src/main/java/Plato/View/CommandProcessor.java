@@ -2,7 +2,7 @@ package Plato.View;
 
 public class CommandProcessor {
 
-    public void processingCommand(String command){
+    public static void processingCommand(String command){
 
     }
 }
