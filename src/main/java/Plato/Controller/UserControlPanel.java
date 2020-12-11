@@ -1,9 +1,6 @@
 package Plato.Controller;
 
-import Plato.Model.Admin;
-import Plato.Model.Game;
-import Plato.Model.PlatoBot;
-import Plato.Model.Player;
+import Plato.Model.*;
 
 import java.util.ArrayList;
 
@@ -42,4 +39,24 @@ public class UserControlPanel {
         friendList.add(player);
         currentUser.setFriendList(friendList);
     }
+
+    public void editUserDetail(Object currentObj, Object newObj){
+
+    }
+
+    public void deleteAccount(String username, String password){
+
+    }
+
+    public void searchFriend(String username){
+
+    }
+
+    public void participateEvent(Event event){
+
+    }
+
+    //edit
+    //delete acc
+    //search friend
 }
