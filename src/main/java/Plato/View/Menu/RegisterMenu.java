@@ -1,5 +1,6 @@
 package Plato.View.Menu;
 
+import Plato.Controller.Manager;
 import Plato.Model.Player;
 
 public class RegisterMenu extends Menu {
@@ -58,6 +59,7 @@ public class RegisterMenu extends Menu {
             phoneNum = scanner.nextLine();
         }
         Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
+        manager.addPlayer(player);
         System.out.println("register successfully!");
     }
 }
