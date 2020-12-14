@@ -1,18 +1,21 @@
 package Plato.View.Menu;
 
-public class LoginMenu extends Menu{
-    public LoginMenu(Menu parentMenu) {
-        super("login menu", parentMenu);
+import Plato.Controller.Manager;
+import Plato.View.Main;
+
+public class UserProfile extends Menu {
+
+    public UserProfile(Menu parentMenu) {
+        super("profile", parentMenu);
     }
 
-    private Menu loginToAccount() {
-        return new Menu("login page", this) {
+
+    private Menu viewProfile() {
+        return new Menu("profile", this) {
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
-                System.out.println("If you have not an account creat one!\n" +
-                        "Enter username and password:" +
-                        "\nEnter back to return");
+                System.out.println("enter back to return");
             }
 
             @Override

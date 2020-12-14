@@ -10,6 +10,7 @@ public class MainMenu extends Menu {
         HashMap<Integer, Menu> submenus = new HashMap<>();
         submenus.put(1, new RegisterMenu(this));
         submenus.put(2, new LoginMenu(this));
+        submenus.put(3, new UserProfile(this));
         this.setSubmenus(submenus);
     }
 }

@@ -29,7 +29,6 @@ public class RegisterMenu extends Menu {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
-                    String[] splitInput = input.split("\\s");
                     this.show();
                     this.execute();
                 }
