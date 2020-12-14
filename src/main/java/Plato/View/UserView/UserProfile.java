@@ -6,6 +6,34 @@ import java.util.ArrayList;
 
 public class UserProfile {
 
+    public void viewPersonalInfo(){
+
+    }
+
+    public void changePassword(String currentPass, String newPass){
+
+    }
+
+    public void editField(Object field, Object newValue){
+
+    }
+
+    public void ViewPlatoStatistics(){
+
+    }
+
+    public void gameHistory(){
+
+    }
+
+    public void GameStatistics(String gameName){
+
+    }
+
+    public void logout(){
+
+    }
+    //...........................
     public static void showPoints(){
 
     }

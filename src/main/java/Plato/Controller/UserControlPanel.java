@@ -56,7 +56,15 @@ public class UserControlPanel {
 
     }
 
-    //edit
-    //delete acc
-    //search friend
+    public void registerUser(Player player){
+        players.add(player);
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
+    }
 }

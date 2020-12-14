@@ -7,8 +7,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class AdminControlPanel {
-    private ArrayList<String> allUsers;
+    Manager manager = new Manager();
+    Player player = null;
+
     public void addEvent(Game game, Date startDate, Date finishDate, int score){
+
+    }
+
+    public void registerAdmin(Admin admin){
 
     }
 
@@ -36,12 +42,12 @@ public class AdminControlPanel {
 
     }
 
-    public ArrayList<String> viewUsers(){
-        return allUsers;
+    public ArrayList<Player> viewUsers(){
+        return manager.getAllUsers();
     }
 
     private void addUsername(Player player){
-        allUsers.add(player.getUsername());
+        manager.addPlayer(player);
     }
 
     public void viewUserProfile(String username){

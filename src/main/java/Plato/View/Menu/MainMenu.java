@@ -1,10 +1,14 @@
 package Plato.View.Menu;
 
-import java.util.Stack;
+import Plato.View.Menu.Menu;
 
-public class MainMenu {
-    protected static Stack<MainMenu> menus;
-    protected static String username;
+import java.util.HashMap;
 
-
+public class MainMenu extends Menu {
+    public MainMenu() {
+        super("Main Menu", null);
+        HashMap<Integer, Menu> submenus = new HashMap<>();
+//        submenus.put(1, new StudentMenu(this));
+        this.setSubmenus(submenus);
+    }
 }
