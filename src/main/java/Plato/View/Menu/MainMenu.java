@@ -8,7 +8,8 @@ public class MainMenu extends Menu {
     public MainMenu() {
         super("Main Menu", null);
         HashMap<Integer, Menu> submenus = new HashMap<>();
-//        submenus.put(1, new StudentMenu(this));
+        submenus.put(1, new RegisterMenu(this));
+        submenus.put(2, new LoginMenu(this));
         this.setSubmenus(submenus);
     }
 }
