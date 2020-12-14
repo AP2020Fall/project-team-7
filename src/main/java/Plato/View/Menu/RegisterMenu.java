@@ -30,7 +30,6 @@ public class RegisterMenu extends Menu {
                     this.parentMenu.execute();
                 } else {
                     String[] splitInput = input.split("\\s");
-//                    manager.submitCourseMarkForStudent(splitInput[0], Float.parseFloat(splitInput[1]), splitInput[2]);
                     this.show();
                     this.execute();
                 }
