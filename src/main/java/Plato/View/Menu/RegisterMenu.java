@@ -1,5 +1,7 @@
 package Plato.View.Menu;
 
+import Plato.Model.Player;
+
 public class RegisterMenu extends Menu {
     private String username;
     private String password;
@@ -43,6 +45,19 @@ public class RegisterMenu extends Menu {
         lastName = scanner.nextLine();
         System.out.println("Enter your Email: ");
         Email = scanner.nextLine();
-
+        while (!checkEmail(Email)){
+            System.out.println("your Email is not valid. please enter your Email: ");
+            Email = scanner.nextLine();
+        }
+        System.out.println("Enter your id: ");
+        id = scanner.nextLine();
+        System.out.println("Enter your phone: ");
+        phoneNum = scanner.nextLine();
+        while (!checkPhoneNumber(phoneNum)){
+            System.out.println("your phone number is not valid. please enter your phone");
+            phoneNum = scanner.nextLine();
+        }
+        Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
+        System.out.println("register successfully!");
     }
 }
