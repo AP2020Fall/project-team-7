@@ -19,11 +19,13 @@ public class RegisterMenu extends Menu {
     }
 
     private Menu createNewAccount() {
-        return new Menu("register", this) {
+        return new Menu("Registration", this) {
             @Override
             public void show() {
-                System.out.println(this.getName() + ":");
                 System.out.println("if you have account back and login!");
+//                System.out.println(this.getName() + ":");
+                System.out.println("enter username and password");
+
             }
 
             @Override
@@ -34,7 +36,8 @@ public class RegisterMenu extends Menu {
                     this.parentMenu.execute();
                 } else {
                     String[] splitInput = input.split("\\s+");
-                    if (manager.getAllUsers().size()==0) {
+                    scanner.nextLine();
+                    if (manager.getAllUsers().size() == 0) {
                         System.out.println("registration successfully!\n" +
                                 "complete your profile.");
                         completeProfile(splitInput[0], splitInput[1]);
