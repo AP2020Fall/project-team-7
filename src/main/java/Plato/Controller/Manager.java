@@ -5,9 +5,11 @@ import Plato.Model.Player;
 import com.google.gson.Gson;
 //import org.json.simple.JSONObject;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Manager {
     private ArrayList<Player> allUsers;
+    private HashMap<String , String> user;
     private ArrayList<Game> games;
     private ArrayList<Event> events;
     Gson gson = new Gson();
@@ -44,5 +46,13 @@ public class Manager {
 
     public void setEvents(ArrayList<Event> events) {
         this.events = events;
+    }
+
+    public HashMap<String, String> getUser() {
+        return user;
+    }
+
+    public void setUser(HashMap<String, String> user) {
+        this.user = user;
     }
 }

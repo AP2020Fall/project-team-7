@@ -19,7 +19,7 @@ public class RegisterMenu extends Menu {
     }
 
     private Menu createNewAccount() {
-        return new Menu("enter username and password", this) {
+        return new Menu("register", this) {
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
@@ -34,14 +34,20 @@ public class RegisterMenu extends Menu {
                     this.parentMenu.execute();
                 } else {
                     String[] splitInput = input.split("\\s+");
-                    for (Player allUser : manager.getAllUsers()) {
-                        if (allUser.getUsername().equalsIgnoreCase(splitInput[0])){
-                            System.out.println("this Id is already taken!");
-                            execute();
-                        } else {
-                            System.out.println("registration successfully!\n" +
-                                    "complete your profile.");
-                            completeProfile(splitInput[0], splitInput[1]);
+                    if (manager.getAllUsers().size()==0) {
+                        System.out.println("registration successfully!\n" +
+                                "complete your profile.");
+                        completeProfile(splitInput[0], splitInput[1]);
+                    } else {
+                        for (Player allUser : manager.getAllUsers()) {
+                            if (allUser.getUsername().equalsIgnoreCase(splitInput[0])) {
+                                System.out.println("this Id is already taken!");
+                                execute();
+                            } else {
+                                System.out.println("registration successfully!\n" +
+                                        "complete your profile.");
+                                completeProfile(splitInput[0], splitInput[1]);
+                            }
                         }
                     }
                     this.show();
@@ -51,7 +57,7 @@ public class RegisterMenu extends Menu {
         };
     }
 
-    public void completeProfile(String username, String password){
+    public void completeProfile(String username, String password) {
         String Email, phoneNum, firstName, lastName, id;
         System.out.println("Enter your first name: ");
         firstName = scanner.nextLine();
@@ -59,7 +65,7 @@ public class RegisterMenu extends Menu {
         lastName = scanner.nextLine();
         System.out.println("Enter your Email: ");
         Email = scanner.nextLine();
-        while (!checkEmail(Email)){
+        while (!checkEmail(Email)) {
             System.out.println("your Email is not valid. please enter your Email: ");
             Email = scanner.nextLine();
         }
@@ -67,7 +73,7 @@ public class RegisterMenu extends Menu {
         id = scanner.nextLine();
         System.out.println("Enter your phone: ");
         phoneNum = scanner.nextLine();
-        while (!checkPhoneNumber(phoneNum)){
+        while (!checkPhoneNumber(phoneNum)) {
             System.out.println("your phone number is not valid. please enter your phone");
             phoneNum = scanner.nextLine();
         }
@@ -75,7 +81,6 @@ public class RegisterMenu extends Menu {
         manager.registerUser(player);
         System.out.println("register successfully!");
     }
-
 
 
 }
