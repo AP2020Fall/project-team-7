@@ -31,12 +31,12 @@ public class RegisterMenu extends Menu {
             @Override
             public void execute() {
                 String input = scanner.nextLine();
+                scanner.nextLine();
                 if (input.equalsIgnoreCase("back")) {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
                     String[] splitInput = input.split("\\s+");
-                    scanner.nextLine();
                     if (manager.getAllUsers().size() == 0) {
                         System.out.println("registration successfully!\n" +
                                 "complete your profile.");
