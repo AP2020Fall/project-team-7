@@ -29,17 +29,19 @@ public class RegisterMenu extends Menu {
 
             @Override
             public void execute() {
-                String username = scanner.nextLine();
-                String password = scanner.nextLine();
+//                String username = scanner.nextLine();
+//                String password = scanner.nextLine();
+                String input = scanner.nextLine();
                 scanner.nextLine();
+                username = input.split("\\s+")[0];
+                password = input.split("\\s+")[1];
+
                 if (username.equalsIgnoreCase("back")) {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
-//                    String[] splitInput = username.split("\\s+");
-                    if (manager.getAllUsers().size() == 0) {
-                        System.out.println("registration successfully!\n" +
-                                "complete your profile.");
+                    if (manager.getAllUsers().isEmpty()) {
+                        System.out.println("complete your profile.");
                         completeProfile(username, password);
                     } else {
                         for (Player allUser : manager.getAllUsers()) {
