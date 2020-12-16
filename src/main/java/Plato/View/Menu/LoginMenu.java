@@ -15,10 +15,14 @@ public class LoginMenu extends Menu{
         return new Menu("login page", this) {
             @Override
             public void show() {
+//                System.out.println(this.getName() + ":");
+//                System.out.println("If you have not an account create one!\n" +
+//                        "Enter username and password:" +
+//                        "\nEnter back to return");
                 System.out.println(this.getName() + ":");
-                System.out.println("If you have not an account create one!\n" +
-                        "Enter username and password:" +
-                        "\nEnter back to return");
+                System.out.println("enter username and password");
+                System.out.println("if you have not account back and register!");
+
             }
 
             @Override
