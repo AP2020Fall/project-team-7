@@ -47,7 +47,7 @@ public class AdminControlPanel {
     }
 
     private void addUsername(Player player){
-        manager.addPlayer(player);
+        manager.registerUser(player);
     }
 
     public void viewUserProfile(String username){

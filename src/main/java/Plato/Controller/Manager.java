@@ -22,7 +22,7 @@ public class Manager {
         this.allUsers = allUsers;
     }
 
-    public void addPlayer(Player player){
+    public void registerUser(Player player){
         String detail;
         allUsers.add(player);
         setAllUsers(allUsers);

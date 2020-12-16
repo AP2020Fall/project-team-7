@@ -3,23 +3,27 @@ package Plato.View.Menu;
 import Plato.Controller.Manager;
 import Plato.Model.Player;
 
+import java.util.HashMap;
+
 public class RegisterMenu extends Menu {
     private String username;
     private String password;
 
 
     public RegisterMenu(Menu parentMenu) {
-        super("Register menu", parentMenu);
+        super("Register", parentMenu);
+        HashMap<Integer, Menu> submenus = new HashMap<>();
+        submenus.put(1, createNewAccount());
+        this.setSubmenus(submenus);
+
     }
 
     private Menu createNewAccount() {
-        return new Menu("create account", this) {
+        return new Menu("enter username and password", this) {
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
-                System.out.println("If you have not an account creat one!\n" +
-                        "Enter username and password:" +
-                        "\nEnter back to return");
+                System.out.println("if you have account back and login!");
             }
 
             @Override
@@ -29,6 +33,17 @@ public class RegisterMenu extends Menu {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
+                    String[] splitInput = input.split("\\s+");
+                    for (Player allUser : manager.getAllUsers()) {
+                        if (allUser.getUsername().equalsIgnoreCase(splitInput[0])){
+                            System.out.println("this Id is already taken!");
+                            execute();
+                        } else {
+                            System.out.println("registration successfully!\n" +
+                                    "complete your profile.");
+                            completeProfile(splitInput[0], splitInput[1]);
+                        }
+                    }
                     this.show();
                     this.execute();
                 }
@@ -36,7 +51,7 @@ public class RegisterMenu extends Menu {
         };
     }
 
-    public void createNewAccount(String username, String password){
+    public void completeProfile(String username, String password){
         String Email, phoneNum, firstName, lastName, id;
         System.out.println("Enter your first name: ");
         firstName = scanner.nextLine();
@@ -57,7 +72,10 @@ public class RegisterMenu extends Menu {
             phoneNum = scanner.nextLine();
         }
         Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
-        manager.addPlayer(player);
+        manager.registerUser(player);
         System.out.println("register successfully!");
     }
+
+
+
 }
