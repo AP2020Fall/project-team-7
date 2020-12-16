@@ -19,20 +19,19 @@ public class RegisterMenu extends Menu {
     }
 
     private Menu createNewAccount() {
-        return new Menu("Registration", this) {
+        return new Menu("Register menu", this) {
             @Override
             public void show() {
-                System.out.println("if you have account back and login!");
-//                System.out.println(this.getName() + ":");
+                System.out.println(this.getName() + ":");
                 System.out.println("enter username and password");
-
+                System.out.println("if you have account back and login!");
             }
 
             @Override
             public void execute() {
                 String username = scanner.nextLine();
                 String password = scanner.nextLine();
-//                scanner.nextLine();
+                scanner.nextLine();
                 if (username.equalsIgnoreCase("back")) {
                     this.parentMenu.show();
                     this.parentMenu.execute();
