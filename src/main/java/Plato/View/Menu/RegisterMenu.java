@@ -30,26 +30,28 @@ public class RegisterMenu extends Menu {
 
             @Override
             public void execute() {
-                String input = scanner.nextLine();
-                scanner.nextLine();
-                if (input.equalsIgnoreCase("back")) {
+                String username = scanner.nextLine();
+                String password = scanner.nextLine();
+//                scanner.nextLine();
+                if (username.equalsIgnoreCase("back")) {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
-                    String[] splitInput = input.split("\\s+");
+//                    String[] splitInput = username.split("\\s+");
                     if (manager.getAllUsers().size() == 0) {
                         System.out.println("registration successfully!\n" +
                                 "complete your profile.");
-                        completeProfile(splitInput[0], splitInput[1]);
+                        completeProfile(username, password);
                     } else {
                         for (Player allUser : manager.getAllUsers()) {
-                            if (allUser.getUsername().equalsIgnoreCase(splitInput[0])) {
+                            if (allUser.getUsername().equalsIgnoreCase(username)) {
                                 System.out.println("this Id is already taken!");
                                 execute();
                             } else {
                                 System.out.println("registration successfully!\n" +
                                         "complete your profile.");
-                                completeProfile(splitInput[0], splitInput[1]);
+                                completeProfile(username, password);
+                                break;
                             }
                         }
                     }
