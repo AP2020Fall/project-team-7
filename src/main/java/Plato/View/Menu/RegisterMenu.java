@@ -54,11 +54,12 @@ public class RegisterMenu extends Menu {
                     } else {
                         while (platoBotController.isThisUsernameExist(username)) {
                             System.out.println("this Id is already taken!");
-                            execute();
+                            this.show();
+                            this.execute();
                         }
                     }
-                    this.show();
-                    this.execute();
+//                    this.show();
+//                    this.execute();
                 }
             }
         };
