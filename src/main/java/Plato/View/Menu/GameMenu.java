@@ -15,7 +15,7 @@ public class GameMenu extends Menu{
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
-
+                System.out.println(manager.getGames());
             }
 
             @Override
