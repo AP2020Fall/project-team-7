@@ -4,9 +4,7 @@ import Plato.Model.Player;
 import java.util.HashMap;
 
 public class RegisterMenu extends Menu {
-    private String username;
-    private String password;
-    PlatoBotController platoBotController;
+PlatoBotController platoBotController;
 
 
     public RegisterMenu(Menu parentMenu) {
@@ -33,17 +31,14 @@ public class RegisterMenu extends Menu {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
-//                    username = input.split("\\s+")[0];
-//                    password = input.split("\\s+")[1];
-                    setUsername(input);
+                    String password;
                     System.out.println("enter password\n" +
                             "(password must contains uppercase and lowercase and digit character at least 8 character)");
                     password = scanner.nextLine();
-                    setPassword(password);
-                    if (!platoBotController.isThisUsernameExist(getUsername())){
-                        if (platoBotController.checkPassword(getPassword())){
+                    if (!platoBotController.isThisUsernameExist(input)){
+                        if (platoBotController.checkPassword(password)){
                             System.out.println("complete your profile!");
-                            completeProfile(username, password);
+                            completeProfile(input, password);
                         } else {
                             while (!platoBotController.checkPassword(password)){
                                 System.out.println("password must have 8-20 character " +
@@ -51,12 +46,12 @@ public class RegisterMenu extends Menu {
                                 password = scanner.nextLine();
                                 if (platoBotController.checkPassword(password)){
                                     System.out.println("complete your profile!");
-                                    completeProfile(username, password);
+                                    completeProfile(input, password);
                                 }
                             }
                         }
                     } else {
-                        while (platoBotController.isThisUsernameExist(username)) {
+                        while (platoBotController.isThisUsernameExist(input)) {
                             System.out.println("this Id is already taken!");
                             this.show();
                             this.execute();
@@ -69,21 +64,21 @@ public class RegisterMenu extends Menu {
         };
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+//    public String getUsername() {
+//        return username;
+//    }
+//
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
+//
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
 
     public void completeProfile(String username, String password) {
         String Email, phoneNum, firstName, lastName, id;
