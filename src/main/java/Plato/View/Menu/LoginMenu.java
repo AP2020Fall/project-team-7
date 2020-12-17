@@ -16,7 +16,7 @@ public class LoginMenu extends Menu {
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
-                System.out.println("enter username");
+                System.out.println("enter username and password");
                 System.out.println("if you have not account back and register!");
             }
 
@@ -27,10 +27,10 @@ public class LoginMenu extends Menu {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
-                    System.out.println("enter your password");
-                    String password = scanner.nextLine();
+                    String[] splitInput = input.split("\\s+");
                     for (String user : manager.getUser().keySet()) {
-                        if (manager.getUser().get(user).equals(password)){
+                        if ((manager.getUser().keySet().equals(splitInput[0])) &&
+                                (manager.getUser().get(user).equals(splitInput[1]))) {
                             System.out.println("login successfully!");
                         } else {
                             System.out.println("username or password is wrong!");
