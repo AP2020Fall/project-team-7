@@ -14,7 +14,12 @@ public class Manager {
     private ArrayList<Event> events;
     Gson gson = new Gson();
 
-
+    public Manager() {
+        allUsers = new ArrayList<>();
+        userLoginInfo = new HashMap<>();
+        games = new ArrayList<>();
+        events = new ArrayList<>();
+    }
 
     public ArrayList<Player> getAllUsers() {
         return allUsers;
