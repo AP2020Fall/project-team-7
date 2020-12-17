@@ -1,7 +1,7 @@
 package Plato.View;
 
 import Plato.Controller.Manager;
-import Plato.View.Menu.MainMenu;
+import Plato.View.Menu.FirstPage;
 import Plato.View.Menu.Menu;
 
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class CommandProcessor {
         Menu.setScanner(this.scanner);
         Menu.setManager(this.manager);
 
-        Menu currentMenu = new MainMenu();
+        Menu currentMenu = new FirstPage();
         currentMenu.show();
         currentMenu.execute();
     }

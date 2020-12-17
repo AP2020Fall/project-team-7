@@ -51,7 +51,7 @@ public class RegisterMenu extends Menu {
                             } else {
                                 System.out.println("registration successfully!\n" +
                                         "complete your profile.");
-                                completeProfile(username, password);
+//                                completeProfile(username, password);
                                 break;
                             }
                         }
