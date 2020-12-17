@@ -31,4 +31,32 @@ public class UserProfile extends Menu {
             }
         };
     }
+
+    private void showPoints(){
+
+    }
+
+    private void viewFavoriteGame(){
+
+    }
+
+    private void viewPlatoBotMessage(){
+
+    }
+
+    private void viewLastPlayed(){
+
+    }
+
+    private void viewAdminSuggestion(){
+
+    }
+
+    private void chooseSuggestedGame(){
+
+    }
+
+    private void addFriend(){
+
+    }
 }
