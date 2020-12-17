@@ -22,8 +22,7 @@ public class RegisterMenu extends Menu {
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
-                System.out.println("enter username and password\n" +
-                        "(password must contains uppercase and lowercase and digit character at least 8 character)");
+                System.out.println("enter username");
                 System.out.println("if you have account back and login!");
             }
 
@@ -34,10 +33,15 @@ public class RegisterMenu extends Menu {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
-                    username = input.split("\\s+")[0];
-                    password = input.split("\\s+")[1];
-                    if (!platoBotController.isThisUsernameExist(username)){
-                        if (platoBotController.checkPassword(password)){
+//                    username = input.split("\\s+")[0];
+//                    password = input.split("\\s+")[1];
+                    setUsername(input);
+                    System.out.println("enter password\n" +
+                            "(password must contains uppercase and lowercase and digit character at least 8 character)");
+                    password = scanner.nextLine();
+                    setPassword(password);
+                    if (!platoBotController.isThisUsernameExist(getUsername())){
+                        if (platoBotController.checkPassword(getPassword())){
                             System.out.println("complete your profile!");
                             completeProfile(username, password);
                         } else {
@@ -58,11 +62,27 @@ public class RegisterMenu extends Menu {
                             this.execute();
                         }
                     }
-//                    this.show();
-//                    this.execute();
+                    this.show();
+                    this.execute();
                 }
             }
         };
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void completeProfile(String username, String password) {

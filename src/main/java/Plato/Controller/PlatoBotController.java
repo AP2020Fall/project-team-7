@@ -38,9 +38,13 @@ public class PlatoBotController {
     }
 
     public boolean isThisUsernameExist(String username){
-        for (Player allUser : manager.getAllUsers()) {
-            if (allUser.getUsername().equalsIgnoreCase(username)){
-                return true;
+        if (manager.getAllUsers().size()==0){
+            return false;
+        }else {
+            for (Player allUser : manager.getAllUsers()) {
+                if (allUser.getUsername().equalsIgnoreCase(username)) {
+                    return true;
+                }
             }
         }
         return false;
