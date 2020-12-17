@@ -1,9 +1,12 @@
 package Plato.Controller;
 
+import Plato.Model.Player;
+
 import java.util.ArrayList;
 
 public class PlatoBotController {
     private ArrayList<String> message;
+    Manager manager = new Manager();
 
     public ArrayList<String> getMessage() {
         return message;
@@ -28,8 +31,17 @@ public class PlatoBotController {
     }
 
     public boolean checkPassword(String password) {
-        if (password.matches(".{8,}")) {
+        if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,20}$")) {
             return true;
+        }
+        return false;
+    }
+
+    public boolean isThisUsernameExist(String username){
+        for (Player allUser : manager.getAllUsers()) {
+            if (allUser.getUsername().equalsIgnoreCase(username)){
+                return true;
+            }
         }
         return false;
     }

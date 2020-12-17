@@ -25,7 +25,8 @@ public class RegisterMenu extends Menu {
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
-                System.out.println("enter username and password");
+                System.out.println("enter username and password\n" +
+                        "(password must contains uppercase and lowercase and digit character at least 8 character)");
                 System.out.println("if you have account back and login!");
             }
 
@@ -34,28 +35,25 @@ public class RegisterMenu extends Menu {
 //                String username = scanner.nextLine();
 //                String password = scanner.nextLine();
                 String input = scanner.nextLine();
-                scanner.nextLine();
-                username = input.split("\\s+")[0];
-                password = input.split("\\s+")[1];
-
-                if (username.equalsIgnoreCase("back")) {
+                if (input.equalsIgnoreCase("back")) {
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
-                    if (manager.getAllUsers().isEmpty()) {
-                        System.out.println("complete your profile.");
-                        completeProfile(username, password);
-                    } else {
-                        for (Player allUser : manager.getAllUsers()) {
-                            if (allUser.getUsername().equalsIgnoreCase(username)) {
-                                System.out.println("this Id is already taken!");
-                                execute();
-                            } else {
-                                System.out.println("registration successfully!\n" +
-                                        "complete your profile.");
-//                                completeProfile(username, password);
-                                break;
+                    username = input.split("\\s+")[0];
+                    password = input.split("\\s+")[1];
+                    if (!platoBotController.isThisUsernameExist(username)){
+                        if (platoBotController.checkPassword(password)){
+                            completeProfile(username, password);
+                            System.out.println("complete your profile!");
+                        } else {
+                            while (!platoBotController.checkPassword(password)){
+
                             }
+                        }
+                    } else {
+                        while (platoBotController.isThisUsernameExist(username)) {
+                            System.out.println("this Id is already taken!");
+                            execute();
                         }
                     }
                     this.show();
@@ -89,6 +87,5 @@ public class RegisterMenu extends Menu {
         manager.registerUser(player);
         System.out.println("register successfully!");
     }
-
 
 }
