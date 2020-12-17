@@ -43,11 +43,17 @@ public class RegisterMenu extends Menu {
                     password = input.split("\\s+")[1];
                     if (!platoBotController.isThisUsernameExist(username)){
                         if (platoBotController.checkPassword(password)){
-                            completeProfile(username, password);
                             System.out.println("complete your profile!");
+                            completeProfile(username, password);
                         } else {
                             while (!platoBotController.checkPassword(password)){
-
+                                System.out.println("password must have 8-20 character " +
+                                        "and contains uppercase and lowercase and digit");
+                                password = scanner.nextLine();
+                                if (platoBotController.checkPassword(password)){
+                                    System.out.println("complete your profile!");
+                                    completeProfile(username, password);
+                                }
                             }
                         }
                     } else {
