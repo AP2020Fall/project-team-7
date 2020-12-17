@@ -32,4 +32,36 @@ public class GameMenu extends Menu{
             }
         };
     }
+
+    private void showScoreBoard(){
+
+    }
+
+    private void showDetails(){
+
+    }
+
+    private void showLog(){
+
+    }
+
+    private void showWinsCount(){
+
+    }
+
+    private void showPlayedCount(){
+
+    }
+
+    private void addToFavorite(){
+
+    }
+
+    private void runGame(){
+
+    }
+
+    private void showPoints(){
+
+    }
 }
