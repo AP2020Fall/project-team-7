@@ -15,8 +15,7 @@ public class GameMenu extends Menu{
             @Override
             public void show() {
                 System.out.println(this.getName() + ":");
-                System.out.println("enter username and password");
-                System.out.println("if you have not account back and register!");
+
             }
 
             @Override
