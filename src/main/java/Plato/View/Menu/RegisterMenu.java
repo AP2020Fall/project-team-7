@@ -1,9 +1,6 @@
 package Plato.View.Menu;
-
-import Plato.Controller.Manager;
 import Plato.Controller.PlatoBotController;
 import Plato.Model.Player;
-
 import java.util.HashMap;
 
 public class RegisterMenu extends Menu {
@@ -32,8 +29,6 @@ public class RegisterMenu extends Menu {
 
             @Override
             public void execute() {
-//                String username = scanner.nextLine();
-//                String password = scanner.nextLine();
                 String input = scanner.nextLine();
                 if (input.equalsIgnoreCase("back")) {
                     this.parentMenu.show();
