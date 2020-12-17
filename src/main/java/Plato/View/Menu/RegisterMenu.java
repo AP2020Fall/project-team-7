@@ -1,6 +1,7 @@
 package Plato.View.Menu;
 
 import Plato.Controller.Manager;
+import Plato.Controller.PlatoBotController;
 import Plato.Model.Player;
 
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.HashMap;
 public class RegisterMenu extends Menu {
     private String username;
     private String password;
+    PlatoBotController platoBotController;
 
 
     public RegisterMenu(Menu parentMenu) {
@@ -15,7 +17,7 @@ public class RegisterMenu extends Menu {
         HashMap<Integer, Menu> submenus = new HashMap<>();
         submenus.put(1, createNewAccount());
         this.setSubmenus(submenus);
-
+        platoBotController = new PlatoBotController();
     }
 
     private Menu createNewAccount() {
@@ -71,7 +73,7 @@ public class RegisterMenu extends Menu {
         lastName = scanner.nextLine();
         System.out.println("Enter your Email: ");
         Email = scanner.nextLine();
-        while (!checkEmail(Email)) {
+        while (!platoBotController.checkEmail(Email)) {
             System.out.println("your Email is not valid. please enter your Email: ");
             Email = scanner.nextLine();
         }
@@ -79,7 +81,7 @@ public class RegisterMenu extends Menu {
         id = scanner.nextLine();
         System.out.println("Enter your phone: ");
         phoneNum = scanner.nextLine();
-        while (!checkPhoneNumber(phoneNum)) {
+        while (!platoBotController.checkPhoneNumber(phoneNum)) {
             System.out.println("your phone number is not valid. please enter your phone");
             phoneNum = scanner.nextLine();
         }
