@@ -7,6 +7,7 @@ public class UserProfile extends Menu {
 
     public UserProfile(Menu parentMenu) {
         super("profile", parentMenu);
+
     }
 
 
@@ -31,32 +32,165 @@ public class UserProfile extends Menu {
             }
         };
     }
+//complete from here
+    private Menu showPoints(){
+        return new Menu("show point", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
-    private void showPoints(){
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
 
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void viewFavoriteGame(){
+    private Menu viewFavoriteGame(){
+        return new Menu("favorite games", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void viewPlatoBotMessage(){
+    private Menu viewPlatoBotMessage(){
+        return new Menu("plato bot message", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void viewLastPlayed(){
+    private Menu viewLastPlayed(){
+        return new Menu("last played game", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void viewAdminSuggestion(){
+    private Menu viewAdminSuggestion(){
+        return new Menu("Admin suggestion", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void chooseSuggestedGame(){
+    private Menu chooseSuggestedGame(){
+        return new Menu("choose suggested game", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void addFriend(){
+    private Menu addFriend(){
+        return new Menu("add friend", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 }
