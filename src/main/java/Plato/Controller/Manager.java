@@ -30,10 +30,10 @@ public class Manager {
     }
 
     public void registerUser(Player player){
-        String detail;
+//        String detail;
         allUsers.add(player);
         setAllUsers(allUsers);
-        detail = gson.toJson(player);
+//        detail = gson.toJson(player);
         //file output stream
     }
 
