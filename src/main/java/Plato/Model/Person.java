@@ -2,6 +2,8 @@ package Plato.Model;
 
 import javafx.scene.paint.Stop;
 
+import java.util.HashMap;
+
 public class Person {
     protected String firstName;
     protected String lastName;
@@ -10,6 +12,7 @@ public class Person {
     protected String password;
     protected String Email;
     protected String phoneNumber;
+    protected HashMap<String , String> loginInfo;
 
     public Person(String firstName, String lastName, String username,
                   String id, String password, String email, String phoneNumber) {
@@ -76,6 +79,19 @@ public class Person {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public HashMap<String, String> getLoginInfo() {
+        return loginInfo;
+    }
+
+    public void setLoginInfo(HashMap<String, String> loginInfo) {
+        this.loginInfo = loginInfo;
     }
 
     @Override

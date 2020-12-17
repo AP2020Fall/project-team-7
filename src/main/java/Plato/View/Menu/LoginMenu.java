@@ -27,6 +27,7 @@ public class LoginMenu extends Menu{
                     this.parentMenu.show();
                     this.parentMenu.execute();
                 } else {
+
                     this.show();
                     this.execute();
                 }
