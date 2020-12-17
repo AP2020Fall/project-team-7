@@ -7,6 +7,8 @@ public class GameMenu extends Menu{
         super(name, parentMenu);
         HashMap<Integer, Menu> submenus = new HashMap<>();
         submenus.put(1, showGame());
+        submenus.put(2, showScoreBoard());
+        submenus.put(3,showDetails());
         this.setSubmenus(submenus);
     }
 
@@ -32,36 +34,188 @@ public class GameMenu extends Menu{
             }
         };
     }
+//complete from here
+    private Menu showScoreBoard(){
+        return new Menu("score board", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
-    private void showScoreBoard(){
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
 
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void showDetails(){
+    private Menu showDetails(){
+        return new Menu("details", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void showLog(){
+    private Menu showLog(){
+        return new Menu("Log", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void showWinsCount(){
+    private Menu showWinsCount(){
+        return new Menu("wins count", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void showPlayedCount(){
+    private Menu showPlayedCount(){
+        return new Menu("played count", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void addToFavorite(){
+    private Menu addToFavorite(){
+        return new Menu("add to favorite games", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void runGame(){
+    private Menu runGame(){
+        return new Menu("run game", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 
-    private void showPoints(){
+    private Menu showPoints(){
+        return new Menu("show point", this) {
+            @Override
+            public void show() {
+                System.out.println(this.getName() + ":");
+                System.out.println(manager.getGames());
+            }
 
+            @Override
+            public void execute() {
+                String input = scanner.nextLine();
+                if (input.equalsIgnoreCase("back")) {
+                    this.parentMenu.show();
+                    this.parentMenu.execute();
+                } else {
+
+                    this.show();
+                    this.execute();
+                }
+            }
+        };
     }
 }
