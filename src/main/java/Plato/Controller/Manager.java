@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class Manager {
     private ArrayList<Player> allUsers;
-    private HashMap<String , String> user;
+    private HashMap<String , String> userLoginInfo;
     private ArrayList<Game> games;
     private ArrayList<Event> events;
     Gson gson = new Gson();
@@ -49,10 +49,12 @@ public class Manager {
     }
 
     public HashMap<String, String> getUser() {
-        return user;
+        return userLoginInfo;
     }
 
     public void setUser(HashMap<String, String> user) {
-        this.user = user;
+        this.userLoginInfo = user;
     }
+
+
 }
