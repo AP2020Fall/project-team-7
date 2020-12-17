@@ -53,8 +53,6 @@ PlatoBotController platoBotController;
                     } else {
                         while (platoBotController.isThisUsernameExist(input)) {
                             System.out.println("this Id is already taken!");
-                            this.show();
-                            this.execute();
                         }
                     }
                     this.show();
