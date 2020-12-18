@@ -33,7 +33,7 @@ public class LoginMenu extends Menu {
                                 (manager.getUser().get(user).equals(splitInput[1]))) {
                             System.out.println("login successfully!");
                         } else {
-                            System.out.println("username or password is wrong!");
+                            System.err.println("username or password is wrong!");
                             this.show();
                             this.execute();
                         }

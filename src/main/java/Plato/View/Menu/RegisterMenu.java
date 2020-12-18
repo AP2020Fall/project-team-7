@@ -41,7 +41,7 @@ PlatoBotController platoBotController;
                             completeProfile(input, password);
                         } else {
                             while (!platoBotController.checkPassword(password)){
-                                System.out.println("password must have 8-20 character " +
+                                System.err.println("password must have 8-20 character " +
                                         "and contains uppercase and lowercase and digit");
                                 password = scanner.nextLine();
                                 if (platoBotController.checkPassword(password)){
@@ -52,7 +52,7 @@ PlatoBotController platoBotController;
                         }
                     } else {
                         while (platoBotController.isThisUsernameExist(input)) {
-                            System.out.println("this Id is already taken!");
+                            System.err.println("this Id is already taken!");
                         }
                     }
                     this.show();
@@ -71,7 +71,7 @@ PlatoBotController platoBotController;
         System.out.println("Enter your Email: ");
         Email = scanner.nextLine();
         while (!platoBotController.checkEmail(Email)) {
-            System.out.println("your Email is not valid. please enter your Email: ");
+            System.err.println("your Email is not valid. please enter your Email: ");
             Email = scanner.nextLine();
         }
         System.out.println("Enter your id: ");
@@ -79,7 +79,7 @@ PlatoBotController platoBotController;
         System.out.println("Enter your phone: ");
         phoneNum = scanner.nextLine();
         while (!platoBotController.checkPhoneNumber(phoneNum)) {
-            System.out.println("your phone number is not valid. please enter your phone");
+            System.err.println("your phone number is not valid. please enter your phone");
             phoneNum = scanner.nextLine();
         }
         Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
