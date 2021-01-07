@@ -1,6 +1,5 @@
 package Game.DotsAndBoxes.Model;
 
-import org.testng.annotations.Test;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -14,10 +13,7 @@ class Helper extends TimerTask
         System.out.println("Timer ran " + ++i);
         if(i == 4)
         {
-            synchronized(ScoreBoard.obj)
-            {
-                ScoreBoard.obj.notify();
-            }
+
         }
     }
 
@@ -25,7 +21,7 @@ class Helper extends TimerTask
 
 
 public class ScoreBoard{
-    protected static Test obj;
+//    protected static Test obj;
     private int score;
     private Player player1;
     private Player player2;

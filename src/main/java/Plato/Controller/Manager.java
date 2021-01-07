@@ -1,18 +1,19 @@
 package Plato.Controller;
+
 import Plato.Model.Event;
 import Plato.Model.Game;
 import Plato.Model.Player;
 import com.google.gson.Gson;
-//import org.json.simple.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Manager {
     private ArrayList<Player> allUsers;
-    private HashMap<String , String> userLoginInfo;
+    private HashMap<String, String> userLoginInfo;
     private ArrayList<Game> games;
     private ArrayList<Event> events;
-    Gson gson = new Gson();
+
 
     public Manager() {
         allUsers = new ArrayList<>();
@@ -29,12 +30,11 @@ public class Manager {
         this.allUsers = allUsers;
     }
 
-    public void registerUser(Player player){
-//        String detail;
+    public void registerUser(Player player) {
+        String data = new Gson().toJson(player);
         allUsers.add(player);
         setAllUsers(allUsers);
-//        detail = gson.toJson(player);
-        //file output stream
+        System.out.println("register successfully!");
     }
 
     public ArrayList<Game> getGames() {

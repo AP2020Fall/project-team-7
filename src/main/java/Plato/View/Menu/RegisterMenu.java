@@ -84,7 +84,7 @@ PlatoBotController platoBotController;
         }
         Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
         manager.registerUser(player);
-        System.out.println("register successfully!");
+
     }
 
 }
