@@ -35,6 +35,7 @@ public class LoginMenu extends Menu {
                         if ((manager.getUser().keySet().equals(splitInput[0])) &&
                                 (manager.getUser().get(user).equals(splitInput[1]))) {
                             isCorrectUser = true;
+                            new UserProfile(null);
                             System.out.println("login successfully!");
                         } else {
                             System.err.println("username or password is wrong!");

@@ -90,6 +90,7 @@ public class RegisterMenu extends Menu {
         manager.registerUser(player);
         isCorrectDetail = true;
         System.out.println("registration successfully!");
+        new UserProfile(null);
     }
 
 }

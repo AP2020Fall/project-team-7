@@ -1,7 +1,5 @@
 package Plato.View.Menu;
 
-import Plato.View.Menu.Menu;
-
 import java.util.HashMap;
 
 public class FirstPage extends Menu {

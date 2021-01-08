@@ -35,16 +35,16 @@ public class Manager {
     }
 
     public void registerUser(Player player) {
-        try {
-            //complete
-            Gson gson = new Gson();
-            Writer writer = Files.newBufferedWriter(Paths.get("user.json"));
-            gson.toJson(player, writer);
-            writer.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            //complete
+//            Gson gson = new Gson();
+//            Writer writer = Files.newBufferedWriter(Paths.get("user.json"));
+//            gson.toJson(player, writer);
+//            writer.close();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         allUsers.add(player);
         setAllUsers(allUsers);

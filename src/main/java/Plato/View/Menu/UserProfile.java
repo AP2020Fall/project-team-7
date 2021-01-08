@@ -1,12 +1,15 @@
 package Plato.View.Menu;
 
-import Plato.Controller.Manager;
-import Plato.View.Main;
+import java.util.HashMap;
 
 public class UserProfile extends Menu {
 
     public UserProfile(Menu parentMenu) {
         super("profile", parentMenu);
+        HashMap<Integer, Menu> submenus = new HashMap<>();
+        submenus.put(1, viewProfile());
+        submenus.put(2, new LoginMenu(this));
+        this.setSubmenus(submenus);
 
     }
 
