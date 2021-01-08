@@ -1,4 +1,4 @@
-package Plato.View.UserView;
+package Plato.View.Menu;
 
 import Plato.Model.Player;
 
