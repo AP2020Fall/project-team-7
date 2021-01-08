@@ -13,10 +13,19 @@ public class RegisterMenu extends Menu {
     public RegisterMenu(Menu parentMenu) {
         super("Register", parentMenu);
         HashMap<Integer, Menu> submenus = new HashMap<>();
-        submenus.put(1, createNewAccount());
+        if (!isCorrectDetail)
+            submenus.put(1, createNewAccount());
+        else
+            submenus.put(1, goProfileUser());
         this.setSubmenus(submenus);
         platoBotController = new PlatoBotController();
         isCorrectDetail = false;
+    }
+
+    private Menu goProfileUser(){
+        return new Menu("UserProfile", null){
+
+        };
     }
 
     private Menu createNewAccount() {
@@ -59,9 +68,9 @@ public class RegisterMenu extends Menu {
                             System.err.println("this Id is already taken!");
                         }
                     }
-                    this.show();
-                    this.execute();
                 }
+                this.show();
+                this.execute();
             }
         };
     }
@@ -90,7 +99,6 @@ public class RegisterMenu extends Menu {
         manager.registerUser(player);
         isCorrectDetail = true;
         System.out.println("registration successfully!");
-        new UserProfile(null);
     }
 
 }

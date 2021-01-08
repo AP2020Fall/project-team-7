@@ -8,7 +8,13 @@ public class UserProfile extends Menu {
         super("profile", parentMenu);
         HashMap<Integer, Menu> submenus = new HashMap<>();
         submenus.put(1, viewProfile());
-        submenus.put(2, new LoginMenu(this));
+        submenus.put(2, showPoints());
+        submenus.put(3, viewFavoriteGame());
+        submenus.put(4, viewPlatoBotMessage());
+        submenus.put(5, viewLastPlayed());
+        submenus.put(6, viewAdminSuggestion());
+        submenus.put(7, chooseSuggestedGame());
+        submenus.put(8, addFriend());
         this.setSubmenus(submenus);
 
     }
