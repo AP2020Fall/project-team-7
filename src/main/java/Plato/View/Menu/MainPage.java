@@ -2,10 +2,10 @@ package Plato.View.Menu;
 
 import java.util.HashMap;
 
-public class UserProfile extends Menu {
+public class MainPage extends Menu {
 
-    public UserProfile(Menu parentMenu) {
-        super("profile", parentMenu);
+    public MainPage(Menu parentMenu) {
+        super("MainPage", parentMenu);
         HashMap<Integer, Menu> submenus = new HashMap<>();
         submenus.put(1, viewProfile());
         submenus.put(2, showPoints());
