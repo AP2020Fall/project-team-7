@@ -3,11 +3,14 @@ package Plato.View.Menu;
 import java.util.HashMap;
 
 public class LoginMenu extends Menu {
+    private boolean isCorrectUser;
+
     public LoginMenu(Menu parentMenu) {
         super("login", parentMenu);
         HashMap<Integer, Menu> submenus = new HashMap<>();
         submenus.put(1, loginToAccount());
         this.setSubmenus(submenus);
+        isCorrectUser = false;
 
     }
 
@@ -31,6 +34,7 @@ public class LoginMenu extends Menu {
                     for (String user : manager.getUser().keySet()) {
                         if ((manager.getUser().keySet().equals(splitInput[0])) &&
                                 (manager.getUser().get(user).equals(splitInput[1]))) {
+                            isCorrectUser = true;
                             System.out.println("login successfully!");
                         } else {
                             System.err.println("username or password is wrong!");

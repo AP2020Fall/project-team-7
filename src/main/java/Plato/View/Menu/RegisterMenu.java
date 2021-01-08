@@ -1,10 +1,13 @@
 package Plato.View.Menu;
+
 import Plato.Controller.PlatoBotController;
 import Plato.Model.Player;
+
 import java.util.HashMap;
 
 public class RegisterMenu extends Menu {
-PlatoBotController platoBotController;
+    PlatoBotController platoBotController;
+    private boolean isCorrectDetail;
 
 
     public RegisterMenu(Menu parentMenu) {
@@ -13,6 +16,7 @@ PlatoBotController platoBotController;
         submenus.put(1, createNewAccount());
         this.setSubmenus(submenus);
         platoBotController = new PlatoBotController();
+        isCorrectDetail = false;
     }
 
     private Menu createNewAccount() {
@@ -35,16 +39,16 @@ PlatoBotController platoBotController;
                     System.out.println("enter password\n" +
                             "(password must contains uppercase and lowercase and digit character at least 8 character)");
                     password = scanner.nextLine();
-                    if (!platoBotController.isThisUsernameExist(input)){
-                        if (platoBotController.checkPassword(password)){
+                    if (!platoBotController.isThisUsernameExist(input)) {
+                        if (platoBotController.checkPassword(password)) {
                             System.out.println("complete your profile!");
                             completeProfile(input, password);
                         } else {
-                            while (!platoBotController.checkPassword(password)){
+                            while (!platoBotController.checkPassword(password)) {
                                 System.err.println("password must have 8-20 character " +
                                         "and contains uppercase and lowercase and digit");
                                 password = scanner.nextLine();
-                                if (platoBotController.checkPassword(password)){
+                                if (platoBotController.checkPassword(password)) {
                                     System.out.println("complete your profile!");
                                     completeProfile(input, password);
                                 }
@@ -84,7 +88,8 @@ PlatoBotController platoBotController;
         }
         Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
         manager.registerUser(player);
-
+        isCorrectDetail = true;
+        System.out.println("registration successfully!");
     }
 
 }
