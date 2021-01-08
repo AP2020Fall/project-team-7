@@ -36,10 +36,10 @@ public class Manager {
 
     public void registerUser(Player player) {
         try {
-//            Gson gson = new Gson();
-//            Writer writer = Files.newBufferedWriter(Paths.get("book.json"));
-//            gson.toJson(player, writer);
-//            writer.close();
+            Gson gson = new Gson();
+            Writer writer = Files.newBufferedWriter(Paths.get("user.json"));
+            gson.toJson(player, writer);
+            writer.close();
 
         } catch (IOException e) {
             e.printStackTrace();
