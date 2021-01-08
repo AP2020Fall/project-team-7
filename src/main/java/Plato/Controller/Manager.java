@@ -5,6 +5,10 @@ import Plato.Model.Game;
 import Plato.Model.Player;
 import com.google.gson.Gson;
 
+import java.io.IOException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -31,7 +35,16 @@ public class Manager {
     }
 
     public void registerUser(Player player) {
-        String data = new Gson().toJson(player);
+        try {
+//            Gson gson = new Gson();
+//            Writer writer = Files.newBufferedWriter(Paths.get("book.json"));
+//            gson.toJson(player, writer);
+//            writer.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         allUsers.add(player);
         setAllUsers(allUsers);
         System.out.println("register successfully!");
