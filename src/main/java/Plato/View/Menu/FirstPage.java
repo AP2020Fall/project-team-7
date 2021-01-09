@@ -10,4 +10,14 @@ public class FirstPage extends Menu {
         submenus.put(2, new LoginMenu(this));
         this.setSubmenus(submenus);
     }
+
+    @Override
+    public void show() {
+        super.show();
+    }
+
+    @Override
+    public void execute() {
+        super.execute();
+    }
 }
