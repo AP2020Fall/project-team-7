@@ -68,12 +68,7 @@ public class UserProfile extends Menu{
         };
     }
 
-    private Menu logout(){
-        return new Menu("logout", loginMenu){
 
-        };
-    }
-    //...........................
     private Menu showPoints(){
         return new Menu("show points", this) {
 
@@ -111,5 +106,11 @@ public class UserProfile extends Menu{
         };
     }
 
+    private Menu logout(){
+        return new Menu("logout", loginMenu){
+            FirstPage firstPage = new FirstPage();
+
+        };
+    }
 
 }
