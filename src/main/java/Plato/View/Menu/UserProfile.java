@@ -79,16 +79,23 @@ public class UserProfile extends Menu{
         };
     }
 
-    public static void viewLastPlayed(){
+    private Menu viewLastPlayed(){
+        return new Menu("viewLastPlayed", this) {
 
+        };
     }
 
-    public static void viewAdminSuggestion(){
+    private Menu viewAdminSuggestion(){
+        return new Menu("viewAdminSuggestion", this) {
 
+        };
     }
 
-    public static void addFriend(Player player){
+    private Menu addFriend(){
         //get the username of player and request to him
+        return new Menu("add friend", this) {
+
+        };
     }
 
 
