@@ -3,9 +3,21 @@ package Plato.View.Menu;
 import Plato.Model.Player;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class UserProfile {
+public class UserProfile extends Menu{
 
+    public UserProfile(String name, Menu parentMenu) {
+        super(name, parentMenu);
+        HashMap<String, Menu> submenus = new HashMap<>();
+
+    }
+
+    private Menu userProfilePage(){
+        return new Menu("profile", this) {
+
+        };
+    }
     public void viewPersonalInfo(){
 
     }

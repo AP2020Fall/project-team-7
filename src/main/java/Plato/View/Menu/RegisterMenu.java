@@ -15,18 +15,13 @@ public class RegisterMenu extends Menu {
         HashMap<Integer, Menu> submenus = new HashMap<>();
         if (!isCorrectDetail)
             submenus.put(1, createNewAccount());
-        else
-            submenus.put(1, goProfileUser());
         this.setSubmenus(submenus);
         platoBotController = new PlatoBotController();
         isCorrectDetail = false;
+        UserProfile userProfile = new UserProfile("profile", null);
     }
 
-    private Menu goProfileUser(){
-        return new Menu("UserProfile", null){
 
-        };
-    }
 
     private Menu createNewAccount() {
         return new Menu("Register menu", this) {
@@ -69,8 +64,8 @@ public class RegisterMenu extends Menu {
                         }
                     }
                 }
-                this.show();
-                this.execute();
+//                this.show();
+//                this.execute();
             }
         };
     }
@@ -95,9 +90,9 @@ public class RegisterMenu extends Menu {
             System.err.println("your phone number is not valid. please enter your phone");
             phoneNum = scanner.nextLine();
         }
+        isCorrectDetail = true;
         Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
         manager.registerUser(player);
-        isCorrectDetail = true;
         System.out.println("registration successfully!");
     }
 
