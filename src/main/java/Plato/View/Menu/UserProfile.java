@@ -6,56 +6,77 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserProfile extends Menu{
+    private LoginMenu loginMenu;
 
     public UserProfile(String name, Menu parentMenu) {
-        super(name, parentMenu);
-        HashMap<String, Menu> submenus = new HashMap<>();
-
+        super("Profile", parentMenu);
+        HashMap<Integer, Menu> submenus = new HashMap<>();
+        submenus.put(1, viewPersonalInfo());
+        submenus.put(2, changePassword());
+        submenus.put(3, editField());
+        this.setSubmenus(submenus);
+        loginMenu = new LoginMenu(null);
     }
 
-    private Menu userProfilePage(){
-        return new Menu("profile", this) {
+    private Menu viewPersonalInfo(){
+        return new Menu("viewPersonalInfo", this) {
 
         };
     }
-    public void viewPersonalInfo(){
 
+    private Menu changePassword(){
+        return new Menu("changePassword", this) {
+
+        };
     }
 
-    public void changePassword(String currentPass, String newPass){
+    private Menu editField(){
+        return new Menu("editField", this) {
 
+        };
     }
 
-    public void editField(Object field, Object newValue){
+    private Menu viewPlatoStatistics(){
+        return new Menu("ViewPlatoStatistics", this) {
 
+        };
     }
 
-    public void ViewPlatoStatistics(){
+    private Menu gameHistory(){
+        return new Menu("gameHistory", this) {
 
+        };
     }
 
-    public void gameHistory(){
 
+    private Menu gameStatistics(){
+        return new Menu("gameStatistics", this){
+
+        };
     }
 
-    public void GameStatistics(String gameName){
+    private Menu logout(){
+        return new Menu("logout", loginMenu){
 
-    }
-
-    public void logout(){
-
+        };
     }
     //...........................
-    public static void showPoints(){
+    private Menu showPoints(){
+        return new Menu("showPoints", this) {
 
+        };
     }
 
-    public static void showFavoriteGame(){
+    private Menu showFavoriteGame(){
+        return new Menu("showFavoriteGame", this) {
 
+        };
     }
 
-    public static void showPlatoBotMessage(){
+    private Menu showPlatoBotMessage(){
+        return new Menu("show platoBot message", this) {
 
+        };
     }
 
     public static void viewLastPlayed(){
