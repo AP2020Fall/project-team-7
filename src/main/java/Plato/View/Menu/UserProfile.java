@@ -14,43 +14,56 @@ public class UserProfile extends Menu{
         submenus.put(1, viewPersonalInfo());
         submenus.put(2, changePassword());
         submenus.put(3, editField());
+        //....
+        submenus.put(4, viewPlatoStatistics());
+        submenus.put(5, gameHistory());
+        submenus.put(6, gameStatistics());
+        submenus.put(7, showPoints());
+        //..
+        submenus.put(8, showFavoriteGame());
+        submenus.put(9, showPlatoBotMessage());
+        //
+        submenus.put(10, viewLastPlayed());
+        submenus.put(11, viewAdminSuggestion());
+        submenus.put(12, addFriend());
+        submenus.put(13, logout());
         this.setSubmenus(submenus);
         loginMenu = new LoginMenu(null);
     }
 
     private Menu viewPersonalInfo(){
-        return new Menu("viewPersonalInfo", this) {
+        return new Menu("view personal info", this) {
 
         };
     }
 
     private Menu changePassword(){
-        return new Menu("changePassword", this) {
+        return new Menu("change password", this) {
 
         };
     }
 
     private Menu editField(){
-        return new Menu("editField", this) {
+        return new Menu("edit field", this) {
 
         };
     }
 
     private Menu viewPlatoStatistics(){
-        return new Menu("ViewPlatoStatistics", this) {
+        return new Menu("view plato statistics", this) {
 
         };
     }
 
     private Menu gameHistory(){
-        return new Menu("gameHistory", this) {
+        return new Menu("game history", this) {
 
         };
     }
 
 
     private Menu gameStatistics(){
-        return new Menu("gameStatistics", this){
+        return new Menu("game statistics", this){
 
         };
     }
@@ -62,13 +75,13 @@ public class UserProfile extends Menu{
     }
     //...........................
     private Menu showPoints(){
-        return new Menu("showPoints", this) {
+        return new Menu("show points", this) {
 
         };
     }
 
     private Menu showFavoriteGame(){
-        return new Menu("showFavoriteGame", this) {
+        return new Menu("show favorite game", this) {
 
         };
     }
@@ -80,13 +93,13 @@ public class UserProfile extends Menu{
     }
 
     private Menu viewLastPlayed(){
-        return new Menu("viewLastPlayed", this) {
+        return new Menu("view last played", this) {
 
         };
     }
 
     private Menu viewAdminSuggestion(){
-        return new Menu("viewAdminSuggestion", this) {
+        return new Menu("view admin suggestion", this) {
 
         };
     }

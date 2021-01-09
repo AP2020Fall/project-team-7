@@ -8,6 +8,7 @@ import java.util.HashMap;
 public class RegisterMenu extends Menu {
     PlatoBotController platoBotController;
     private boolean isCorrectDetail;
+    private UserProfile userProfile;
 
 
     public RegisterMenu(Menu parentMenu) {
@@ -18,7 +19,7 @@ public class RegisterMenu extends Menu {
         this.setSubmenus(submenus);
         platoBotController = new PlatoBotController();
         isCorrectDetail = false;
-        UserProfile userProfile = new UserProfile("profile", null);
+        userProfile = new UserProfile("profile", null);
     }
 
 
@@ -64,8 +65,8 @@ public class RegisterMenu extends Menu {
                         }
                     }
                 }
-//                this.show();
-//                this.execute();
+                userProfile.show();
+                userProfile.execute();
             }
         };
     }
