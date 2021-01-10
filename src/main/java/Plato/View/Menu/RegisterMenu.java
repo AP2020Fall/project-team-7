@@ -19,7 +19,7 @@ public class RegisterMenu extends Menu {
         this.setSubmenus(submenus);
         platoBotController = new PlatoBotController();
         isCorrectDetail = false;
-        userProfile = new UserProfile("profile", null);
+        userProfile = new UserProfile("profile", parentMenu);
     }
 
 

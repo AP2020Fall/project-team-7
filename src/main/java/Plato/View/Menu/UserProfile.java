@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserProfile extends Menu{
-    private FirstPage firstPage;
-    private LoginMenu loginMenu;
 
     public UserProfile(String name, Menu parentMenu) {
         super("Profile", parentMenu);
@@ -29,8 +27,7 @@ public class UserProfile extends Menu{
         submenus.put(12, addFriend());
         submenus.put(13, logout());
         this.setSubmenus(submenus);
-        firstPage = new FirstPage();
-        loginMenu = new LoginMenu(firstPage);
+
     }
 
     private Menu viewPersonalInfo(){
@@ -109,8 +106,8 @@ public class UserProfile extends Menu{
     }
 
     private Menu logout(){
-        return new Menu("logout", firstPage){
-
+        return new Menu("logout", this) {
+            
         };
     }
 

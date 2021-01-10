@@ -11,13 +11,4 @@ public class FirstPage extends Menu {
         this.setSubmenus(submenus);
     }
 
-    @Override
-    public void show() {
-        super.show();
-    }
-
-    @Override
-    public void execute() {
-        super.execute();
-    }
 }
