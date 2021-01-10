@@ -106,8 +106,16 @@ public class UserProfile extends Menu{
     }
 
     private Menu logout(){
-        return new Menu("logout", this) {
-            
+        return new Menu("logout", parentMenu) {
+            @Override
+            public void show() {
+                parentMenu.show();
+            }
+
+            @Override
+            public void execute() {
+                parentMenu.execute();
+            }
         };
     }
 
