@@ -67,4 +67,9 @@ public class UserControlPanel {
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
     }
+
+    public void viewUserInfo(Player player){
+        System.out.println(player.toString());
+    }
 }
+

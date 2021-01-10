@@ -53,4 +53,8 @@ public class AdminControlPanel {
     public void viewUserProfile(String username){
 
     }
+
+    public void viewAdminInfo(Admin admin){
+        System.out.println(admin.toString());
+    }
 }

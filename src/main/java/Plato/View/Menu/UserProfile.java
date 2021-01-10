@@ -1,8 +1,5 @@
 package Plato.View.Menu;
 
-import Plato.Model.Player;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserProfile extends Menu{
