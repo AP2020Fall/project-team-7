@@ -13,15 +13,12 @@ public class UserProfile extends Menu{
         submenus.put(1, viewPersonalInfo());
         submenus.put(2, changePassword());
         submenus.put(3, editField());
-        //....
         submenus.put(4, viewPlatoStatistics());
         submenus.put(5, gameHistory());
         submenus.put(6, gameStatistics());
         submenus.put(7, showPoints());
-        //..
         submenus.put(8, showFavoriteGame());
         submenus.put(9, showPlatoBotMessage());
-        //
         submenus.put(10, viewLastPlayed());
         submenus.put(11, viewAdminSuggestion());
         submenus.put(12, addFriend());
