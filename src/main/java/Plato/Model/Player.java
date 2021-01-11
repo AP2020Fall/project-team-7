@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-public class Player extends Person{
+public class Player extends Person {
     private Date platoAge;
     private int score;
     private int cash;
@@ -36,31 +36,31 @@ public class Player extends Person{
         eventsParticipant = new ArrayList<>();
     }
 
-    public void editProfile(){
+    public void editProfile() {
 
     }
 
-    private void login(){
+    private void login() {
 
     }
 
-    private void logout(){
+    private void logout() {
 
     }
 
-    private void participateInEvent(Event event){
+    private void participateInEvent(Event event) {
         eventsParticipant.add(event);
     }
 
-    private void leftTheEvent(Event event){
+    private void leftTheEvent(Event event) {
         eventsParticipant.remove(event);
     }
 
-    private void runGame(){
+    private void runGame() {
 
     }
 
-    private void addFriend(Player username){
+    private void addFriend(Player username) {
         friendList.add(username);
     }
 
@@ -130,12 +130,12 @@ public class Player extends Person{
 
     @Override
     public String toString() {
-        return "Player{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
-                ", Id='" + Id + '\'' +
-                ", Email='" + Email + '\'' +
+        return "Player{" + "\n" +
+                "firstName='" + firstName + '\'' + "\n" +
+                ", lastName='" + lastName + '\'' + "\n" +
+                ", username='" + username + '\'' + "\n" +
+                ", Id='" + Id + '\'' + "\n" +
+                ", Email='" + Email + '\'' + "\n" +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }

@@ -30,10 +30,17 @@ public class UserProfile extends Menu {
 //        System.out.println(manager.getCurrentPlayer().toString());
 //    }
 
-
     private Menu viewPersonalInfo() {
         return new Menu("view personal info", this) {
+            @Override
+            public void show() {
+                System.out.println(manager.getCurrentPlayer().toString());
+            }
 
+//            @Override
+//            public void execute() {
+//                super.execute();
+//            }
         };
     }
 
