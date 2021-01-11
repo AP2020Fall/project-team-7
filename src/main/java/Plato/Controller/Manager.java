@@ -27,7 +27,6 @@ public class Manager {
     private GameControlPanel gameControlPanel;
 
 
-
     public Manager() {
         allUsers = new ArrayList<>();
         userLoginInfo = new HashMap<>();
@@ -38,6 +37,11 @@ public class Manager {
         eventControlPanel = new EventControlPanel();
         platoBotController = new PlatoBotController();
         gameControlPanel = new GameControlPanel();
+        currentPlayer = null;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
     public ArrayList<Player> getAllUsers() {
@@ -47,7 +51,8 @@ public class Manager {
     public void setAllUsers(ArrayList<Player> allUsers) {
         this.allUsers = allUsers;
     }
-//username, id, password, Email, phoneNum
+
+    //username, id, password, Email, phoneNum
     public void registerUser(String firstName, String lastName, String username, String Id, String password, String Email, String phoneNum) {
 //        try {
 //            //complete
@@ -63,7 +68,10 @@ public class Manager {
 //        allUsers.add(player);
 //        setAllUsers(allUsers);
 //        currentPlayer = player;
-        userControlPanel.registerUser(new Player(firstName, lastName, username, Id, password, Email, phoneNum));
+        Player player = new Player(firstName, lastName, username, Id, password, Email, phoneNum);
+        userControlPanel.registerUser(player);
+        setCurrentPlayer(player);
+
 //        adminControlPanel.addUser(firstName, lastName, username, Id, password, Email, phoneNum);
     }
 
@@ -100,13 +108,13 @@ public class Manager {
     }
 
 
-    public void registerUser(Player player) {
+//    public void registerUser(Player player) {
+//
+//    }
 
-    }
-
-    public void addEvent (String gameName, Date  startDate, Date finishDate, int score){
+    public void addEvent(String gameName, Date startDate, Date finishDate, int score) {
         for (Game game : games) {
-            if (game.getGameName().equals(gameName)){
+            if (game.getGameName().equals(gameName)) {
                 adminControlPanel.addEvent(game, startDate, finishDate, score);
             }
         }

@@ -9,6 +9,7 @@ public class RegisterMenu extends Menu {
     PlatoBotController platoBotController;
     private boolean isCorrectDetail;
     private UserProfile userProfile;
+    private Player currentPlayer;
 
 
     public RegisterMenu(Menu parentMenu) {
@@ -20,6 +21,7 @@ public class RegisterMenu extends Menu {
         platoBotController = new PlatoBotController();
         isCorrectDetail = false;
         userProfile = new UserProfile("profile", parentMenu);
+        currentPlayer = null;
     }
 
 
