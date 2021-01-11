@@ -19,6 +19,7 @@ public class Player extends Person{
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
+    private ArrayList<Event> eventsParticipant;
 
     public Player(String firstName, String lastName, String username, String id,
                   String password, String email, String phoneNumber) {
@@ -27,6 +28,12 @@ public class Player extends Person{
 
     public Player(String username) {
         super(username);
+        eventsParticipant = new ArrayList<>();
+        friendList = new ArrayList<>();
+        requests = new ArrayList<>();
+        gamesHistory = new ArrayList<>();
+        platoBotMessage = new ArrayList<>();
+        eventsParticipant = new ArrayList<>();
     }
 
     public void editProfile(){
@@ -42,11 +49,11 @@ public class Player extends Person{
     }
 
     private void participateInEvent(Event event){
-
+        eventsParticipant.add(event);
     }
 
     private void leftTheEvent(Event event){
-
+        eventsParticipant.remove(event);
     }
 
     private void runGame(){
