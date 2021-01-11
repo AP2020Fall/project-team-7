@@ -8,6 +8,10 @@ public class UserControlPanel {
     private ArrayList<Player> players;
     Admin admin;
 
+    public UserControlPanel() {
+        players = new ArrayList<>();
+    }
+
     public int showPoints(Player player){
         return player.getScore();
     }

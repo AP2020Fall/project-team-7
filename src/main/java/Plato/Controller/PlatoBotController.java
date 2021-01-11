@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class PlatoBotController {
     private ArrayList<String> message;
-    Manager manager = new Manager();
+//    Manager manager = new Manager();
 
     public ArrayList<String> getMessage() {
         return message;
@@ -38,15 +38,15 @@ public class PlatoBotController {
     }
 
     public boolean isThisUsernameExist(String username){
-        if (manager.getAllUsers().size()==0){
-            return false;
-        }else {
-            for (Player allUser : manager.getAllUsers()) {
-                if (allUser.getUsername().equalsIgnoreCase(username)) {
-                    return true;
-                }
-            }
-        }
+//        if (manager.getAllUsers().size()==0){
+//            return false;
+//        }else {
+//            for (Player allUser : manager.getAllUsers()) {
+//                if (allUser.getUsername().equalsIgnoreCase(username)) {
+//                    return true;
+//                }
+//            }
+//        }
         return false;
     }
 }

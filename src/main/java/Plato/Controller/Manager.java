@@ -64,7 +64,7 @@ public class Manager {
 //        setAllUsers(allUsers);
 //        currentPlayer = player;
         userControlPanel.registerUser(new Player(firstName, lastName, username, Id, password, Email, phoneNum));
-        adminControlPanel.addUser(firstName, lastName, username, Id, password, Email, phoneNum);
+//        adminControlPanel.addUser(firstName, lastName, username, Id, password, Email, phoneNum);
     }
 
     public void registerAdmin(String firstName, String lastName, String username, String Id, String password, String Email, String phoneNum) {
