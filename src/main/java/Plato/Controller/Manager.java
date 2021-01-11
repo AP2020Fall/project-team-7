@@ -104,7 +104,11 @@ public class Manager {
 
     }
 
-    public void addEvent (String gameName, String  startDate, String finishDate, int score){
-
+    public void addEvent (String gameName, Date  startDate, Date finishDate, int score){
+        for (Game game : games) {
+            if (game.getGameName().equals(gameName)){
+                adminControlPanel.addEvent(game, startDate, finishDate, score);
+            }
+        }
     }
 }
