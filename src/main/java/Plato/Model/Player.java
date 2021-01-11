@@ -14,7 +14,7 @@ public class Player extends Person{
     private int score;
     private int cash;
     private GameLog gameLog;
-    private ArrayList<Friend> friendList;
+    private ArrayList<Player> friendList;
     private ArrayList<Friend> requests;
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
@@ -61,7 +61,7 @@ public class Player extends Person{
     }
 
     private void addFriend(Player username){
-
+        friendList.add(username);
     }
 
     public int getScore() {
@@ -88,11 +88,11 @@ public class Player extends Person{
         this.gameLog = gameLog;
     }
 
-    public ArrayList<Friend> getFriendList() {
+    public ArrayList<Player> getFriendList() {
         return friendList;
     }
 
-    public void setFriendList(ArrayList<Friend> friendList) {
+    public void setFriendList(ArrayList<Player> friendList) {
         this.friendList = friendList;
     }
 
