@@ -46,7 +46,15 @@ public class UserProfile extends Menu {
 
     private Menu changePassword() {
         return new Menu("change password", this) {
+            @Override
+            public void show() {
 
+            }
+
+            @Override
+            public void execute() {
+
+            }
         };
     }
 
