@@ -1,5 +1,6 @@
 package Plato.Controller;
 
+import Plato.Model.Admin;
 import Plato.Model.Event;
 import Plato.Model.Game;
 import Plato.Model.Player;
@@ -17,6 +18,13 @@ public class Manager {
     private HashMap<String, String> userLoginInfo;
     private ArrayList<Game> games;
     private ArrayList<Event> events;
+    private Player currentPlayer;
+    private UserControlPanel userControlPanel;
+    private AdminControlPanel adminControlPanel;
+    private EventControlPanel eventControlPanel;
+    private PlatoBotController platoBotController;
+    private GameControlPanel gameControlPanel;
+
 
 
     public Manager() {
@@ -24,6 +32,11 @@ public class Manager {
         userLoginInfo = new HashMap<>();
         games = new ArrayList<>();
         events = new ArrayList<>();
+        userControlPanel = new UserControlPanel();
+        adminControlPanel = new AdminControlPanel();
+        eventControlPanel = new EventControlPanel();
+        platoBotController = new PlatoBotController();
+        gameControlPanel = new GameControlPanel();
     }
 
     public ArrayList<Player> getAllUsers() {
@@ -33,8 +46,8 @@ public class Manager {
     public void setAllUsers(ArrayList<Player> allUsers) {
         this.allUsers = allUsers;
     }
-
-    public void registerUser(Player player) {
+//username, id, password, Email, phoneNum
+    public void registerUser(String firstName, String lastName, String username, String Id, String password, String Email, String phoneNum) {
 //        try {
 //            //complete
 //            Gson gson = new Gson();
@@ -46,9 +59,19 @@ public class Manager {
 //            e.printStackTrace();
 //        }
 
-        allUsers.add(player);
-        setAllUsers(allUsers);
-        System.out.println("register successfully!");
+//        allUsers.add(player);
+//        setAllUsers(allUsers);
+//        currentPlayer = player;
+        userControlPanel.registerUser(new Player(firstName, lastName, username, Id, password, Email, phoneNum));
+        adminControlPanel.addUser(firstName, lastName, username, Id, password, Email, phoneNum);
+    }
+
+    public void registerAdmin(String firstName, String lastName, String username, String Id, String password, String Email, String phoneNum) {
+        adminControlPanel.registerAdmin(new Admin(firstName, lastName, username, Id, password, Email, phoneNum));
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
     }
 
     public ArrayList<Game> getGames() {
@@ -76,4 +99,7 @@ public class Manager {
     }
 
 
+    public void registerUser(Player player) {
+
+    }
 }

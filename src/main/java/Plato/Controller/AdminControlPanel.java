@@ -10,6 +10,7 @@ public class AdminControlPanel {
     Manager manager = new Manager();
     Player player = null;
 
+
     public void addEvent(Game game, Date startDate, Date finishDate, int score){
 
     }
@@ -46,8 +47,8 @@ public class AdminControlPanel {
         return manager.getAllUsers();
     }
 
-    private void addUsername(Player player){
-        manager.registerUser(player);
+    public void addUser(String firstName, String lastName, String username, String Id, String password, String Email, String phoneNum){
+        manager.registerUser(new Player(firstName, lastName, username, Id, password, Email, phoneNum));
     }
 
     public void viewUserProfile(String username){

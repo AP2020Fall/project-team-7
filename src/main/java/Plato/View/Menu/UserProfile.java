@@ -1,8 +1,10 @@
 package Plato.View.Menu;
 
+import Plato.Controller.Manager;
+
 import java.util.HashMap;
 
-public class UserProfile extends Menu{
+public class UserProfile extends Menu {
 
     public UserProfile(String name, Menu parentMenu) {
         super("Profile", parentMenu);
@@ -21,85 +23,84 @@ public class UserProfile extends Menu{
         submenus.put(12, addFriend());
         submenus.put(13, logout());
         this.setSubmenus(submenus);
-
     }
 
-    private Menu viewPersonalInfo(){
+    private Menu viewPersonalInfo() {
         return new Menu("view personal info", this) {
 
         };
     }
 
-    private Menu changePassword(){
+    private Menu changePassword() {
         return new Menu("change password", this) {
 
         };
     }
 
-    private Menu editField(){
+    private Menu editField() {
         return new Menu("edit field", this) {
 
         };
     }
 
-    private Menu viewPlatoStatistics(){
+    private Menu viewPlatoStatistics() {
         return new Menu("view plato statistics", this) {
 
         };
     }
 
-    private Menu gameHistory(){
+    private Menu gameHistory() {
         return new Menu("game history", this) {
 
         };
     }
 
 
-    private Menu gameStatistics(){
-        return new Menu("game statistics", this){
+    private Menu gameStatistics() {
+        return new Menu("game statistics", this) {
 
         };
     }
 
 
-    private Menu showPoints(){
+    private Menu showPoints() {
         return new Menu("show points", this) {
 
         };
     }
 
-    private Menu showFavoriteGame(){
+    private Menu showFavoriteGame() {
         return new Menu("show favorite game", this) {
 
         };
     }
 
-    private Menu showPlatoBotMessage(){
+    private Menu showPlatoBotMessage() {
         return new Menu("show platoBot message", this) {
 
         };
     }
 
-    private Menu viewLastPlayed(){
+    private Menu viewLastPlayed() {
         return new Menu("view last played", this) {
 
         };
     }
 
-    private Menu viewAdminSuggestion(){
+    private Menu viewAdminSuggestion() {
         return new Menu("view admin suggestion", this) {
 
         };
     }
 
-    private Menu addFriend(){
+    private Menu addFriend() {
         //get the username of player and request to him
         return new Menu("add friend", this) {
 
         };
     }
 
-    private Menu logout(){
+    private Menu logout() {
         return new Menu("logout", parentMenu) {
             @Override
             public void show() {

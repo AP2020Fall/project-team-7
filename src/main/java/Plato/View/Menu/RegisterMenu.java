@@ -91,9 +91,7 @@ public class RegisterMenu extends Menu {
             System.err.println("your phone number is not valid. please enter your phone");
             phoneNum = scanner.nextLine();
         }
-        isCorrectDetail = true;
-        Player player = new Player(firstName, lastName, username, id, password, Email, phoneNum);
-        manager.registerUser(player);
+        manager.registerUser(firstName, lastName, username, id, password, Email, phoneNum);
         System.out.println("registration successfully!");
     }
 
