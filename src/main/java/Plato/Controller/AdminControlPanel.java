@@ -7,16 +7,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class AdminControlPanel {
-    Player player = null;
-
 
     public void addEvent(Game game, Date startDate, Date finishDate, int score){
 
     }
 
-    public void registerAdmin(Admin admin){
-
-    }
 
     public void viewEventDetail(){
 

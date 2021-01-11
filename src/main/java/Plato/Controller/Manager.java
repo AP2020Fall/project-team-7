@@ -1,11 +1,9 @@
 package Plato.Controller;
 
-import Plato.Model.Admin;
-import Plato.Model.Event;
-import Plato.Model.Game;
-import Plato.Model.Player;
+import Plato.Model.*;
 import com.google.gson.Gson;
 
+import java.awt.event.PaintEvent;
 import java.io.IOException;
 import java.io.Writer;
 import java.nio.file.Files;
@@ -68,15 +66,15 @@ public class Manager {
 //        allUsers.add(player);
 //        setAllUsers(allUsers);
 //        currentPlayer = player;
+        if (Person.isPeopleEmpty()){
+            Admin admin = new Admin(firstName, lastName, username, Id, password, Email, phoneNum);
+
+        }
         Player player = new Player(firstName, lastName, username, Id, password, Email, phoneNum);
         userControlPanel.registerUser(player);
         setCurrentPlayer(player);
 
 //        adminControlPanel.addUser(firstName, lastName, username, Id, password, Email, phoneNum);
-    }
-
-    public void registerAdmin(String firstName, String lastName, String username, String Id, String password, String Email, String phoneNum) {
-        adminControlPanel.registerAdmin(new Admin(firstName, lastName, username, Id, password, Email, phoneNum));
     }
 
     public Player getCurrentPlayer() {

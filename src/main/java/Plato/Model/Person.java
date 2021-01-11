@@ -2,6 +2,7 @@ package Plato.Model;
 
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Person {
@@ -13,6 +14,7 @@ public class Person {
     protected String Email;
     protected String phoneNumber;
     protected HashMap<String , String> loginInfo;
+    private static ArrayList<Person> people = new ArrayList<>();
 
     public Person(String firstName, String lastName, String username,
                   String id, String password, String email, String phoneNumber) {
@@ -23,8 +25,12 @@ public class Person {
         this.password = password;
         this.Email = email;
         this.phoneNumber = phoneNumber;
+        people.add(this);
     }
 
+    public static boolean isPeopleEmpty(){
+        return people.isEmpty();
+    }
     public Person(String username) {
         this.username = username;
     }
