@@ -5,6 +5,7 @@ import Plato.Controller.Manager;
 import java.util.HashMap;
 
 public class UserProfile extends Menu {
+    private String command;
 
     public UserProfile(String name, Menu parentMenu) {
         super("Profile", parentMenu);
@@ -24,6 +25,11 @@ public class UserProfile extends Menu {
         submenus.put(13, logout());
         this.setSubmenus(submenus);
     }
+
+//    private void viewPersonalInfo(){
+//        System.out.println(manager.getCurrentPlayer().toString());
+//    }
+
 
     private Menu viewPersonalInfo() {
         return new Menu("view personal info", this) {

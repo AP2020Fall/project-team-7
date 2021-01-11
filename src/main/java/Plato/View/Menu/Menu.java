@@ -24,6 +24,7 @@ public abstract class Menu {
         Menu.manager = manager;
     }
 
+
     public void setParentMenu(Menu parentMenu) {
         this.parentMenu = parentMenu;
     }
