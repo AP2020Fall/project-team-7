@@ -11,6 +11,7 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class Manager {
@@ -100,6 +101,10 @@ public class Manager {
 
 
     public void registerUser(Player player) {
+
+    }
+
+    public void addEvent (String gameName, String  startDate, String finishDate, int score){
 
     }
 }
