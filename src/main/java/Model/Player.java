@@ -1,29 +1,23 @@
-package Plato.Model;
+package Model;
 
 
-import Plato.View.Menu.Friend;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 public class Player extends Person {
     private Date platoAge;
     private int score;
     private int cash;
-    private GameLog gameLog;
+    private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
-    private ArrayList<Friend> requests;
+    private ArrayList<Player> requests;
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
     private ArrayList<Event> eventsParticipant;
 
-    public Player(String firstName, String lastName, String username, String id,
-                  String password, String email, String phoneNumber) {
-        super(firstName, lastName, username, id, password, email, phoneNumber);
+    public Player(String username, String password, String email, String fName, String lName, String phoneNum) {
+        super(username, password, email, fName, lName, phoneNum);
     }
 
     public Player(String username) {
@@ -80,11 +74,11 @@ public class Player extends Person {
         this.cash = cash;
     }
 
-    public GameLog getGameLog() {
+    public ArrayList<GameLog> getGameLog() {
         return gameLog;
     }
 
-    public void setGameLog(GameLog gameLog) {
+    public void setGameLog(ArrayList<GameLog> gameLog) {
         this.gameLog = gameLog;
     }
 
@@ -96,11 +90,11 @@ public class Player extends Person {
         this.friendList = friendList;
     }
 
-    public ArrayList<Friend> getRequests() {
+    public ArrayList<Player> getRequests() {
         return requests;
     }
 
-    public void setRequests(ArrayList<Friend> requests) {
+    public void setRequests(ArrayList<Player> requests) {
         this.requests = requests;
     }
 
@@ -134,7 +128,6 @@ public class Player extends Person {
                 "firstName='" + firstName + '\'' + "\n" +
                 ", lastName='" + lastName + '\'' + "\n" +
                 ", username='" + username + '\'' + "\n" +
-                ", Id='" + Id + '\'' + "\n" +
                 ", Email='" + Email + '\'' + "\n" +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';

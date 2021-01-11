@@ -1,4 +1,4 @@
-package Plato.Model;
+package Model;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,9 +6,8 @@ import java.util.Date;
 public class Admin extends Person {
     private ArrayList<String> adminSuggestion;
 
-    public Admin(String firstName, String lastName, String username, String id,
-                 String password, String email, String phoneNumber) {
-        super(firstName, lastName, username, id, password, email, phoneNumber);
+    public Admin(String username, String password, String email, String fName, String lName, String phoneNum) {
+        super(username, password, email, fName, lName, phoneNum);
     }
 
     private void addEvent(Game gameName, Date start, Date finish, int score) {
@@ -33,7 +32,6 @@ public class Admin extends Person {
                 "firstName='" + firstName + '\'' + "\n" +
                 ", lastName='" + lastName + '\'' + "\n" +
                 ", username='" + username + '\'' + "\n" +
-                ", Id='" + Id + '\'' + "\n" +
                 ", Email='" + Email + '\'' + "\n" +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';

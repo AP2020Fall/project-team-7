@@ -1,4 +1,4 @@
-package Plato.Model;
+package Model;
 
 
 
@@ -9,22 +9,16 @@ public class Person {
     protected String firstName;
     protected String lastName;
     protected String username;
-    protected String Id;
     protected String password;
     protected String Email;
     protected String phoneNumber;
     protected HashMap<String , String> loginInfo;
     private static ArrayList<Person> people = new ArrayList<>();
 
-    public Person(String firstName, String lastName, String username,
-                  String id, String password, String email, String phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Person(String username, String password, String email, String fName, String lName, String phoneNum) {
         this.username = username;
-        this.Id = id;
         this.password = password;
         this.Email = email;
-        this.phoneNumber = phoneNumber;
         people.add(this);
     }
 
@@ -57,14 +51,6 @@ public class Person {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
     }
 
     public void setPassword(String password) {
@@ -106,7 +92,6 @@ public class Person {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +
-                ", Id='" + Id + '\'' +
                 ", Email='" + Email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';

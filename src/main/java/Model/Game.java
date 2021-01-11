@@ -1,4 +1,4 @@
-package Plato.Model;
+package Model;
 
 public class Game {
     private String GameName;

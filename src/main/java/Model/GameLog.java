@@ -1,4 +1,4 @@
-package Plato.Model;
+package Model;
 
 public class GameLog extends Player{
     private int numberOfPlaying;
@@ -8,7 +8,7 @@ public class GameLog extends Player{
 
     public GameLog(String firstName, String lastName, String username,
                    String id, String password, String email, String phoneNumber) {
-        super(firstName, lastName, username, id, password, email, phoneNumber);
+        super(firstName, lastName, username, password, email, phoneNumber);
     }
 
     public int getNumberOfWins() {
