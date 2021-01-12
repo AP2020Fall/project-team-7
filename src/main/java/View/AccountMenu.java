@@ -7,7 +7,8 @@ import Controller.RegisterManager;
 public class AccountMenu extends Menu {
     public AccountMenu(Manager manager) {
         super(manager);
-        System.out.println("1. Register\n" +
+        System.out.println(
+                "1. Register\n" +
                 "2. Login\n" +
                 "3. exit");
         while (true) {

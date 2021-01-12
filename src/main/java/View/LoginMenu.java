@@ -1,7 +1,7 @@
 package View;
 
-import Controller.AccountManager;
 import Controller.LoginManager;
+import Controller.MainPageManager;
 import Controller.Manager;
 
 public class LoginMenu extends Menu {
@@ -10,7 +10,7 @@ public class LoginMenu extends Menu {
         System.out.println("username:");
         String username = scanner.nextLine();
         if (username.equalsIgnoreCase("back")) {
-            returnBack();
+            returnAccountMenu();
         }
 
         System.out.println("password:");
@@ -20,16 +20,17 @@ public class LoginMenu extends Menu {
             System.out.println("username:");
             username = scanner.nextLine();
             if (username.equalsIgnoreCase("back")) {
-                returnBack();
+                returnAccountMenu();
 
             }
             System.out.println("password:");
             password = scanner.nextLine();
             if (password.equalsIgnoreCase("back")) {
-                returnBack();
+                returnAccountMenu();
             }
         }
         System.out.println("welcome " + username);
+        manager = new MainPageManager();
     }
 
 }

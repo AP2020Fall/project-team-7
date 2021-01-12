@@ -20,7 +20,7 @@ public class Menu {
         return pattern.matcher(input);
     }
 
-    protected void returnBack(){
+    protected void returnAccountMenu(){
         new AccountManager();
     }
 }
