@@ -1,8 +1,10 @@
 package View;
 
+import Controller.AdminPageManager;
 import Controller.MainPageManager;
 import Controller.Manager;
 import Controller.RegisterManager;
+import Model.Person;
 
 public class RegisterMenu extends Menu{
     public RegisterMenu(Manager manager) {
@@ -62,6 +64,9 @@ public class RegisterMenu extends Menu{
         }
         ((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum);
         System.out.println("successfully register "+ username + "\nhello " + fName);
+        if (Person.isPeopleEmpty()){
+            manager = new AdminPageManager();
+        }
         manager = new MainPageManager();
     }
 

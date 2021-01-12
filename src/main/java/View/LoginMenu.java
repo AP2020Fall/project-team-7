@@ -1,8 +1,10 @@
 package View;
 
+import Controller.AdminPageManager;
 import Controller.LoginManager;
 import Controller.MainPageManager;
 import Controller.Manager;
+import Model.Person;
 
 public class LoginMenu extends Menu {
     public LoginMenu(Manager manager) {
@@ -30,6 +32,9 @@ public class LoginMenu extends Menu {
             }
         }
         System.out.println("welcome " + username);
+        if (Person.getPeople().get(0).equals(username)){
+            manager = new AdminPageManager();
+        }
         manager = new MainPageManager();
     }
 
