@@ -30,7 +30,4 @@ public class RegisterMenu extends Menu{
         System.out.println("hello " + fName);
     }
 
-    public void addNewUser(){
-
-    }
 }

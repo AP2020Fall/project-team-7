@@ -6,6 +6,8 @@ import Model.Player;
 import View.AccountMenu;
 import View.RegisterMenu;
 
+import java.util.HashMap;
+
 public class RegisterManager extends Manager{
 
     public RegisterManager() {
@@ -15,6 +17,7 @@ public class RegisterManager extends Manager{
 
 
     public String createNewAccount(String username, String password, String email, String fName, String lName, String phoneNum) {
+        HashMap<String, String> userPass = new HashMap<>();
         if (!isInputValid(email, phoneNum)){
             return "invalid input";
         }
@@ -22,6 +25,7 @@ public class RegisterManager extends Manager{
             Admin admin = new Admin(username, password, email, fName, lName, phoneNum);
         } else {
             Player player = new Player(username, password, email, fName, lName, phoneNum);
+            userPass.put(username, password);
         }
         return "register successfully";
     }
@@ -35,4 +39,5 @@ public class RegisterManager extends Manager{
         }
         return true;
     }
+
 }

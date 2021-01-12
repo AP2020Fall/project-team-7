@@ -1,5 +1,6 @@
 package View;
 
+import Controller.LoginManager;
 import Controller.Manager;
 import Controller.RegisterManager;
 
@@ -15,7 +16,7 @@ public class AccountMenu extends Menu {
                 manager = new RegisterManager();
                 break;
             } else if (input.matches("^2$")) {
-                System.out.println("L");
+                manager = new LoginManager();
                 break;
             } else if (input.matches("^3$")) {
                 System.exit(1);
