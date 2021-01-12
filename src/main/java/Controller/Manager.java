@@ -50,5 +50,19 @@ public class Manager {
         this.currentPerson = person;
     }
 
+    public Admin getAdmin() {
+        return admin;
+    }
 
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
 }

@@ -20,10 +20,12 @@ public class MainPage extends Menu {
         while (true){
             String input = scanner.nextLine();
             if (input.matches("^1$")) {
+                //nullPointerException
                 ((MainPageManager) manager).showPoints();
                 break;
             } else if (input.matches("^2$")) {
-                System.out.println("FG");
+                //didn't check
+                System.out.println("your favorite game:\n" + ((MainPageManager)manager).showFavoriteGame());
                 break;
             } else if (input.matches("^3$")) {
                 System.out.println("PM");

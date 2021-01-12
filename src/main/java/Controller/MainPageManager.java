@@ -1,7 +1,9 @@
 package Controller;
 
-import Model.Player;
+import Model.Game;
 import View.MainPage;
+
+import java.util.ArrayList;
 
 public class MainPageManager extends Manager{
     public MainPageManager() {
@@ -10,6 +12,10 @@ public class MainPageManager extends Manager{
 
     public void showPoints(){
         System.out.println(currentPlayer.getScore());
+    }
+
+    public ArrayList<String> showFavoriteGame(){
+        return currentPlayer.getFavoriteGame();
     }
 }
 
