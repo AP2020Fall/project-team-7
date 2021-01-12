@@ -20,7 +20,7 @@ public class AccountMenu extends Menu {
                 System.exit(1);
                 break;
             } else {
-                System.err.println("Az aval.");
+                System.err.println("invalid input.");
             }
         }
     }
