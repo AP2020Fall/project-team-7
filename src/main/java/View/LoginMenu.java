@@ -10,7 +10,7 @@ public class LoginMenu extends Menu {
         System.out.println("username:");
         String username = scanner.nextLine();
         if (username.equalsIgnoreCase("back")) {
-            ((AccountManager) manager).execute();
+            returnBack();
         }
 
         System.out.println("password:");
@@ -20,16 +20,19 @@ public class LoginMenu extends Menu {
             System.out.println("username:");
             username = scanner.nextLine();
             if (username.equalsIgnoreCase("back")) {
-                ((AccountManager) manager).execute();
+                returnBack();
 
             }
             System.out.println("password:");
             password = scanner.nextLine();
             if (password.equalsIgnoreCase("back")) {
-                ((AccountManager) manager).execute();
-
+                returnBack();
             }
         }
         System.out.println("welcome " + username);
+    }
+
+    private void returnBack(){
+        new AccountManager();
     }
 }
