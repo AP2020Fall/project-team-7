@@ -17,7 +17,7 @@ public class AccountMenu extends Menu {
                 System.out.println("L");
                 break;
             } else if (input.matches("^3$")) {
-                System.out.println("E");
+                System.exit(1);
                 break;
             } else {
                 System.err.println("Az aval.");
