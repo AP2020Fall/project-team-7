@@ -21,6 +21,13 @@ public class Person {
         this.Email = email;
         people.add(this);
     }
+    public static void addPeople(Person person){
+        people.add(person);
+    }
+
+    public static ArrayList<Person> getPeople() {
+        return people;
+    }
 
     public static boolean isPeopleEmpty(){
         return people.isEmpty();

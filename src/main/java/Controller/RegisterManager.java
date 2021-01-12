@@ -16,18 +16,16 @@ public class RegisterManager extends Manager{
     }
 
 
-    public String createNewAccount(String username, String password, String email, String fName, String lName, String phoneNum) {
-        if (!isInputValid(email, phoneNum)){
-            return "invalid input";
-        }
+    public void createNewAccount(String username, String password, String email, String fName, String lName, String phoneNum) {
         if (Person.isPeopleEmpty()){
             Admin admin = new Admin(username, password, email, fName, lName, phoneNum);
+            Person.addPeople(admin);
             setPerson(admin);
         } else {
             Player player = new Player(username, password, email, fName, lName, phoneNum);
+            Person.addPeople(player);
             setPerson(player);
         }
-        return "register " + username + " successfully";
     }
 
     private boolean isInputValid(String email, String phoneNum){
@@ -38,6 +36,15 @@ public class RegisterManager extends Manager{
             return false;
         }
         return true;
+    }
+
+    public boolean isThisUsernameExist(String username){
+        for (Person person : Person.getPeople()) {
+            if (person.getUsername().equals(username)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

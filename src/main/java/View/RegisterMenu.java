@@ -8,6 +8,11 @@ public class RegisterMenu extends Menu{
         super(manager);
         System.out.println("username:");
         String username = scanner.nextLine();
+        while (((RegisterManager) manager).isThisUsernameExist(username)){
+            System.err.println("this username is already taken!");
+            System.out.println("username:");
+            username = scanner.nextLine();
+        }
         System.out.println("password:");
         String password = scanner.nextLine();
         System.out.println("Email:");
@@ -26,8 +31,8 @@ public class RegisterMenu extends Menu{
             System.err.println("invalid input, try again!");
             phoneNum = scanner.nextLine();
         }
-        System.out.println(((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum));
-        System.out.println("hello " + fName);
+        ((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum);
+        System.out.println("successfully register "+ username + "\nhello " + fName);
     }
 
 }
