@@ -11,7 +11,8 @@ public class LoginManager extends Manager{
 
     public boolean loginUser(String username, String password){
         for (Player player : getPlayers()) {
-            if (player.getUsername().equals(username) && player.getPassword().equals(password)){
+            if (person.getUsername().equals(username) && person.getPassword().equals(password)){
+                setPerson(person);
                 return true;
             }
         }

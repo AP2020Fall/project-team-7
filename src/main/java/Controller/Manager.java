@@ -7,10 +7,9 @@ import View.Menu;
 import java.util.ArrayList;
 
 public class Manager {
-    protected Person person = null;
+    protected Person currentPerson = null;
     protected Menu menu;
     protected ArrayList<Player> players = new ArrayList<>();
-
     public void addPlayer(Player player){
         players.add(player);
     }
@@ -40,4 +39,11 @@ public class Manager {
         return false;
     }
 
+    public Person getPerson() {
+        return currentPerson;
+    }
+
+    public void setPerson(Person person) {
+        this.currentPerson = person;
+    }
 }
