@@ -27,7 +27,7 @@ public class RegisterManager extends Manager{
             Player player = new Player(username, password, email, fName, lName, phoneNum);
             userPass.put(username, password);
         }
-        return "register successfully";
+        return "register " + username + " successfully";
     }
 
     private boolean isInputValid(String email, String phoneNum){
