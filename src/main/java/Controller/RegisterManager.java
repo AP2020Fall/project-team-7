@@ -16,11 +16,10 @@ public class RegisterManager extends Manager{
     }
 
 
-    public boolean createNewAccount(String username, String password, String email, String fName, String lName, String phoneNum) {
+    public String createNewAccount(String username, String password, String email, String fName, String lName, String phoneNum) {
         HashMap<String, String> userPass = new HashMap<>();
         if (!isInputValid(email, phoneNum)){
-//            return "invalid input";
-            return false;
+            return "invalid input";
         }
         if (Person.isPeopleEmpty()){
             Admin admin = new Admin(username, password, email, fName, lName, phoneNum);
@@ -28,8 +27,7 @@ public class RegisterManager extends Manager{
             Player player = new Player(username, password, email, fName, lName, phoneNum);
             userPass.put(username, password);
         }
-//        return "register successfully";
-        return true;
+        return "register successfully";
     }
 
     private boolean isInputValid(String email, String phoneNum){
