@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 public class Player extends Person {
     private Date platoAge;
-    private int score;
-    private int cash;
+    private int score = 0;
+    private int cash = 0;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
     private ArrayList<Player> requests;
@@ -31,7 +31,13 @@ public class Player extends Person {
         eventsParticipant = new ArrayList<>();
     }
 
+    public int getScore() {
+        return score;
+    }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
 
     private void participateInEvent(Event event) {
         eventsParticipant.add(event);
@@ -49,9 +55,6 @@ public class Player extends Person {
         friendList.add(username);
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
 
     public int getCash() {
         return cash;

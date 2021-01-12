@@ -9,7 +9,4 @@ public class AdminPageManager extends Manager{
         menu = new AdminPage(this);
     }
 
-    public void showPoints(){
-        currentPerson.getScore();
-    }
 }

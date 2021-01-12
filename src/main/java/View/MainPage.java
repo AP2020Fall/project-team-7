@@ -1,6 +1,7 @@
 package View;
 
 import Controller.LoginManager;
+import Controller.MainPageManager;
 import Controller.Manager;
 import Controller.RegisterManager;
 
@@ -19,7 +20,7 @@ public class MainPage extends Menu {
         while (true){
             String input = scanner.nextLine();
             if (input.matches("^1$")) {
-                System.out.println("SP");
+                ((MainPageManager) manager).showPoints();
                 break;
             } else if (input.matches("^2$")) {
                 System.out.println("FG");

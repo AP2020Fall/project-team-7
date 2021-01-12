@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Admin;
 import Model.Person;
 import Model.Player;
 import View.Menu;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 
 public class Manager {
     protected Person currentPerson = null;
+    protected Admin admin = null;
+    protected Player currentPlayer = null;
     protected Menu menu;
     protected ArrayList<Player> players = new ArrayList<>();
     public void addPlayer(Player player){
@@ -46,4 +49,6 @@ public class Manager {
     public void setPerson(Person person) {
         this.currentPerson = person;
     }
+
+
 }

@@ -21,10 +21,12 @@ public class RegisterManager extends Manager{
             Admin admin = new Admin(username, password, email, fName, lName, phoneNum);
             Person.addPeople(admin);
             setPerson(admin);
+            setAdmin(admin);
         } else {
             Player player = new Player(username, password, email, fName, lName, phoneNum);
             Person.addPeople(player);
             setPerson(player);
+            setCurrentPlayer(player);
         }
     }
 
