@@ -12,15 +12,22 @@ public class RegisterMenu extends Menu{
         String password = scanner.nextLine();
         System.out.println("Email:");
         String email = scanner.nextLine();
+        while (!manager.checkEmail(email)){
+            System.err.println("invalid input, try again!");
+            email = scanner.nextLine();
+        }
         System.out.println("first name:");
         String fName = scanner.nextLine();
         System.out.println("last name:");
         String lName = scanner.nextLine();
         System.out.println("phone number:");
         String phoneNum = scanner.nextLine();
-
-
-        ((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum);
+        while (!manager.checkPhoneNumber(phoneNum)){
+            System.err.println("invalid input, try again!");
+            phoneNum = scanner.nextLine();
+        }
+        System.out.println(((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum));
+        System.out.println("hello " + fName);
     }
 
     public void addNewUser(){

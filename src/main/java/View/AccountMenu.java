@@ -1,6 +1,7 @@
 package View;
 
 import Controller.Manager;
+import Controller.RegisterManager;
 
 public class AccountMenu extends Menu {
     public AccountMenu(Manager manager) {
@@ -11,7 +12,7 @@ public class AccountMenu extends Menu {
         while (true) {
             String input = scanner.nextLine();
             if (input.matches("^1$")) {
-                System.out.println("R");
+                manager = new RegisterManager();
                 break;
             } else if (input.matches("^2$")) {
                 System.out.println("L");
