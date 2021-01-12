@@ -32,7 +32,4 @@ public class LoginMenu extends Menu {
         System.out.println("welcome " + username);
     }
 
-    private void returnBack(){
-        new AccountManager();
-    }
 }

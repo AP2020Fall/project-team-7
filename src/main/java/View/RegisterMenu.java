@@ -26,7 +26,8 @@ public class RegisterMenu extends Menu{
             System.err.println("invalid input, try again!");
             phoneNum = scanner.nextLine();
         }
-        System.out.println(((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum));
+        ((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum);
+//        System.out.println(((RegisterManager) manager).createNewAccount(username, password, email, fName, lName, phoneNum));
         System.out.println("hello " + fName);
     }
 

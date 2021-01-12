@@ -1,5 +1,6 @@
 package View;
 
+import Controller.AccountManager;
 import Controller.Manager;
 
 import java.util.Scanner;
@@ -17,5 +18,9 @@ public class Menu {
     protected Matcher getMatcher(String input, String regex) {
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(input);
+    }
+
+    protected void returnBack(){
+        new AccountManager();
     }
 }
