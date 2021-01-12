@@ -31,17 +31,7 @@ public class Player extends Person {
         eventsParticipant = new ArrayList<>();
     }
 
-    public void editProfile() {
 
-    }
-
-    private void login() {
-
-    }
-
-    private void logout() {
-
-    }
 
     private void participateInEvent(Event event) {
         eventsParticipant.add(event);
@@ -57,10 +47,6 @@ public class Player extends Person {
 
     private void addFriend(Player username) {
         friendList.add(username);
-    }
-
-    public int getScore() {
-        return score;
     }
 
     public void setScore(int score) {
@@ -123,6 +109,8 @@ public class Player extends Person {
         this.platoBotMessage = platoBotMessage;
     }
 
+
+
     @Override
     public String toString() {
         return "Player{" + "\n" +
@@ -133,5 +121,7 @@ public class Player extends Person {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+
 
 }

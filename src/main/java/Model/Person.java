@@ -103,4 +103,7 @@ public class Person {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+    public void getScore() {
+    }
 }
