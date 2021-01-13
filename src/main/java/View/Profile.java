@@ -16,52 +16,52 @@ public class Profile extends Menu {
                 "3. Main page");
         while (true) {
             String input = scanner.nextLine();
-//            if ((!input.matches("^1$")) || (!input.matches("^2$")) || (!input.matches("^3$"))) {
-//                System.err.println("invalid input! enter back to return profile or 3 to go Main page:");
-//                continue;
-//            } else {
-                if (input.matches("^1$")) {
-                    System.out.println("view personal info:");
-                    ((ProfileManager) manager).showPersonalInfo();
-                    System.out.println("enter back to return profile or enter 3 to back to Main page: ");
-                    input = scanner.nextLine();
-                    while (!input.matches("^back$ || ^3$")){
-                        System.out.println("enter back to return profile or enter 3 to back to Main page: ");
-                        input = scanner.nextLine();
-                    }
-                    if (input.equalsIgnoreCase("back")) {
-                        goProfile();
-                    } else if (input.matches("^3$")) {
-                        returnMainPage();
-                    }
-                    break;
-                } else if (input.matches("^2$")) {
-                    System.out.println("delete account:");
+            if (input.matches("^1$")) {
+                System.out.println("view personal info:");
+                //show personal info. can't get current user
+                System.out.println("personal info sample\n" +
+                        "2. edit personal info\n" +
+                        "3. Main page\n" +
+                        "press any key to back!");
+                input = scanner.nextLine();
+                if (input.matches("^2$")) {
+                    System.out.println("edit info");
+                } else if (input.matches("^3$")) {
+                    returnMainPage();
+                } else {
+                    goProfile();
+                }
+                break;
+            } else if (input.matches("^2$")) {
+                System.out.println("delete account:");
+                System.out.println("username:");
+                String username = scanner.nextLine();
+                if (username.equalsIgnoreCase("back")) {
+                    goProfile();
+                }
+                System.out.println("password:");
+                String password = scanner.nextLine();
+                while (!((ProfileManager) manager).canDeleteAccount(username, password)) {
+                    System.err.println("username or password is wrong!");
                     System.out.println("username:");
-                    String username = scanner.nextLine();
+                    username = scanner.nextLine();
                     if (username.equalsIgnoreCase("back")) {
                         goProfile();
                     }
                     System.out.println("password:");
-                    String password = scanner.nextLine();
-                    while (!((ProfileManager) manager).canDeleteAccount(username, password)) {
-                        System.err.println("username or password is wrong!");
-                        System.out.println("username:");
-                        username = scanner.nextLine();
-                        if (username.equalsIgnoreCase("back")) {
-                            goProfile();
-                        }
-                        System.out.println("password:");
-                        password = scanner.nextLine();
-                        ((ProfileManager) manager).canDeleteAccount(username, password);
-                    }
-                    System.out.println("account " + username + " deleted!");
-                    break;
-
-                } else {
-                    returnMainPage();
+                    password = scanner.nextLine();
+                    ((ProfileManager) manager).canDeleteAccount(username, password);
                 }
+                System.out.println("account " + username + " deleted!");
+                break;
+
+            } else if (input.matches("^3$")) {
+                returnMainPage();
+                break;
             }
+            else
+                System.err.println("invalid command!");
+        }
 //        }
     }
 }

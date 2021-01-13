@@ -54,7 +54,7 @@ public class MainPage extends Menu {
                 break;
 
             } else {
-                System.out.println("invalid command");
+                System.err.println("invalid command");
             }
         }
     }
