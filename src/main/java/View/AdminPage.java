@@ -5,9 +5,7 @@ import Controller.Manager;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class AdminPage extends Menu {
     public AdminPage(Manager manager) {
@@ -44,7 +42,7 @@ public class AdminPage extends Menu {
 
                 break;
             } else if (input.matches("^6$")) {
-                //change event's finish date
+                editEventDate();
                 break;
             } else if (input.matches("^7$")) {
                 System.out.println("all users:\n" + manager.getPlayers());
@@ -74,7 +72,7 @@ public class AdminPage extends Menu {
             String startDate = scanner.nextLine();
             String finishDate = scanner.nextLine();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date start= null;
+            Date start = null;
             Date finish = null;
             try {
                 start = sdf.parse(startDate);
@@ -82,7 +80,7 @@ public class AdminPage extends Menu {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            if (manager.checkDate(startDate) && manager.checkDate(finishDate)){
+            if (manager.checkDate(startDate) && manager.checkDate(finishDate)) {
                 int score = scanner.nextInt();
                 ((AdminPageManager) manager).addEvent(gameName, start, finish, score);
             } else {
@@ -91,6 +89,7 @@ public class AdminPage extends Menu {
 
         }
     }
+
     private void editEventDate() {
         System.out.println("date format: 'yyyy-MM-dd'");
         while (true) {
