@@ -6,9 +6,9 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class Player extends Person {
-    private Date platoAge;
-    private int score = 0;
-    private int cash = 0;
+    private int platoAge;
+    private int score;
+    private int cash;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
     private ArrayList<Player> requests;
@@ -29,6 +29,9 @@ public class Player extends Person {
         gamesHistory = new ArrayList<>();
         platoBotMessage = new ArrayList<>();
         eventsParticipant = new ArrayList<>();
+        platoAge = 0;
+        score = 0;
+        cash = 0;
     }
 
     public int getScore() {
@@ -112,7 +115,13 @@ public class Player extends Person {
         this.platoBotMessage = platoBotMessage;
     }
 
+    public void setPlatoAge(int platoAge) {
+        this.platoAge = platoAge;
+    }
 
+    public int getPlatoAge() {
+        return platoAge;
+    }
 
     @Override
     public String toString() {

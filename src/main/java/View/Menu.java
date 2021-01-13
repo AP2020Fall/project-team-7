@@ -1,7 +1,9 @@
 package View;
 
 import Controller.AccountManager;
+import Controller.MainPageManager;
 import Controller.Manager;
+import Controller.ProfileManager;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -23,4 +25,14 @@ public class Menu {
     protected void returnAccountMenu(){
         new AccountManager();
     }
+
+    protected void goProfile(){
+        new ProfileManager();
+    }
+
+    protected void returnMainPage(){
+        new MainPageManager();
+    }
+
+
 }
