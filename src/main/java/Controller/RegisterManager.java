@@ -19,12 +19,10 @@ public class RegisterManager extends Manager{
     public void createNewAccount(String username, String password, String email, String fName, String lName, String phoneNum) {
         if (isThisAdmin()){
             Admin admin = new Admin(username, password, email, fName, lName, phoneNum);
-            Person.addPeople(admin);
             setPerson(admin);
             setAdmin(admin);
         } else {
             Player player = new Player(username, password, email, fName, lName, phoneNum);
-            Person.addPeople(player);
             setPerson(player);
             setCurrentPlayer(player);
         }

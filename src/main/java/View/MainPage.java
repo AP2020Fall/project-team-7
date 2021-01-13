@@ -7,7 +7,8 @@ import Controller.ProfileManager;
 public class MainPage extends Menu {
     public MainPage(Manager manager) {
         super(manager);
-        System.out.println("Main page:\n" +
+        System.out.println("" +
+                "Main page:\n" +
                 "1. profile\n" +
                 "2. show points\n" +
                 "3. favorite games\n" +
