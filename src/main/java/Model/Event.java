@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Event {
-    private Game gameName;
+    private String  gameName;
     private Date startDate;
     private Date finishDate;
     private int eventScore;
     private String eventId;
     private ArrayList<Event> events;
 
-    public Event(Game gameName, Date startDate, Date finishDate, int eventScore) {
+    public Event(String  gameName, Date startDate, Date finishDate, int eventScore) {
         this.gameName = gameName;
         this.startDate = startDate;
         this.finishDate = finishDate;
@@ -19,11 +19,11 @@ public class Event {
         events = new ArrayList<>();
     }
 
-    public Game getGameName() {
+    public String getGameName() {
         return gameName;
     }
 
-    public void setGameName(Game gameName) {
+    public void setGameName(String gameName) {
         this.gameName = gameName;
     }
 
