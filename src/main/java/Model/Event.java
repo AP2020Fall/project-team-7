@@ -8,7 +8,7 @@ public class Event {
     private Date startDate;
     private Date finishDate;
     private int eventScore;
-    private String eventId;
+    private int eventId = 1000;
     private ArrayList<Event> events;
 
     public Event(String  gameName, Date startDate, Date finishDate, int eventScore) {
@@ -52,11 +52,11 @@ public class Event {
         this.eventScore = eventScore;
     }
 
-    public String getEventId() {
+    public int getEventId() {
         return eventId;
     }
 
-    public void setEventId(String eventId) {
+    public void setEventId(int eventId) {
         this.eventId = eventId;
     }
 

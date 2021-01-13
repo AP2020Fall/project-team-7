@@ -69,8 +69,6 @@ public class AdminPage extends Menu {
     private void addEvent() {
         System.out.println("enter game's name: ");
         String gameName = scanner.nextLine();
-
-
         while (true) {
             System.out.println("date format: 'yyyy-MM-dd'");
             String startDate = scanner.nextLine();
@@ -92,7 +90,8 @@ public class AdminPage extends Menu {
             }
 
         }
-
-
+    }
+    private void editEventDate(){
+        
     }
 }
