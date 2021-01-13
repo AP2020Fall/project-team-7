@@ -9,7 +9,7 @@ public class Event {
     private Date finishDate;
     private int eventScore;
     private int eventId = 1000;
-    private ArrayList<Event> events;
+    private static ArrayList<Event> events;
 
     public Event(String  gameName, Date startDate, Date finishDate, int eventScore) {
         this.gameName = gameName;
@@ -60,7 +60,7 @@ public class Event {
         this.eventId = eventId;
     }
 
-    public ArrayList<Event> getEvents() {
+    public static ArrayList<Event> getEvents() {
         return events;
     }
 

@@ -91,7 +91,23 @@ public class AdminPage extends Menu {
 
         }
     }
-    private void editEventDate(){
-        
+    private void editEventDate() {
+        System.out.println("date format: 'yyyy-MM-dd'");
+        while (true) {
+            int eventId = scanner.nextInt();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String finishDate = scanner.nextLine();
+            if (manager.checkDate(finishDate)) {
+                Date finish = null;
+                try {
+                    finish = sdf.parse(finishDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                ((AdminPageManager) manager).editDate(eventId, finish);
+            } else {
+                System.err.println("invalid date! pattern: yyyy-MM-dd");
+            }
+        }
     }
 }

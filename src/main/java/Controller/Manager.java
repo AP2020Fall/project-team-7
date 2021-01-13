@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Admin;
+import Model.Event;
 import Model.Person;
 import Model.Player;
 import View.Menu;
@@ -13,12 +14,37 @@ public class Manager {
     protected Player currentPlayer = null;
     protected Menu menu;
     protected ArrayList<Player> players = new ArrayList<>();
+
     public void addPlayer(Player player){
         players.add(player);
     }
 
     public ArrayList<Player> getPlayers() {
         return players;
+    }
+
+    public Person getPerson() {
+        return currentPerson;
+    }
+
+    public void setPerson(Person person) {
+        this.currentPerson = person;
+    }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
     public boolean checkEmail(String email) {
@@ -47,29 +73,5 @@ public class Manager {
             return true;
         }
         return false;
-    }
-
-    public Person getPerson() {
-        return currentPerson;
-    }
-
-    public void setPerson(Person person) {
-        this.currentPerson = person;
-    }
-
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
-    public Player getCurrentPlayer() {
-        return currentPlayer;
-    }
-
-    public void setCurrentPlayer(Player currentPlayer) {
-        this.currentPlayer = currentPlayer;
     }
 }
