@@ -17,6 +17,7 @@ public class Event {
         this.finishDate = finishDate;
         this.eventScore = eventScore;
         events = new ArrayList<>();
+        events.add(this);
     }
 
     public String getGameName() {

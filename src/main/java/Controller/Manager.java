@@ -35,6 +35,13 @@ public class Manager {
         return false;
     }
 
+    public boolean checkDate(String date){
+        if (date.matches("^dddd-dd-dd$"))
+            return true;
+
+        return false;
+    }
+
     public boolean checkPassword(String password) {
         if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,20}$")) {
             return true;

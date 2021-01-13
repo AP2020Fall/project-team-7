@@ -1,8 +1,13 @@
 package View;
 
-import Controller.MainPageManager;
+import Controller.AdminPageManager;
 import Controller.Manager;
-import Controller.ProfileManager;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class AdminPage extends Menu {
     public AdminPage(Manager manager) {
@@ -35,7 +40,7 @@ public class AdminPage extends Menu {
 
                 break;
             } else if (input.matches("^5$")) {
-                //add event
+                addEvent();
 
                 break;
             } else if (input.matches("^6$")) {
@@ -59,5 +64,35 @@ public class AdminPage extends Menu {
                 System.err.println("invalid command");
             }
         }
+    }
+
+    private void addEvent() {
+        System.out.println("enter game's name: ");
+        String gameName = scanner.nextLine();
+
+
+        while (true) {
+            System.out.println("date format: 'yyyy-MM-dd'");
+            String startDate = scanner.nextLine();
+            String finishDate = scanner.nextLine();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date start= null;
+            Date finish = null;
+            try {
+                start = sdf.parse(startDate);
+                finish = sdf.parse(finishDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            if (manager.checkDate(startDate) && manager.checkDate(finishDate)){
+                int score = scanner.nextInt();
+                ((AdminPageManager) manager).addEvent(gameName, start, finish, score);
+            } else {
+                System.err.println("invalid date! pattern: yyyy-MM-dd");
+            }
+
+        }
+
+
     }
 }

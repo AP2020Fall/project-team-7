@@ -10,7 +10,7 @@ public class Admin extends Person {
         super(username, password, email, fName, lName, phoneNum);
     }
 
-    private void addEvent(Game gameName, Date start, Date finish, int score) {
+    private void addEvent(String gameName, Date start, Date finish, int score) {
         Event event = new Event(gameName, start, finish, score);
     }
 
