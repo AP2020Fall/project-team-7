@@ -13,7 +13,7 @@ public class MainPage extends Menu {
                 "3. favorite games\n" +
                 "4. platoBot's message\n" +
                 "5. view last played\n" +
-                "6. view Admin's suggestion" +
+                "6. view Admin's suggestion\n" +
                 "7. choose suggested game\n" +
                 "8. add friend\n" +
                 "9. logout");
