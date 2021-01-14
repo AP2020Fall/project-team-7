@@ -29,15 +29,14 @@ public class AdminPage extends Menu {
         while (true) {
             String input = scanner.nextLine();
             if (input.matches("^1$")) {
-                //change game's name
                 changeGameName();
                 break;
             } else if (input.matches("^2$")) {
-                //delete game
                 deleteGame();
                 break;
             } else if (input.matches("^3$")) {
                 //disable game for update
+                System.out.println("not working now ha ha ha...");
                 showAdminMenu();
                 break;
             } else if (input.matches("^4$")) {
@@ -56,6 +55,8 @@ public class AdminPage extends Menu {
 
             } else if (input.matches("^8$")) {
                 //ban user
+                System.out.println("not working now ha ha ha...");
+                showAdminMenu();
                 break;
 
             } else if (input.matches("^9$")) {
