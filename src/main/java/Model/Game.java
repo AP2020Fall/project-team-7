@@ -3,21 +3,22 @@ package Model;
 import java.util.ArrayList;
 
 public class Game {
-    private String name;
+    private String gameName;
     private int gameId;
     public static ArrayList<Game> games = new ArrayList<>();
-    public Game(String gameName, int gameId) {
-        name = gameName;
+
+    public Game(String name, int gameId) {
+        gameName = name;
         this.gameId = gameId;
         games.add(this);
     }
 
     public String getName() {
-        return name;
+        return gameName;
     }
 
     public void setName(String name) {
-        name = name;
+        gameName = name;
     }
 
     public int getGameId() {
@@ -36,4 +37,8 @@ public class Game {
         return games;
     }
 
+    @Override
+    public String toString() {
+        return gameId + ". " + gameName;
+    }
 }
