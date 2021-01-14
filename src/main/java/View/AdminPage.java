@@ -139,6 +139,7 @@ public class AdminPage extends Menu {
         if (((AdminPageManager) manager).isThisGameExist(gameName)) {
             ((AdminPageManager) manager).deleteGame(gameName);
             System.out.println("" + gameName + " game deleted.");
+            System.out.println("games:\n" + Game.getGames().toString());
         } else
             System.err.println("there is no game with name " + gameName);
         showAdminMenu();
