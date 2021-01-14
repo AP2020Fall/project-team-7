@@ -25,6 +25,8 @@ public class AdminPage extends Menu {
             String input = scanner.nextLine();
             if (input.matches("^1$")) {
                 //change game's name
+                changeGameName();
+                break;
             } else if (input.matches("^2$")) {
                 //delete game
 
@@ -39,7 +41,6 @@ public class AdminPage extends Menu {
                 break;
             } else if (input.matches("^5$")) {
                 addEvent();
-
                 break;
             } else if (input.matches("^6$")) {
                 editEventDate();
@@ -107,6 +108,17 @@ public class AdminPage extends Menu {
             } else {
                 System.err.println("invalid date! pattern: yyyy-MM-dd");
             }
+        }
+    }
+
+    private void changeGameName(){
+        System.out.println("enter game's name:");
+        String gameName = scanner.nextLine();
+        if (((AdminPageManager)manager).isThisGameExist(gameName)){
+            String changedName = scanner.nextLine();
+            ((AdminPageManager)manager).changeGameName(gameName, changedName);
+        } else {
+            System.out.println("there is no game with name " + gameName);
         }
     }
 }

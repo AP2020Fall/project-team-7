@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Admin;
-import Model.Event;
-import Model.Person;
-import Model.Player;
+import Model.*;
 import View.Menu;
 
 import java.util.ArrayList;
@@ -74,4 +71,5 @@ public class Manager {
         }
         return false;
     }
+
 }
