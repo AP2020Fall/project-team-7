@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Person;
 import Model.Player;
 import View.Profile;
 
@@ -14,10 +15,11 @@ public class ProfileManager extends Manager {
 
     public boolean canDeleteAccount(String username, String password) {
         boolean canDelete = false;
-        for (Player player : players) {
-            if (player.getUsername().equals(username) && player.getPassword().equals(password)) {
+        for (Person person : Person.getPeople()) {
+            if (person.getUsername().equals(username) && person.getPassword().equals(password)) {
+                Person.getPeople().remove(person);
+                players.remove(person);
                 canDelete = true;
-                players.remove(player);
                 break;
             }
         }

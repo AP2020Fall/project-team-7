@@ -118,7 +118,7 @@ public class AdminPage extends Menu {
 
 
     private void changeGameName() {
-        System.out.println("games:\n" + Game.getGames().toString());
+        System.out.println("games:\n" + Game.getGames());
         System.out.println("enter game's name:");
         String gameName = scanner.nextLine();
         if (((AdminPageManager) manager).isThisGameExist(gameName)) {
@@ -153,10 +153,10 @@ public class AdminPage extends Menu {
         String comment = scanner.nextLine();
         if (comment.matches("^1$")) {
             comment = scanner.nextLine();
-            ((AdminPageManager) manager).setComment(comment);
+            AdminPageManager.comment = comment;
             showAdminMenu();
         } else if (comment.matches("^2$")){
-            ((AdminPageManager) manager).setComment("");
+            AdminPageManager.comment = "";
             showAdminMenu();
 
         } else if (comment.matches("^3$")) {

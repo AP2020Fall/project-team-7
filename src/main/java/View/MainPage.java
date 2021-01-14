@@ -12,21 +12,21 @@ public class MainPage extends Menu {
     }
 
     private void showMainPage() {
-        if (((AdminPageManager) manager).getComment().length()==0){
+        if (AdminPageManager.getComment().length() != 0) {
             System.out.print("Admin comment: ");
         }
         System.out.println("" +
-                ((AdminPageManager) manager).getComment() + "\n\n" +
-                "Main page:\n" +
-                "1. profile\n" +
-                "2. show points\n" +
-                "3. favorite games\n" +
-                "4. platoBot's message\n" +
-                "5. view last played\n" +
-                "6. view Admin's suggestion\n" +
-                "7. choose suggested game\n" +
-                "8. add friend\n" +
-                "9. logout");
+                (AdminPageManager.getComment() + "\n" +
+                        "Main page:\n" +
+                        "1. profile\n" +
+                        "2. show points\n" +
+                        "3. favorite games\n" +
+                        "4. platoBot's message\n" +
+                        "5. view last played\n" +
+                        "6. view Admin's suggestion\n" +
+                        "7. choose suggested game\n" +
+                        "8. add friend\n" +
+                        "9. logout"));
 
         while (true) {
             String input = scanner.nextLine();
