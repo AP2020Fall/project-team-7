@@ -41,12 +41,7 @@ public class Profile extends Menu {
     private void viewPersonalInfo() {
         System.out.println("view personal info:");
         //show personal info. can't get current user
-        System.out.println("\n" +
-                Manager.getCurrentPlayer().getUsername() + "\n" +
-                Manager.getCurrentPlayer().getFirstName() + "\n" +
-                Manager.getCurrentPlayer().getLastName() + "\n" +
-                Manager.getCurrentPlayer().getEmail() + "\n" +
-                Manager.getCurrentPlayer().getPhoneNumber());
+        System.out.println(Manager.getCurrentPlayer().toString());
         System.out.println("" +
                 "2. edit personal info\n" +
                 "3. Main page\n" +

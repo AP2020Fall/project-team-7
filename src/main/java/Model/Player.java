@@ -17,12 +17,13 @@ public class Player extends Person {
     private ArrayList<String> platoBotMessage;
     private ArrayList<Event> eventsParticipant;
 
-    public Player(String username, String password, String email, String fName, String lName, String phoneNum) {
-        super(username, password, email, fName, lName, phoneNum);
-    }
-
-    public Player(String username) {
-        super(username);
+    public Player(String userName, String password, String email, String fName, String lName, String phoneNum) {
+        super(userName, password, email, fName, lName, phoneNum);
+        firstName = fName;
+        lastName = lName;
+        phoneNumber = phoneNum;
+        Email = email;
+        setPassword(password);
         eventsParticipant = new ArrayList<>();
         friendList = new ArrayList<>();
         requests = new ArrayList<>();
@@ -32,6 +33,7 @@ public class Player extends Person {
         platoAge = 0;
         score = 0;
         cash = 0;
+
     }
 
     public int getScore() {
@@ -125,13 +127,12 @@ public class Player extends Person {
 
     @Override
     public String toString() {
-        return "Player{" + "\n" +
+        return "user: " + username + "\n" +
                 "firstName='" + firstName + '\'' + "\n" +
-                ", lastName='" + lastName + '\'' + "\n" +
-                ", username='" + username + '\'' + "\n" +
-                ", Email='" + Email + '\'' + "\n" +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+                "lastName='" + lastName + '\'' + "\n" +
+                "username='" + username + '\'' + "\n" +
+                "Email='" + Email + '\'' + "\n" +
+                "phoneNumber='" + phoneNumber + '\'';
     }
 
 

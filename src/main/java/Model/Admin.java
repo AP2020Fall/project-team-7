@@ -6,16 +6,18 @@ import java.util.Date;
 public class Admin extends Person {
     private ArrayList<String> adminSuggestion;
 
-    public Admin(String username, String password, String email, String fName, String lName, String phoneNum) {
-        super(username, password, email, fName, lName, phoneNum);
+    public Admin(String userName, String password, String email, String fName, String lName, String phoneNum) {
+        super(userName, password, email, fName, lName, phoneNum);
+        username = userName;
+        Email = email;
+        firstName = fName;
+        lastName = lName;
+        phoneNumber = phoneNum;
+        setPassword(password);
     }
 
     private void addEvent(String gameName, Date start, Date finish, int score) {
         Event event = new Event(gameName, start, finish, score);
-    }
-
-    private void deleteEvent(Event event) {
-
     }
 
     public ArrayList<String> getAdminSuggestion() {
@@ -28,12 +30,11 @@ public class Admin extends Person {
 
     @Override
     public String toString() {
-        return "Admin{" + "\n" +
+        return "Admin:" + "\n" +
                 "firstName='" + firstName + '\'' + "\n" +
-                ", lastName='" + lastName + '\'' + "\n" +
-                ", username='" + username + '\'' + "\n" +
-                ", Email='" + Email + '\'' + "\n" +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+                "lastName='" + lastName + '\'' + "\n" +
+                "username='" + username + '\'' + "\n" +
+                "Email='" + Email + '\'' + "\n" +
+                "phoneNumber='" + phoneNumber + '\'';
     }
 }
