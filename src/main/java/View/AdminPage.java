@@ -118,7 +118,7 @@ public class AdminPage extends Menu {
 
 
     private void changeGameName() {
-        System.out.println(Game.getGames().get(0).toString() + "\n" + Game.getGames().get(1).toString());
+        System.out.println("games:\n" + Game.getGames().toString());
         System.out.println("enter game's name:");
         String gameName = scanner.nextLine();
         if (((AdminPageManager) manager).isThisGameExist(gameName)) {
@@ -133,7 +133,14 @@ public class AdminPage extends Menu {
     }
 
     private void deleteGame() {
-
+        System.out.println("games:\n" + Game.getGames().toString());
+        System.out.println("enter game's name:");
+        String gameName = scanner.nextLine();
+        if (((AdminPageManager) manager).isThisGameExist(gameName)) {
+            ((AdminPageManager) manager).deleteGame(gameName);
+            System.out.println("" + gameName + " game deleted.");
+        } else
+            System.err.println("there is no game with name " + gameName);
         showAdminMenu();
     }
 }

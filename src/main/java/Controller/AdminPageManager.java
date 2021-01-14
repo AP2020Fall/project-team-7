@@ -43,6 +43,15 @@ public class AdminPageManager extends Manager {
         }
     }
 
+    public void deleteGame(String gameName){
+        for (Game game : Game.getGames()) {
+            if (game.getName().equalsIgnoreCase(gameName)) {
+                Game.games.remove(game);
+                break;
+            }
+        }
+    }
+
     public boolean isThisGameExist(String gameName) {
         boolean find = false;
         for (Game game : Game.getGames()) {
