@@ -14,7 +14,7 @@ public class AdminPage extends Menu {
         showAdminMenu();
     }
 
-    private void showAdminMenu(){
+    private void showAdminMenu() {
         System.out.println("" +
                 "Admin page:\n" +
                 "1. change game's name\n" +
@@ -34,15 +34,15 @@ public class AdminPage extends Menu {
                 break;
             } else if (input.matches("^2$")) {
                 //delete game
-
+                deleteGame();
                 break;
             } else if (input.matches("^3$")) {
                 //disable game for update
-
+                showAdminMenu();
                 break;
             } else if (input.matches("^4$")) {
                 //put comment in home
-
+                showAdminMenu();
                 break;
             } else if (input.matches("^5$")) {
                 addEvent();
@@ -52,6 +52,7 @@ public class AdminPage extends Menu {
                 break;
             } else if (input.matches("^7$")) {
                 System.out.println("all users:\n" + manager.getPlayers());
+                showAdminMenu();
                 break;
 
             } else if (input.matches("^8$")) {
@@ -73,62 +74,66 @@ public class AdminPage extends Menu {
     private void addEvent() {
         System.out.println("enter game's name: ");
         String gameName = scanner.nextLine();
-        while (true) {
-            System.out.println("date format: 'yyyy-MM-dd'");
-            String startDate = scanner.nextLine();
-            String finishDate = scanner.nextLine();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date start = null;
-            Date finish = null;
-            try {
-                start = sdf.parse(startDate);
-                finish = sdf.parse(finishDate);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            if (manager.checkDate(startDate) && manager.checkDate(finishDate)) {
-                int score = scanner.nextInt();
-                ((AdminPageManager) manager).addEvent(gameName, start, finish, score);
-            } else {
-                System.err.println("invalid date! pattern: yyyy-MM-dd");
-            }
-
+        System.out.println("date format: 'yyyy-MM-dd'");
+        System.out.println("start:");
+        String startDate = scanner.nextLine();
+        System.out.println("finish:");
+        String finishDate = scanner.nextLine();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date start = null;
+        Date finish = null;
+        try {
+            start = sdf.parse(startDate);
+            finish = sdf.parse(finishDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+        if (manager.checkDate(startDate) && manager.checkDate(finishDate)) {
+            int score = scanner.nextInt();
+            ((AdminPageManager) manager).addEvent(gameName, start, finish, score);
+        } else {
+            System.err.println("invalid date! pattern: yyyy-MM-dd");
+        }
+        showAdminMenu();
     }
 
     private void editEventDate() {
         System.out.println("date format: 'yyyy-MM-dd'");
-        while (true) {
-            int eventId = scanner.nextInt();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String finishDate = scanner.nextLine();
-            if (manager.checkDate(finishDate)) {
-                Date finish = null;
-                try {
-                    finish = sdf.parse(finishDate);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                ((AdminPageManager) manager).editDate(eventId, finish);
-            } else {
-                System.err.println("invalid date! pattern: yyyy-MM-dd");
+        int eventId = scanner.nextInt();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String finishDate = scanner.nextLine();
+        if (manager.checkDate(finishDate)) {
+            Date finish = null;
+            try {
+                finish = sdf.parse(finishDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
+            ((AdminPageManager) manager).editDate(eventId, finish);
+        } else {
+            System.err.println("invalid date! pattern: yyyy-MM-dd");
         }
+        showAdminMenu();
     }
 
-    private void changeGameName(){
+
+    private void changeGameName() {
         System.out.println(Game.getGames().get(0).toString() + "\n" + Game.getGames().get(1).toString());
         System.out.println("enter game's name:");
         String gameName = scanner.nextLine();
-        if (((AdminPageManager)manager).isThisGameExist(gameName)){
+        if (((AdminPageManager) manager).isThisGameExist(gameName)) {
             System.out.println("enter new name:");
             String changedName = scanner.nextLine();
-            ((AdminPageManager)manager).changeGameName(gameName, changedName);
+            ((AdminPageManager) manager).changeGameName(gameName, changedName);
             System.out.println("changed " + gameName + " name to " + changedName);
-            showAdminMenu();
         } else {
             System.err.println("there is no game with name " + gameName);
-            showAdminMenu();
         }
+        showAdminMenu();
+    }
+
+    private void deleteGame() {
+
+        showAdminMenu();
     }
 }
