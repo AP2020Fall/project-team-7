@@ -19,7 +19,6 @@ public class LoginMenu extends Menu {
         if (username.equalsIgnoreCase("back")) {
             returnAccountMenu();
         }
-
         System.out.println("password:");
         String password = scanner.nextLine();
         while (!((LoginManager) manager).loginUser(username, password)) {
@@ -28,7 +27,6 @@ public class LoginMenu extends Menu {
             username = scanner.nextLine();
             if (username.equalsIgnoreCase("back")) {
                 returnAccountMenu();
-
             }
             System.out.println("password:");
             password = scanner.nextLine();
@@ -37,7 +35,7 @@ public class LoginMenu extends Menu {
             }
         }
         System.out.println("welcome " + username);
-        if (Person.getPeople().get(0).equals(username)){
+        if (Person.getPeople().get(0).getPassword().equals(username)){
             manager = new AdminPageManager();
         }
         manager = new MainPageManager();

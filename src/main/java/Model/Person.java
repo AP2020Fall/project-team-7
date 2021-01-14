@@ -26,9 +26,6 @@ public class Person {
         return people;
     }
 
-    public static boolean isPeopleEmpty(){
-        return people.isEmpty();
-    }
     public Person(String username) {
         this.username = username;
     }
