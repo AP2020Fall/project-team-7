@@ -5,12 +5,11 @@ import java.util.ArrayList;
 public class Game {
     private String name;
     private int gameId;
-    private static ArrayList<Game> games = new ArrayList<>();
+    public static ArrayList<Game> games = new ArrayList<>();
     public Game(String gameName, int gameId) {
         name = gameName;
         this.gameId = gameId;
         games.add(this);
-
     }
 
     public String getName() {
@@ -36,4 +35,5 @@ public class Game {
     public static ArrayList<Game> getGames() {
         return games;
     }
+
 }

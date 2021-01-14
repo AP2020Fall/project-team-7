@@ -1,4 +1,11 @@
 package Controller;
 
-public class GameMenuManager extends Manager{
+import View.GameMenu;
+
+public class GameMenuManager extends Manager {
+    public GameMenuManager() {
+        menu = new GameMenu(this);
+    }
+
+
 }

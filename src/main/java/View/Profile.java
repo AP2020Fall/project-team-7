@@ -6,6 +6,10 @@ import Controller.ProfileManager;
 public class Profile extends Menu {
     public Profile(Manager manager) {
         super(manager);
+        showProfile();
+    }
+
+    private void showProfile(){
         System.out.println("" +
                 "Enter 3 to go to Main page!" +
                 "username: " + "\n" +
@@ -30,7 +34,6 @@ public class Profile extends Menu {
                 System.err.println("invalid command!");
         }
     }
-
     private void viewPersonalInfo(String input) {
         System.out.println("view personal info:");
         //show personal info. can't get current user

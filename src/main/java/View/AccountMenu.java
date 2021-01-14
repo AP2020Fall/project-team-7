@@ -7,10 +7,14 @@ import Controller.RegisterManager;
 public class AccountMenu extends Menu {
     public AccountMenu(Manager manager) {
         super(manager);
+        showAccountMenu();
+    }
+
+    private void showAccountMenu() {
         System.out.println(
                 "1. Register\n" +
-                "2. Login\n" +
-                "3. exit");
+                        "2. Login\n" +
+                        "3. exit");
         while (true) {
             String input = scanner.nextLine();
             if (input.matches("^1$")) {

@@ -2,6 +2,7 @@ package View;
 
 import Controller.AdminPageManager;
 import Controller.Manager;
+import Model.Game;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -116,6 +117,7 @@ public class AdminPage extends Menu {
     }
 
     private void changeGameName(){
+        System.out.println("games:\n" + Game.getGames());
         System.out.println("enter game's name:");
         String gameName = scanner.nextLine();
         if (((AdminPageManager)manager).isThisGameExist(gameName)){

@@ -7,6 +7,10 @@ import Controller.ProfileManager;
 public class MainPage extends Menu {
     public MainPage(Manager manager) {
         super(manager);
+        showMainPage();
+    }
+
+    private void showMainPage(){
         System.out.println("" +
                 "Main page:\n" +
                 "1. profile\n" +

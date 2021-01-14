@@ -9,6 +9,11 @@ import Model.Person;
 public class LoginMenu extends Menu {
     public LoginMenu(Manager manager) {
         super(manager);
+        showLoginMenu();
+    }
+
+    private void showLoginMenu(){
+        System.out.println("login");
         System.out.println("username:");
         String username = scanner.nextLine();
         if (username.equalsIgnoreCase("back")) {

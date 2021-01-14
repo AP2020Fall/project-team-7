@@ -9,6 +9,10 @@ import Model.Person;
 public class RegisterMenu extends Menu {
     public RegisterMenu(Manager manager) {
         super(manager);
+        showRegisterMenu();
+    }
+
+    private void showRegisterMenu(){
         System.out.println("write back to return!");
         System.out.println("username:");
         String username = scanner.nextLine();
