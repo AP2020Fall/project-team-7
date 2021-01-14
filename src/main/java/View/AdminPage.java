@@ -41,8 +41,7 @@ public class AdminPage extends Menu {
                 showAdminMenu();
                 break;
             } else if (input.matches("^4$")) {
-                //put comment in home
-                showAdminMenu();
+                putCommentInHome();
                 break;
             } else if (input.matches("^5$")) {
                 addEvent();
@@ -143,5 +142,27 @@ public class AdminPage extends Menu {
         } else
             System.err.println("there is no game with name " + gameName);
         showAdminMenu();
+    }
+
+    private void putCommentInHome(){
+        System.out.println("" +
+                "1. enter your command\n" +
+                "2. delete current comment\n" +
+                "3. back");
+        String comment = scanner.nextLine();
+        if (comment.matches("^1$")) {
+            comment = scanner.nextLine();
+            ((AdminPageManager) manager).setComment(comment);
+            showAdminMenu();
+        } else if (comment.matches("^2$")){
+            ((AdminPageManager) manager).setComment("");
+            showAdminMenu();
+
+        } else if (comment.matches("^3$")) {
+            showAdminMenu();
+        }else {
+            System.err.println("invalid command!");
+            putCommentInHome();
+        }
     }
 }

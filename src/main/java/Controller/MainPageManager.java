@@ -1,11 +1,10 @@
 package Controller;
 
-import Model.Game;
 import View.MainPage;
-
 import java.util.ArrayList;
 
 public class MainPageManager extends Manager{
+
     public MainPageManager() {
         menu = new MainPage(this);
     }
@@ -17,5 +16,6 @@ public class MainPageManager extends Manager{
     public ArrayList<String> showFavoriteGame(){
         return currentPlayer.getFavoriteGame();
     }
+
 }
 

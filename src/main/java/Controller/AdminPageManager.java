@@ -9,6 +9,7 @@ import java.util.Date;
 public class AdminPageManager extends Manager {
     Game dotsAndBoxes = new Game("Dots And Boxes", 1);
     Game reversi = new Game("Reversi", 2);
+    private String comment = "";
 
     public AdminPageManager() {
         menu = new AdminPage(this);
@@ -63,4 +64,11 @@ public class AdminPageManager extends Manager {
         return find;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 }

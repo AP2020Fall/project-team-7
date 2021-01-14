@@ -1,5 +1,6 @@
 package View;
 
+import Controller.AdminPageManager;
 import Controller.MainPageManager;
 import Controller.Manager;
 import Controller.ProfileManager;
@@ -10,8 +11,12 @@ public class MainPage extends Menu {
         showMainPage();
     }
 
-    private void showMainPage(){
+    private void showMainPage() {
+        if (((AdminPageManager) manager).getComment().length()==0){
+            System.out.print("Admin comment: ");
+        }
         System.out.println("" +
+                ((AdminPageManager) manager).getComment() + "\n\n" +
                 "Main page:\n" +
                 "1. profile\n" +
                 "2. show points\n" +
@@ -52,7 +57,7 @@ public class MainPage extends Menu {
                 System.out.println("add");
                 break;
 
-            } else if (input.matches("^9$")){
+            } else if (input.matches("^9$")) {
                 System.out.println("logout");
                 manager.setPerson(null);
                 returnAccountMenu();
@@ -63,4 +68,5 @@ public class MainPage extends Menu {
             }
         }
     }
+
 }
