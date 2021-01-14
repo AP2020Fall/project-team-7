@@ -10,6 +10,10 @@ import java.util.Date;
 public class AdminPage extends Menu {
     public AdminPage(Manager manager) {
         super(manager);
+        showAdminMenu();
+    }
+
+    private void showAdminMenu(){
         System.out.println("" +
                 "Admin page:\n" +
                 "1. change game's name\n" +
@@ -117,8 +121,10 @@ public class AdminPage extends Menu {
         if (((AdminPageManager)manager).isThisGameExist(gameName)){
             String changedName = scanner.nextLine();
             ((AdminPageManager)manager).changeGameName(gameName, changedName);
+            System.out.println("changed " + gameName + " name to " + changedName);
         } else {
-            System.out.println("there is no game with name " + gameName);
+            System.err.println("there is no game with name " + gameName);
+            showAdminMenu();
         }
     }
 }
