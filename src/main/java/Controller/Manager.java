@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Manager {
     protected Person currentPerson = null;
     protected Admin admin = null;
-    protected Player currentPlayer = null;
+    protected static Player currentPlayer = null;
     protected Menu menu;
     protected ArrayList<Player> players = new ArrayList<>();
 
@@ -36,12 +36,12 @@ public class Manager {
         this.admin = admin;
     }
 
-    public Player getCurrentPlayer() {
+    public static Player getCurrentPlayer() {
         return currentPlayer;
     }
 
-    public void setCurrentPlayer(Player currentPlayer) {
-        this.currentPlayer = currentPlayer;
+    public static void setCurrentPlayer(Player current) {
+        currentPlayer = current;
     }
 
     public boolean checkEmail(String email) {
