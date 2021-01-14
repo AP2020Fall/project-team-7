@@ -16,9 +16,9 @@ public class Profile extends Menu {
         System.out.println("" +
                 "Enter 3 to go to Main page!\n" +
                 "username: " + person.getUsername() + "\n" +
-                "plato age: " + 0 + "\n" +
-                "friends: " + 0 + "\n" +
-                "score: " + 0 + "\n" +
+                "plato age: " + Manager.getCurrentPlayer().getPlatoAge() + "\n" +
+                "friends: " + Manager.getCurrentPlayer().getFriendList().size() + "\n" +
+                "score: " + Manager.getCurrentPlayer().getScore() + "\n" +
                 "1. view personal info\n" +
                 "2. delete Account\n" +
                 "3. Main page");
@@ -40,7 +40,6 @@ public class Profile extends Menu {
 
     private void viewPersonalInfo() {
         System.out.println("view personal info:");
-        //show personal info. can't get current user
         System.out.println(Manager.getCurrentPlayer().toString());
         System.out.println("" +
                 "2. edit personal info\n" +
