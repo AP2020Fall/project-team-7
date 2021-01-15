@@ -25,9 +25,9 @@ public class MainPage extends Menu {
                         "4. platoBot's message\n" +
                         "5. view last played\n" +
                         "6. view Admin's suggestion\n" +
-                        "7. choose suggested game\n" +
-                        "8. games\n" +
-                        "9. add friend\n" +
+                        "7. games\n" +
+                        "8. add friend\n" +
+                        "9. profile\n" +
                         "10. logout"));
 
 
@@ -46,23 +46,22 @@ public class MainPage extends Menu {
             System.out.println("bot message: " + ((MainPageManager) manager).showBotMessage());
 
         } else if (input.matches("^5$")) {
-            System.out.println("last played: " + ((MainPageManager) manager).viewLastPlayed());
+            System.out.println("last played: " + ((MainPageManager) manager).viewLastPlayed().toString());
 
         } else if (input.matches("^6$")) {
             System.out.println("VA");
 
         } else if (input.matches("^7$")) {
-            System.out.println("CS");
+            showGames();
 
         } else if (input.matches("^8$")) {
-            showGames();
-        } else if (input.matches("^9$")) {
             System.out.println("add");
 
+        } else if (input.matches("^9$")) {
+            goProfile();
+
         } else if (input.matches("^10$")) {
-            System.out.println("logout");
-            manager.setPerson(null);
-            returnAccountMenu();
+            logout();
         } else {
             System.err.println("invalid command");
             showMainPage();

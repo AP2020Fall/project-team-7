@@ -57,36 +57,37 @@ public class Profile extends Menu {
 
     private void editInfo() {
         System.out.println("" +
-                "edit info:" +
+                "edit info\n:" +
                 "1. change password\n" +
                 "2. change first name\n" +
                 "3. change last name\n" +
                 "4. change Email\n" +
                 "5. change phone number\n" +
                 "6. back");
-        while (true) {
+
             String input = scanner.nextLine();
             if (input.matches("^1$")) {
 
-                break;
+
             } else if (input.matches("^2$")) {
 
-                break;
+
             } else if (input.matches("^3$")) {
 
-                break;
+
             } else if (input.matches("^4$")) {
 
-                break;
+
             } else if (input.matches("^5$")) {
 
-                break;
+
             } else if (input.matches("^6$")) {
 
-                break;
-            } else
+
+            } else {
                 System.err.println("invalid command!");
-        }
+                editInfo();
+            }
     }
 
     private void deleteAccount() {
@@ -110,5 +111,6 @@ public class Profile extends Menu {
             ((ProfileManager) manager).canDeleteAccount(username, password);
         }
         System.out.println("account " + username + " deleted!");
+        logout();
     }
 }

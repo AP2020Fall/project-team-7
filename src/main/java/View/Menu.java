@@ -34,5 +34,11 @@ public class Menu {
         new MainPageManager();
     }
 
+    protected void logout(){
+        System.out.println("logout");
+        manager.setPerson(null);
+        returnAccountMenu();
+    }
+
 
 }

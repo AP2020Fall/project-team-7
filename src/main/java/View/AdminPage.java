@@ -60,9 +60,7 @@ public class AdminPage extends Menu {
                 break;
 
             } else if (input.matches("^9$")) {
-                System.out.println("logout");
-                manager.setPerson(null);
-                returnAccountMenu();
+                logout();
                 break;
 
             } else {
