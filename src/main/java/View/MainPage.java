@@ -85,8 +85,10 @@ public class MainPage extends Menu {
             showMainPage();
         } else if (Integer.parseInt(input) == Game.getGames().size() + 2) {
             goProfile();
-        } else
+        } else {
+            System.err.println("invalid command!");
             showGames();
+        }
     }
 
 }

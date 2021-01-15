@@ -22,12 +22,12 @@ public class MainPageManager extends Manager{
         return currentPlayer.getPlatoBotMessage();
     }
 
-    public Game viewLastPlayed(){
+    public ArrayList<Game> viewLastPlayed(){
         return currentPlayer.getLastPlayed();
     }
 
-    public void setLastPlayed(Game gameName){
-        currentPlayer.setLastPlayed(gameName);
+    public void setLastPlayed(Game game){
+        currentPlayer.getLastPlayed().add(game);
     }
 
 }

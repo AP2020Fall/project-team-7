@@ -7,7 +7,7 @@ public class Player extends Person {
     private int platoAge;
     private int score;
     private int cash;
-    private Game lastPlayed;
+    private ArrayList<Game> lastPlayed;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
     private ArrayList<Player> requests;
@@ -124,11 +124,11 @@ public class Player extends Person {
         return platoAge;
     }
 
-    public Game getLastPlayed() {
+    public ArrayList<Game> getLastPlayed() {
         return lastPlayed;
     }
 
-    public void setLastPlayed(Game lastPlayed) {
+    public void setLastPlayed(ArrayList<Game> lastPlayed) {
         this.lastPlayed = lastPlayed;
     }
 
