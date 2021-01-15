@@ -30,9 +30,8 @@ public class MainPage extends Menu {
                         "9. profile\n" +
                         "10. logout"));
 
-
         String input = scanner.nextLine();
-        if (input.matches("^2$")) {
+        if (input.matches("^1$")) {
             manager = new ProfileManager();
         } else if (input.matches("^2$")) {
             //nullPointerException
@@ -78,8 +77,18 @@ public class MainPage extends Menu {
                         (Game.getGames().size() + 2) + ". profile");
         String input = scanner.nextLine();
         if (Integer.parseInt(input) <= Game.getGames().size()) {
-            System.out.println("play " + Game.getGames().get(Integer.parseInt(input)));
-            ((MainPageManager)manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)));
+            System.out.println(Game.getGames().get(Integer.parseInt(input)));
+            System.out.println("1. play\n2. add this game to favorites");
+            String choose = scanner.nextLine();
+            if (choose.matches("^1$")) {
+                System.out.println("playing " + Game.getGames().get(Integer.parseInt(input)));
+                ((MainPageManager) manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)));
+                //felan back
+                showGames();
+            } else if (choose.matches("^2$")){
+                ((MainPageManager)manager).addFavoriteGame(Game.getGames().get(Integer.parseInt(input)));
+                System.out.println("add " + Game.getGames().get(Integer.parseInt(input)) + " to your favorite game");
+            }
         } else if (Integer.parseInt(input) == Game.getGames().size() + 1) {
             showMainPage();
         } else if (Integer.parseInt(input) == Game.getGames().size() + 2) {

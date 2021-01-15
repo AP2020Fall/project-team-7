@@ -12,7 +12,7 @@ public class Player extends Person {
     private ArrayList<Player> friendList;
     private ArrayList<Player> requests;
     private ArrayList<Game> gamesHistory;
-    private ArrayList<String> favoriteGame;
+    private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
     private ArrayList<Event> eventsParticipant;
 
@@ -100,11 +100,11 @@ public class Player extends Person {
         this.gamesHistory = gamesHistory;
     }
 
-    public ArrayList<String > getFavoriteGame() {
+    public ArrayList<Game > getFavoriteGame() {
         return favoriteGame;
     }
 
-    public void setFavoriteGame(ArrayList<String> favoriteGame) {
+    public void setFavoriteGame(ArrayList<Game> favoriteGame) {
         this.favoriteGame = favoriteGame;
     }
 

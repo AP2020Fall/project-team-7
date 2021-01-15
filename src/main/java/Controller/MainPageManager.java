@@ -14,7 +14,7 @@ public class MainPageManager extends Manager{
         System.out.println(currentPlayer.getScore());
     }
 
-    public ArrayList<String> showFavoriteGame(){
+    public ArrayList<Game> showFavoriteGame(){
         return currentPlayer.getFavoriteGame();
     }
 
@@ -28,6 +28,14 @@ public class MainPageManager extends Manager{
 
     public void setLastPlayed(Game game){
         currentPlayer.getLastPlayed().add(game);
+    }
+
+    public void addFavoriteGame(Game game){
+        currentPlayer.getFavoriteGame().add(game);
+    }
+
+    public void deleteGameFromFavorite(Game game){
+        currentPlayer.getFavoriteGame().remove(game);
     }
 
 }
