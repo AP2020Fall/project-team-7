@@ -21,22 +21,22 @@ public class ProfileManager extends Manager {
     }
 
     public void changePassword(String password){
-        currentPerson.setPassword(password);
+        getCurrentPlayer().setPassword(password);
     }
 
     public void changeEmail(String email){
-        currentPerson.setEmail(email);
+        getCurrentPlayer().setEmail(email);
     }
 
     public void changePhoneNum(String phoneNum){
-        currentPerson.setPhoneNumber(phoneNum);
+        getCurrentPlayer().setPhoneNumber(phoneNum);
     }
 
     public void changeFName(String fName){
-        currentPerson.setFirstName(fName);
+        getCurrentPlayer().setFirstName(fName);
     }
 
     public void changeLName(String lName){
-        currentPerson.setLastName(lName);
+        getCurrentPlayer().setLastName(lName);
     }
 }

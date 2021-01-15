@@ -74,12 +74,12 @@ public class Profile extends Menu {
             input = scanner.nextLine();
             ((ProfileManager)manager).changeFName(input);
             System.out.println("your first name changed to " + input);
-            showProfile();
+            viewPersonalInfo();
         } else if (input.matches("^3$")) {
             input = scanner.nextLine();
             ((ProfileManager)manager).changeLName(input);
             System.out.println("your last name changed to " + input);
-            showProfile();
+            viewPersonalInfo();
         } else if (input.matches("^4$")) {
             changeEmail();
 
@@ -87,7 +87,7 @@ public class Profile extends Menu {
             changePhoneNum();
 
         } else if (input.matches("^6$")) {
-            showProfile();
+            viewPersonalInfo();
 
         } else {
             System.err.println("invalid command!");
@@ -107,7 +107,7 @@ public class Profile extends Menu {
             currentPassword = scanner.nextLine();
             ((ProfileManager)manager).changePassword(currentPassword);
             System.out.println("your password changed successfully.");
-            showProfile();
+            viewPersonalInfo();
         } else {
             System.err.println("wrong password!");
             changePassword();
@@ -123,7 +123,7 @@ public class Profile extends Menu {
         if (manager.checkEmail(email)){
             ((ProfileManager)manager).changeEmail(email);
             System.out.println("your email changed to " + email);
-            showProfile();
+            viewPersonalInfo();
         } else {
             System.err.println("invalid input!");
             changeEmail();
@@ -139,7 +139,7 @@ public class Profile extends Menu {
         if (manager.checkPhoneNumber(phoneNum)){
             ((ProfileManager)manager).changePhoneNum(phoneNum);
             System.out.println("changed phone number to " + phoneNum);
-            showProfile();
+            viewPersonalInfo();
         } else {
             System.err.println("invalid input!");
             changePhoneNum();

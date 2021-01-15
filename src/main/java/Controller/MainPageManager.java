@@ -17,7 +17,7 @@ public class MainPageManager extends Manager {
     }
 
     public ArrayList<Game> showFavoriteGame() {
-        return currentPlayer.getFavoriteGame();
+        return getCurrentPlayer().getFavoriteGame();
     }
 
     public ArrayList<String> showBotMessage() {
@@ -38,7 +38,6 @@ public class MainPageManager extends Manager {
         currentPlayer.getFavoriteGame().add(game);
     }
 
-    //this func must send request
     public void addFriend(String username) {
         for (Player player : currentPlayer.getFriendList()) {
             if (player.getUsername().equals(username)) {
@@ -68,7 +67,7 @@ public class MainPageManager extends Manager {
 
     public void showRequests() {
         for (int i = 0; i < currentPlayer.getRequests().size(); i++) {
-            System.out.println((i + 1)+ ". " + currentPlayer.getRequests().get(i) + " wants to be your friend!");
+            System.out.println((i + 1) + ". " + currentPlayer.getRequests().get(i) + " wants to be your friend!");
         }
     }
 
@@ -99,23 +98,28 @@ public class MainPageManager extends Manager {
         return currentPlayer.getAcceptAndReject();
     }
 
-    public String showProfileToOtherUsers(String username){
+    public void showProfileToOtherUsers(String username) {
+        boolean found = false;
+        Player thisPlayer = null;
         for (Player player : currentPlayer.getFriendList()) {
-            if (player.getUsername().equals(username)){
-                return "user: " + player.getUsername() + "\n" +
-                        "first name: " + player.getFirstName() + ", last name: " + player.getLastName() + "\n" +
-                        "friends: " + player.getFriendList().size() + "\n" +
-                        "wins: " + player.getWins() + "\n" +
-                        "plato age: " + player.getPlatoAge();
+            if (player.getUsername().equals(username)) {
+                thisPlayer = player;
+                found = true;
             }
         }
-        return "not found!";
+        if (found) {
+            System.out.println("user: " + thisPlayer.getUsername() + "\n" +
+                    "first name: " + thisPlayer.getFirstName() + ", last name: " + thisPlayer.getLastName() + "\n" +
+                    "friends: " + thisPlayer.getFriendList().size() + "\n" +
+                    "wins: " + thisPlayer.getWins() + "\n" +
+                    "plato age: " + thisPlayer.getPlatoAge());
+        }
     }
 
-    public void reportUser(String username){
+    public void reportUser(String username) {
         for (Player player : players) {
-            if (player.getUsername().equals(username)){
-                player.setReports(player.getReports()+1);
+            if (player.getUsername().equals(username)) {
+                player.setReports(player.getReports() + 1);
             }
         }
     }

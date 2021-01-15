@@ -82,6 +82,6 @@ public class Manager {
     }
 
     public boolean isThisPasswordCorrect(String password){
-        return currentPerson.getPassword().equals(password);
+        return getCurrentPlayer().getPassword().equals(password);
     }
 }
