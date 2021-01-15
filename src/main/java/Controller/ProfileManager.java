@@ -25,4 +25,24 @@ public class ProfileManager extends Manager {
         }
         return canDelete;
     }
+
+    public void changePassword(String password){
+        currentPerson.setPassword(password);
+    }
+
+    public void changeEmail(String email){
+        currentPerson.setEmail(email);
+    }
+
+    public void changePhoneNum(String phoneNum){
+        currentPerson.setPhoneNumber(phoneNum);
+    }
+
+    public void changeFName(String fName){
+        currentPerson.setFirstName(fName);
+    }
+
+    public void changeLName(String lName){
+        currentPerson.setLastName(lName);
+    }
 }

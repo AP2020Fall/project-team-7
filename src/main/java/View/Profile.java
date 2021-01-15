@@ -68,26 +68,81 @@ public class Profile extends Menu {
 
         String input = scanner.nextLine();
         if (input.matches("^1$")) {
-
+            changePassword();
 
         } else if (input.matches("^2$")) {
-
-
+            input = scanner.nextLine();
+            ((ProfileManager)manager).changeFName(input);
+            System.out.println("your first name changed to " + input);
+            showProfile();
         } else if (input.matches("^3$")) {
-
-
+            input = scanner.nextLine();
+            ((ProfileManager)manager).changeLName(input);
+            System.out.println("your last name changed to " + input);
+            showProfile();
         } else if (input.matches("^4$")) {
-
+            changeEmail();
 
         } else if (input.matches("^5$")) {
-
+            changePhoneNum();
 
         } else if (input.matches("^6$")) {
-
+            showProfile();
 
         } else {
             System.err.println("invalid command!");
             editInfo();
+        }
+    }
+
+    private void changePassword() {
+        System.out.println("" +
+                "enter your current password:\n" +
+                "or enter 'back' to return");
+        String currentPassword = scanner.nextLine();
+        if (currentPassword.equalsIgnoreCase("back")){
+            editInfo();
+        }
+        if (manager.isThisPasswordCorrect(currentPassword)){
+            currentPassword = scanner.nextLine();
+            ((ProfileManager)manager).changePassword(currentPassword);
+            System.out.println("your password changed successfully.");
+            showProfile();
+        } else {
+            System.err.println("wrong password!");
+            changePassword();
+        }
+    }
+
+    private void changeEmail() {
+        System.out.println("enter your new email\n" + "or enter 'back' to return");
+        String email = scanner.nextLine();
+        if (email.equalsIgnoreCase("back")){
+            editInfo();
+        }
+        if (manager.checkEmail(email)){
+            ((ProfileManager)manager).changeEmail(email);
+            System.out.println("your email changed to " + email);
+            showProfile();
+        } else {
+            System.err.println("invalid input!");
+            changeEmail();
+        }
+    }
+
+    private void changePhoneNum() {
+        System.out.println("enter your new phone number\n" + "or enter 'back' to return");
+        String phoneNum = scanner.nextLine();
+        if (phoneNum.equalsIgnoreCase("back")){
+            editInfo();
+        }
+        if (manager.checkPhoneNumber(phoneNum)){
+            ((ProfileManager)manager).changePhoneNum(phoneNum);
+            System.out.println("changed phone number to " + phoneNum);
+            showProfile();
+        } else {
+            System.err.println("invalid input!");
+            changePhoneNum();
         }
     }
 

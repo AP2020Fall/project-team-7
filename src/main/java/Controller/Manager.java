@@ -72,4 +72,7 @@ public class Manager {
         return false;
     }
 
+    public boolean isThisPasswordCorrect(String password){
+        return currentPerson.getPassword().equals(password);
+    }
 }
