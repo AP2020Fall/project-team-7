@@ -22,20 +22,21 @@ public class Profile extends Menu {
                 "1. view personal info\n" +
                 "2. delete Account\n" +
                 "3. Main page");
-        while (true) {
-            String input = scanner.nextLine();
-            if (input.matches("^1$")) {
-                viewPersonalInfo();
 
-            } else if (input.matches("^2$")) {
-                deleteAccount();
+        String input = scanner.nextLine();
+        if (input.matches("^1$")) {
+            viewPersonalInfo();
 
-            } else if (input.matches("^3$")) {
-                returnMainPage();
-                break;
-            } else
-                System.err.println("invalid command!");
+        } else if (input.matches("^2$")) {
+            deleteAccount();
+
+        } else if (input.matches("^3$")) {
+            returnMainPage();
+        } else {
+            System.err.println("invalid command!");
+            showProfile();
         }
+
     }
 
     private void viewPersonalInfo() {
@@ -65,29 +66,29 @@ public class Profile extends Menu {
                 "5. change phone number\n" +
                 "6. back");
 
-            String input = scanner.nextLine();
-            if (input.matches("^1$")) {
+        String input = scanner.nextLine();
+        if (input.matches("^1$")) {
 
 
-            } else if (input.matches("^2$")) {
+        } else if (input.matches("^2$")) {
 
 
-            } else if (input.matches("^3$")) {
+        } else if (input.matches("^3$")) {
 
 
-            } else if (input.matches("^4$")) {
+        } else if (input.matches("^4$")) {
 
 
-            } else if (input.matches("^5$")) {
+        } else if (input.matches("^5$")) {
 
 
-            } else if (input.matches("^6$")) {
+        } else if (input.matches("^6$")) {
 
 
-            } else {
-                System.err.println("invalid command!");
-                editInfo();
-            }
+        } else {
+            System.err.println("invalid command!");
+            editInfo();
+        }
     }
 
     private void deleteAccount() {
