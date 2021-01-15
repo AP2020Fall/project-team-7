@@ -38,14 +38,6 @@ public class RegisterManager extends Manager{
         return true;
     }
 
-    public boolean isThisUsernameExist(String username){
-        for (Person person : Person.getPeople()) {
-            if (person.getUsername().equals(username)){
-                return true;
-            }
-        }
-        return false;
-    }
 
     public boolean isThisAdmin(){
         if (Person.getPeople().isEmpty()){

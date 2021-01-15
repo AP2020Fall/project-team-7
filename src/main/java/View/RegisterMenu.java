@@ -19,7 +19,7 @@ public class RegisterMenu extends Menu {
         if (username.equalsIgnoreCase("back")) {
             returnAccountMenu();
         }
-        while (((RegisterManager) manager).isThisUsernameExist(username)) {
+        while (manager.isThisUsernameExist(username)) {
             System.err.println("this username is already taken!");
             System.out.println("username:");
             username = scanner.nextLine();

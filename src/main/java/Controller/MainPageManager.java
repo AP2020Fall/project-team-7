@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Game;
+import Model.Player;
 import View.MainPage;
 
 import java.util.ArrayList;
@@ -39,6 +40,15 @@ public class MainPageManager extends Manager {
 
     public void deleteGameFromFavorite(Game game) {
         currentPlayer.getFavoriteGame().remove(game);
+    }
+
+    public void addFriend(String username){
+        for (Player player : currentPlayer.getFriendList()) {
+            if (player.getUsername().equals(username)){
+                currentPlayer.getFriendList().add(player);
+                break;
+            }
+        }
     }
 
 }

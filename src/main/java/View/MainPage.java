@@ -54,8 +54,7 @@ public class MainPage extends Menu {
             showGames();
 
         } else if (input.matches("^8$")) {
-            System.out.println("add");
-            showMainPage();
+            addFriend();
 
         } else if (input.matches("^9$")) {
             goProfile();
@@ -137,4 +136,28 @@ public class MainPage extends Menu {
         showMainPage();
     }
 
+    private void addFriend(){
+        System.out.println("enter username\n" +
+                "or enter 'back' to return");
+        String input = scanner.nextLine();
+        if (input.equalsIgnoreCase("back")){
+            showMainPage();
+        } else {
+            if (manager.isThisUsernameExist(input) && !manager.getPerson().getUsername().equals(input)){
+                ((MainPageManager)manager).addFriend(input);
+            } else {
+                if (manager.getPerson().getUsername().equals(input)){
+                    System.err.println("you cannot add your self to your friend!");
+                    addFriend();
+                }
+                System.err.println("the user not found!");
+                addFriend();
+            }
+        }
+        System.out.println("enter 'back' to return");
+        while (!scanner.nextLine().equalsIgnoreCase("back")){
+            System.err.println("invalid command. enter back to return!");
+        }
+        showMainPage();
+    }
 }
