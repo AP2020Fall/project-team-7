@@ -11,7 +11,7 @@ public class Player extends Person {
     private ArrayList<Game> lastPlayed;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
-    private ArrayList<String> requests;
+    private ArrayList<Player> requests;
     private ArrayList<String> acceptAndReject;
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
@@ -83,11 +83,11 @@ public class Player extends Person {
         this.friendList = friendList;
     }
 
-    public ArrayList<String> getRequests() {
+    public ArrayList<Player> getRequests() {
         return requests;
     }
 
-    public void setRequests(ArrayList<String> requests) {
+    public void setRequests(ArrayList<Player> requests) {
         this.requests = requests;
     }
 

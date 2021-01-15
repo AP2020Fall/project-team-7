@@ -25,9 +25,7 @@ public class MainPageManager extends Manager {
     }
 
     public void viewLastPlayed() {
-        for (int i = getCurrentPlayer().getLastPlayed().size() - 1; i >= 0; i--) {
-            System.out.println(getCurrentPlayer().getLastPlayed().get(i).toString());
-        }
+            System.out.println(getCurrentPlayer().getLastPlayed());
     }
 
     public void setLastPlayed(Game game) {
@@ -50,7 +48,7 @@ public class MainPageManager extends Manager {
     public void sendRequest(String username) {
         for (Player player : getCurrentPlayer().getFriendList()) {
             if (player.getUsername().equals(username)) {
-                player.getRequests().add(getCurrentPlayer().getUsername());
+                player.getRequests().add(getCurrentPlayer());
                 break;
             }
         }

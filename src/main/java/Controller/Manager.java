@@ -53,6 +53,12 @@ public class Manager {
         return false;
     }
 
+    public boolean isThisCurrentPlayer(String username){
+        if (getCurrentPlayer().getUsername().equals(username))
+            return true;
+        return false;
+    }
+
     public boolean checkEmail(String email) {
         if (email.matches("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$")) {
             return true;

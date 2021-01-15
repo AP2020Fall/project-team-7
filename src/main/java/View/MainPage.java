@@ -149,19 +149,17 @@ public class MainPage extends Menu {
         if (input.equalsIgnoreCase("back")) {
             showMainPage();
         } else {
-            if (manager.isThisUsernameExist(input) && !manager.getPerson().getUsername().equals(input)) {
+            if (manager.isThisUsernameExist(input) && !manager.isThisCurrentPlayer(input)) {
                 ((MainPageManager) manager).sendRequest(input);
+                System.out.println("send request to " + input);
             } else {
-                if (manager.getPerson().getUsername().equals(input)) {
+                if (manager.isThisCurrentPlayer(input)) {
                     System.err.println("you cannot add yourself to your friend!");
                     requestToFriend();
                 }
                 System.err.println("the user not found!");
                 requestToFriend();
             }
-        }
-        while (!scanner.nextLine().equalsIgnoreCase("back")) {
-            System.err.println("invalid command. enter back to return!");
         }
         showMainPage();
     }
