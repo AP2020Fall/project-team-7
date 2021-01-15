@@ -9,10 +9,6 @@ public class ProfileManager extends Manager {
         menu = new Profile(this);
     }
 
-    public void   showPersonalInfo() {
-        System.out.println(currentPlayer.toString());
-    }
-
     public boolean canDeleteAccount(String username, String password) {
         boolean canDelete = false;
         for (Person person : Person.getPeople()) {
