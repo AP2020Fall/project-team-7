@@ -32,8 +32,7 @@ public class MainPage extends Menu {
                         "8 .show friends\n" +
                         "9 .show requests\n" +
                         "10. add friend\n" +
-                        "11. profile\n" +
-                        "12. logout"));
+                        "11. logout"));
 
         String input = scanner.nextLine();
         if (input.matches("^1$")) {
@@ -67,10 +66,7 @@ public class MainPage extends Menu {
         } else if (input.matches("^10$")) {
             requestToFriend();
 
-        } else if (input.matches("^11$")) {
-            goProfile();
-
-        } else if (input.matches("^12$")) {
+        }  else if (input.matches("^11$")) {
             logout();
         } else {
             System.err.println("invalid command");
@@ -81,7 +77,7 @@ public class MainPage extends Menu {
     private void showGames() {
         System.out.println("games\n:");
         for (int i = 0; i < Game.getGames().size(); i++) {
-            System.out.println(i + 1 + ". " + Game.getGames().get(i));
+            System.out.println(Game.getGames().get(i));
         }
         System.out.println(
                 (Game.getGames().size() + 1) + ". back\n" +
@@ -172,6 +168,7 @@ public class MainPage extends Menu {
     }
 
     private void showFriends() {
+        System.out.println("friends list:");
         ((MainPageManager) manager).showFriendList();
         System.out.println("" +
                 "1. profile [username]\n" +

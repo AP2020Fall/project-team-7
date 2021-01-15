@@ -12,7 +12,7 @@ public class LoginMenu extends Menu {
         showLoginMenu();
     }
 
-    private void showLoginMenu(){
+    private void showLoginMenu() {
         System.out.println("login");
         System.out.println("username:");
         String username = scanner.nextLine();
@@ -35,10 +35,10 @@ public class LoginMenu extends Menu {
             }
         }
         System.out.println("welcome " + username);
-        if (Person.getPeople().get(0).getPassword().equals(username)){
+        if (Person.getPeople().get(0).getUsername().equals(username)) {
             manager = new AdminPageManager();
-        }
-        manager = new MainPageManager();
+        } else
+            manager = new MainPageManager();
     }
 
 }

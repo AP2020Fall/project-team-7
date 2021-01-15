@@ -49,7 +49,7 @@ public class AdminPage extends Menu {
                 editEventDate();
                 break;
             } else if (input.matches("^7$")) {
-                System.out.println("all users:\n" + manager.getPlayers());
+                System.out.println("all users:\n" + manager.getPlayers().toString());//change
                 showAdminMenu();
                 break;
 

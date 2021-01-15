@@ -58,7 +58,7 @@ public class Profile extends Menu {
 
     private void editInfo() {
         System.out.println("" +
-                "edit info\n:" +
+                "edit info:\n" +
                 "1. change password\n" +
                 "2. change first name\n" +
                 "3. change last name\n" +
