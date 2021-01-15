@@ -4,6 +4,7 @@ import Controller.AdminPageManager;
 import Controller.MainPageManager;
 import Controller.Manager;
 import Controller.ProfileManager;
+import Model.Game;
 
 public class MainPage extends Menu {
     public MainPage(Manager manager) {
@@ -25,48 +26,67 @@ public class MainPage extends Menu {
                         "5. view last played\n" +
                         "6. view Admin's suggestion\n" +
                         "7. choose suggested game\n" +
-                        "8. add friend\n" +
-                        "9. logout"));
+                        "8. games\n" +
+                        "9. add friend\n" +
+                        "10. logout"));
 
-        while (true) {
-            String input = scanner.nextLine();
-            if (input.matches("^1$")) {
-                manager = new ProfileManager();
-            } else if (input.matches("^2$")) {
-                //nullPointerException
-                ((MainPageManager) manager).showPoints();
-                break;
-                //didn't check
-            } else if (input.matches("^3$")) {
-                System.out.println("your favorite game:\n" + ((MainPageManager) manager).showFavoriteGame());
-                break;
-            } else if (input.matches("^4$")) {
-                System.out.println("PM");
-                break;
-            } else if (input.matches("^5$")) {
-                System.out.println("VL");
-                break;
-            } else if (input.matches("^6$")) {
-                System.out.println("VA");
-                break;
-            } else if (input.matches("^7$")) {
-                System.out.println("CS");
-                break;
 
-            } else if (input.matches("^8$")) {
-                System.out.println("add");
-                break;
+        String input = scanner.nextLine();
+        if (input.matches("^1$")) {
+            manager = new ProfileManager();
+        } else if (input.matches("^2$")) {
+            //nullPointerException
+            ((MainPageManager) manager).showPoints();
 
-            } else if (input.matches("^9$")) {
-                System.out.println("logout");
-                manager.setPerson(null);
-                returnAccountMenu();
-                break;
+            //didn't check
+        } else if (input.matches("^3$")) {
+            System.out.println("your favorite game:\n" + ((MainPageManager) manager).showFavoriteGame());
 
-            } else {
-                System.err.println("invalid command");
-            }
+        } else if (input.matches("^4$")) {
+            System.out.println("bot message: " + ((MainPageManager) manager).showBotMessage());
+
+        } else if (input.matches("^5$")) {
+            System.out.println("last played: " + ((MainPageManager) manager).viewLastPlayed());
+
+        } else if (input.matches("^6$")) {
+            System.out.println("VA");
+
+        } else if (input.matches("^7$")) {
+            System.out.println("CS");
+
+        } else if (input.matches("^8$")) {
+            showGames();
+        } else if (input.matches("^9$")) {
+            System.out.println("add");
+
+        } else if (input.matches("^10$")) {
+            System.out.println("logout");
+            manager.setPerson(null);
+            returnAccountMenu();
+        } else {
+            System.err.println("invalid command");
+            showMainPage();
         }
+    }
+
+    private void showGames() {
+        System.out.println("games\n:");
+        for (int i = 0; i < Game.getGames().size(); i++) {
+            System.out.println(i + 1 + ". " + Game.getGames().get(i));
+        }
+        System.out.println(
+                (Game.getGames().size() + 1) + ". back\n" +
+                        (Game.getGames().size() + 2) + ". profile");
+        String input = scanner.nextLine();
+        if (Integer.parseInt(input) <= Game.getGames().size()) {
+            System.out.println("play " + Game.getGames().get(Integer.parseInt(input)));
+            ((MainPageManager)manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)));
+        } else if (Integer.parseInt(input) == Game.getGames().size() + 1) {
+            showMainPage();
+        } else if (Integer.parseInt(input) == Game.getGames().size() + 2) {
+            goProfile();
+        } else
+            showGames();
     }
 
 }

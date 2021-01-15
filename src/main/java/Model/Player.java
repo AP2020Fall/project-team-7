@@ -2,13 +2,12 @@ package Model;
 
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 
 public class Player extends Person {
     private int platoAge;
     private int score;
     private int cash;
+    private Game lastPlayed;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
     private ArrayList<Player> requests;
@@ -33,7 +32,7 @@ public class Player extends Person {
         platoAge = 0;
         score = 0;
         cash = 0;
-
+        lastPlayed = null;
     }
 
     public int getScore() {
@@ -123,6 +122,14 @@ public class Player extends Person {
 
     public int getPlatoAge() {
         return platoAge;
+    }
+
+    public Game getLastPlayed() {
+        return lastPlayed;
+    }
+
+    public void setLastPlayed(Game lastPlayed) {
+        this.lastPlayed = lastPlayed;
     }
 
     @Override
