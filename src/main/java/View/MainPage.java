@@ -45,7 +45,8 @@ public class MainPage extends Menu {
             System.out.println("bot message: " + ((MainPageManager) manager).showBotMessage());
 
         } else if (input.matches("^5$")) {
-            System.out.println("last played: " + ((MainPageManager) manager).viewLastPlayed().toString());
+            System.out.println("last played:");
+            ((MainPageManager) manager).viewLastPlayed();
 
         } else if (input.matches("^6$")) {
             System.out.println("VA");
@@ -85,8 +86,8 @@ public class MainPage extends Menu {
                 ((MainPageManager) manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)));
                 //felan back
                 showGames();
-            } else if (choose.matches("^2$")){
-                ((MainPageManager)manager).addFavoriteGame(Game.getGames().get(Integer.parseInt(input)));
+            } else if (choose.matches("^2$")) {
+                ((MainPageManager) manager).addFavoriteGame(Game.getGames().get(Integer.parseInt(input)));
                 System.out.println("add " + Game.getGames().get(Integer.parseInt(input)) + " to your favorite game");
             }
         } else if (Integer.parseInt(input) == Game.getGames().size() + 1) {
