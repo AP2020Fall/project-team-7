@@ -5,6 +5,7 @@ import Controller.MainPageManager;
 import Controller.Manager;
 import Controller.ProfileManager;
 import Model.Game;
+import sun.applet.Main;
 
 public class MainPage extends Menu {
     public MainPage(Manager manager) {
@@ -26,9 +27,11 @@ public class MainPage extends Menu {
                         "5. view last played\n" +
                         "6. view Admin's suggestion\n" +
                         "7. games\n" +
-                        "8. add friend\n" +
-                        "9. profile\n" +
-                        "10. logout"));
+                        "8 .show friends\n" +
+                        "9 .show requests\n" +
+                        "10. add friend\n" +
+                        "11. profile\n" +
+                        "12. logout"));
 
         String input = scanner.nextLine();
         if (input.matches("^1$")) {
@@ -54,12 +57,18 @@ public class MainPage extends Menu {
             showGames();
 
         } else if (input.matches("^8$")) {
-            addFriend();
+            showFriends();
 
         } else if (input.matches("^9$")) {
-            goProfile();
+            showRequests();
 
         } else if (input.matches("^10$")) {
+            addFriend();
+
+        } else if (input.matches("^11$")) {
+            goProfile();
+
+        } else if (input.matches("^12$")) {
             logout();
         } else {
             System.err.println("invalid command");
@@ -99,54 +108,54 @@ public class MainPage extends Menu {
         }
     }
 
-    private void showPoints(){
+    private void showPoints() {
         ((MainPageManager) manager).showPoints();
         System.out.println("enter 'back' to return");
-        while (!scanner.nextLine().equalsIgnoreCase("back")){
+        while (!scanner.nextLine().equalsIgnoreCase("back")) {
             System.err.println("invalid command. enter back to return!");
         }
         showMainPage();
     }
 
-    private void showFavoriteGame(){
+    private void showFavoriteGame() {
         System.out.println("your favorite game:\n" + ((MainPageManager) manager).showFavoriteGame());
         System.out.println("enter 'back' to return");
-        while (!scanner.nextLine().equalsIgnoreCase("back")){
+        while (!scanner.nextLine().equalsIgnoreCase("back")) {
             System.err.println("invalid command. enter back to return!");
         }
         showMainPage();
     }
 
-    private void showBotMessage(){
+    private void showBotMessage() {
         System.out.println("bot message: " + ((MainPageManager) manager).showBotMessage());
         System.out.println("enter 'back' to return");
-        while (!scanner.nextLine().equalsIgnoreCase("back")){
+        while (!scanner.nextLine().equalsIgnoreCase("back")) {
             System.err.println("invalid command. enter back to return!");
         }
         showMainPage();
     }
 
-    private void viewLastPlayed(){
+    private void viewLastPlayed() {
         System.out.println("last played:");
         ((MainPageManager) manager).viewLastPlayed();
         System.out.println("enter 'back' to return");
-        while (!scanner.nextLine().equalsIgnoreCase("back")){
+        while (!scanner.nextLine().equalsIgnoreCase("back")) {
             System.err.println("invalid command. enter back to return!");
         }
         showMainPage();
     }
 
-    private void addFriend(){
+    private void addFriend() {
         System.out.println("enter username\n" +
                 "or enter 'back' to return");
         String input = scanner.nextLine();
-        if (input.equalsIgnoreCase("back")){
+        if (input.equalsIgnoreCase("back")) {
             showMainPage();
         } else {
-            if (manager.isThisUsernameExist(input) && !manager.getPerson().getUsername().equals(input)){
-                ((MainPageManager)manager).addFriend(input);
+            if (manager.isThisUsernameExist(input) && !manager.getPerson().getUsername().equals(input)) {
+                ((MainPageManager) manager).addFriend(input);
             } else {
-                if (manager.getPerson().getUsername().equals(input)){
+                if (manager.getPerson().getUsername().equals(input)) {
                     System.err.println("you cannot add your self to your friend!");
                     addFriend();
                 }
@@ -154,8 +163,25 @@ public class MainPage extends Menu {
                 addFriend();
             }
         }
+        while (!scanner.nextLine().equalsIgnoreCase("back")) {
+            System.err.println("invalid command. enter back to return!");
+        }
+        showMainPage();
+    }
+
+    private void showFriends(){
+        ((MainPageManager)manager).showFriendList();
         System.out.println("enter 'back' to return");
-        while (!scanner.nextLine().equalsIgnoreCase("back")){
+        while (!scanner.nextLine().equalsIgnoreCase("back")) {
+            System.err.println("invalid command. enter back to return!");
+        }
+        showMainPage();
+    }
+
+    private void showRequests(){
+
+        System.out.println("enter 'back' to return");
+        while (!scanner.nextLine().equalsIgnoreCase("back")) {
             System.err.println("invalid command. enter back to return!");
         }
         showMainPage();

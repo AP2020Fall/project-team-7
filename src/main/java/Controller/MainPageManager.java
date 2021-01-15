@@ -42,6 +42,7 @@ public class MainPageManager extends Manager {
         currentPlayer.getFavoriteGame().remove(game);
     }
 
+    //this func must send request
     public void addFriend(String username){
         for (Player player : currentPlayer.getFriendList()) {
             if (player.getUsername().equals(username)){
@@ -49,6 +50,10 @@ public class MainPageManager extends Manager {
                 break;
             }
         }
+    }
+
+    public void showFriendList(){
+        System.out.println(currentPlayer.getFriendList());
     }
 
 }
