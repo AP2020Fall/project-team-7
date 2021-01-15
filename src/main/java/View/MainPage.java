@@ -5,7 +5,6 @@ import Controller.MainPageManager;
 import Controller.Manager;
 import Controller.ProfileManager;
 import Model.Game;
-import sun.applet.Main;
 
 public class MainPage extends Menu {
     public MainPage(Manager manager) {
@@ -20,6 +19,7 @@ public class MainPage extends Menu {
         System.out.println("" +
                 (AdminPageManager.getComment() + "\n" +
                         "Main page:\n" +
+                        "wins: " + ((MainPageManager) manager).getWins() + "\n" +
                         "1. profile\n" +
                         "2. show points\n" +
                         "3. favorite games\n" +
@@ -63,7 +63,7 @@ public class MainPage extends Menu {
             showRequests();
 
         } else if (input.matches("^10$")) {
-            addFriend();
+            requestToFriend();
 
         } else if (input.matches("^11$")) {
             goProfile();
@@ -92,8 +92,8 @@ public class MainPage extends Menu {
             if (choose.matches("^1$")) {
                 System.out.println("playing " + Game.getGames().get(Integer.parseInt(input)));
                 ((MainPageManager) manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)));
-                //felan back
-                showGames();
+                if (input.equalsIgnoreCase("back"))
+                    showGames();
             } else if (choose.matches("^2$")) {
                 ((MainPageManager) manager).addFavoriteGame(Game.getGames().get(Integer.parseInt(input)));
                 System.out.println("add " + Game.getGames().get(Integer.parseInt(input)) + " to your favorite game");
@@ -145,9 +145,8 @@ public class MainPage extends Menu {
         showMainPage();
     }
 
-    private void addFriend() {
-        System.out.println("enter username\n" +
-                "or enter 'back' to return");
+    private void requestToFriend() {
+        System.out.println("enter username\nor enter 'back' to return");
         String input = scanner.nextLine();
         if (input.equalsIgnoreCase("back")) {
             showMainPage();
@@ -157,10 +156,10 @@ public class MainPage extends Menu {
             } else {
                 if (manager.getPerson().getUsername().equals(input)) {
                     System.err.println("you cannot add your self to your friend!");
-                    addFriend();
+                    requestToFriend();
                 }
                 System.err.println("the user not found!");
-                addFriend();
+                requestToFriend();
             }
         }
         while (!scanner.nextLine().equalsIgnoreCase("back")) {
@@ -169,8 +168,8 @@ public class MainPage extends Menu {
         showMainPage();
     }
 
-    private void showFriends(){
-        ((MainPageManager)manager).showFriendList();
+    private void showFriends() {
+        ((MainPageManager) manager).showFriendList();
         System.out.println("enter 'back' to return");
         while (!scanner.nextLine().equalsIgnoreCase("back")) {
             System.err.println("invalid command. enter back to return!");
@@ -178,7 +177,7 @@ public class MainPage extends Menu {
         showMainPage();
     }
 
-    private void showRequests(){
+    private void showRequests() {
 
         System.out.println("enter 'back' to return");
         while (!scanner.nextLine().equalsIgnoreCase("back")) {

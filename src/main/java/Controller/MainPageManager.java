@@ -38,10 +38,6 @@ public class MainPageManager extends Manager {
         currentPlayer.getFavoriteGame().add(game);
     }
 
-    public void deleteGameFromFavorite(Game game) {
-        currentPlayer.getFavoriteGame().remove(game);
-    }
-
     //this func must send request
     public void addFriend(String username){
         for (Player player : currentPlayer.getFriendList()) {
@@ -54,6 +50,10 @@ public class MainPageManager extends Manager {
 
     public void showFriendList(){
         System.out.println(currentPlayer.getFriendList());
+    }
+
+    public int getWins(){
+        return currentPlayer.getWins();
     }
 
 }

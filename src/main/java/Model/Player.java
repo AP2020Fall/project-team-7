@@ -6,11 +6,11 @@ import java.util.ArrayList;
 public class Player extends Person {
     private int platoAge;
     private int score;
-    private int cash;
+    private int wins;
     private ArrayList<Game> lastPlayed;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
-    private ArrayList<Player> requests;
+    private ArrayList<String> requests;
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
@@ -31,7 +31,7 @@ public class Player extends Person {
         eventsParticipant = new ArrayList<>();
         platoAge = 0;
         score = 0;
-        cash = 0;
+        wins = 0;
         lastPlayed = null;
     }
 
@@ -47,25 +47,12 @@ public class Player extends Person {
         eventsParticipant.add(event);
     }
 
-    private void leftTheEvent(Event event) {
-        eventsParticipant.remove(event);
+    public int getWins() {
+        return wins;
     }
 
-    private void runGame() {
-
-    }
-
-    private void addFriend(Player username) {
-        friendList.add(username);
-    }
-
-
-    public int getCash() {
-        return cash;
-    }
-
-    public void setCash(int cash) {
-        this.cash = cash;
+    public void setWins(int wins) {
+        this.wins = wins;
     }
 
     public ArrayList<GameLog> getGameLog() {
@@ -84,11 +71,11 @@ public class Player extends Person {
         this.friendList = friendList;
     }
 
-    public ArrayList<Player> getRequests() {
+    public ArrayList<String> getRequests() {
         return requests;
     }
 
-    public void setRequests(ArrayList<Player> requests) {
+    public void setRequests(ArrayList<String> requests) {
         this.requests = requests;
     }
 
@@ -100,7 +87,7 @@ public class Player extends Person {
         this.gamesHistory = gamesHistory;
     }
 
-    public ArrayList<Game > getFavoriteGame() {
+    public ArrayList<Game> getFavoriteGame() {
         return favoriteGame;
     }
 
@@ -116,12 +103,12 @@ public class Player extends Person {
         this.platoBotMessage = platoBotMessage;
     }
 
-    public void setPlatoAge(int platoAge) {
-        this.platoAge = platoAge;
-    }
-
     public int getPlatoAge() {
         return platoAge;
+    }
+
+    public void setPlatoAge(int platoAge) {
+        this.platoAge = platoAge;
     }
 
     public ArrayList<Game> getLastPlayed() {
@@ -141,7 +128,6 @@ public class Player extends Person {
                 "Email='" + Email + '\'' + "\n" +
                 "phoneNumber='" + phoneNumber + '\'';
     }
-
 
 
 }
