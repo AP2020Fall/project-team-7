@@ -34,28 +34,28 @@ public class MainPage extends Menu {
         if (input.matches("^1$")) {
             manager = new ProfileManager();
         } else if (input.matches("^2$")) {
-            //nullPointerException
-            ((MainPageManager) manager).showPoints();
+            showPoints();
 
             //didn't check
         } else if (input.matches("^3$")) {
-            System.out.println("your favorite game:\n" + ((MainPageManager) manager).showFavoriteGame());
+            showFavoriteGame();
 
         } else if (input.matches("^4$")) {
-            System.out.println("bot message: " + ((MainPageManager) manager).showBotMessage());
+            showBotMessage();
 
         } else if (input.matches("^5$")) {
-            System.out.println("last played:");
-            ((MainPageManager) manager).viewLastPlayed();
+            viewLastPlayed();
 
         } else if (input.matches("^6$")) {
             System.out.println("VA");
+            showMainPage();
 
         } else if (input.matches("^7$")) {
             showGames();
 
         } else if (input.matches("^8$")) {
             System.out.println("add");
+            showMainPage();
 
         } else if (input.matches("^9$")) {
             goProfile();
@@ -98,6 +98,43 @@ public class MainPage extends Menu {
             System.err.println("invalid command!");
             showGames();
         }
+    }
+
+    private void showPoints(){
+        ((MainPageManager) manager).showPoints();
+        System.out.println("enter 'back' to return");
+        while (!scanner.nextLine().equalsIgnoreCase("back")){
+            System.err.println("invalid command. enter back to return!");
+        }
+        showMainPage();
+    }
+
+    private void showFavoriteGame(){
+        System.out.println("your favorite game:\n" + ((MainPageManager) manager).showFavoriteGame());
+        System.out.println("enter 'back' to return");
+        while (!scanner.nextLine().equalsIgnoreCase("back")){
+            System.err.println("invalid command. enter back to return!");
+        }
+        showMainPage();
+    }
+
+    private void showBotMessage(){
+        System.out.println("bot message: " + ((MainPageManager) manager).showBotMessage());
+        System.out.println("enter 'back' to return");
+        while (!scanner.nextLine().equalsIgnoreCase("back")){
+            System.err.println("invalid command. enter back to return!");
+        }
+        showMainPage();
+    }
+
+    private void viewLastPlayed(){
+        System.out.println("last played:");
+        ((MainPageManager) manager).viewLastPlayed();
+        System.out.println("enter 'back' to return");
+        while (!scanner.nextLine().equalsIgnoreCase("back")){
+            System.err.println("invalid command. enter back to return!");
+        }
+        showMainPage();
     }
 
 }
