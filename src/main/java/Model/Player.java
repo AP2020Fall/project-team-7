@@ -11,6 +11,7 @@ public class Player extends Person {
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
     private ArrayList<String> requests;
+    private ArrayList<String> acceptAndReject;
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
@@ -29,6 +30,7 @@ public class Player extends Person {
         gamesHistory = new ArrayList<>();
         platoBotMessage = new ArrayList<>();
         eventsParticipant = new ArrayList<>();
+        acceptAndReject = new ArrayList<>();
         platoAge = 0;
         score = 0;
         wins = 0;
@@ -117,6 +119,14 @@ public class Player extends Person {
 
     public void setLastPlayed(ArrayList<Game> lastPlayed) {
         this.lastPlayed = lastPlayed;
+    }
+
+    public ArrayList<String> getAcceptAndReject() {
+        return acceptAndReject;
+    }
+
+    public void setAcceptAndReject(ArrayList<String> acceptAndReject) {
+        this.acceptAndReject = acceptAndReject;
     }
 
     @Override

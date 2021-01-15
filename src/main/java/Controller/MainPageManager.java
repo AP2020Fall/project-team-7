@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Game;
+import Model.Person;
 import Model.Player;
 import View.MainPage;
 
@@ -78,6 +79,23 @@ public class MainPageManager extends Manager {
 
     public int getWins() {
         return currentPlayer.getWins();
+    }
+
+    public void acceptAndReject(String username, boolean accept){
+        for (Player player : getPlayers()) {
+            if (player.getUsername().equals(username)){
+                if (accept){
+                    player.getAcceptAndReject().add(currentPlayer.getUsername() + " accepted your request!");
+                } else {
+                    player.getAcceptAndReject().add(currentPlayer.getUsername() + " put you away :(");
+                }
+                break;
+            }
+        }
+    }
+
+    public ArrayList<String> showRequestResult(){
+        return currentPlayer.getAcceptAndReject();
     }
 
 }

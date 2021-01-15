@@ -20,6 +20,8 @@ public class MainPage extends Menu {
                 (AdminPageManager.getComment() + "\n" +
                         "Main page:\n" +
                         "wins: " + ((MainPageManager) manager).getWins() + "\n" +
+                        "your requests result:\n" +
+                        ((MainPageManager) manager).showRequestResult() +
                         "1. profile\n" +
                         "2. show points\n" +
                         "3. favorite games\n" +
@@ -189,6 +191,7 @@ public class MainPage extends Menu {
         if (input.startsWith("accept")) {
             if (((MainPageManager) manager).isThisUserRequest(input.split("\\s+")[1])) {
                 ((MainPageManager) manager).addFriend(input.split("\\s+")[1]);
+                ((MainPageManager) manager).acceptAndReject(input.split("\\s+")[1], true);
                 System.out.println(input.split("\\s+")[1] + "added to your friends.");
             } else {
                 System.out.println("there is no player with this id requests to you :|");
@@ -196,7 +199,7 @@ public class MainPage extends Menu {
             showRequests();
         } else if (input.startsWith("reject")) {
             if (((MainPageManager) manager).isThisUserRequest(input.split("\\s+")[1])) {
-                ((MainPageManager) manager).addFriend(input.split("\\s+")[1]);
+                ((MainPageManager) manager).acceptAndReject(input.split("\\s+")[1], false);
                 System.out.println("Oh! you put away " + input.split("\\s+")[1]);
             } else {
                 System.out.println("there is no player with this id requests to you :|");
