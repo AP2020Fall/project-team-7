@@ -92,6 +92,7 @@ public class MainPage extends Menu {
             if (choose.matches("^1$")) {
                 System.out.println("playing " + Game.getGames().get(Integer.parseInt(input)));
                 ((MainPageManager) manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)));
+                System.out.println("enter back to return.");
                 if (input.equalsIgnoreCase("back"))
                     showGames();
             } else if (choose.matches("^2$")) {
@@ -152,10 +153,10 @@ public class MainPage extends Menu {
             showMainPage();
         } else {
             if (manager.isThisUsernameExist(input) && !manager.getPerson().getUsername().equals(input)) {
-                ((MainPageManager) manager).addFriend(input);
+                ((MainPageManager) manager).sendRequest(input);
             } else {
                 if (manager.getPerson().getUsername().equals(input)) {
-                    System.err.println("you cannot add your self to your friend!");
+                    System.err.println("you cannot add yourself to your friend!");
                     requestToFriend();
                 }
                 System.err.println("the user not found!");
@@ -178,11 +179,34 @@ public class MainPage extends Menu {
     }
 
     private void showRequests() {
-
+        System.out.println("your requests");
+        ((MainPageManager) manager).showRequests();
+        System.out.println("" +
+                "1. accept [username]\n" +
+                "2. reject [username]");
         System.out.println("enter 'back' to return");
-        while (!scanner.nextLine().equalsIgnoreCase("back")) {
-            System.err.println("invalid command. enter back to return!");
+        String input = scanner.nextLine();
+        if (input.startsWith("accept")) {
+            if (((MainPageManager) manager).isThisUserRequest(input.split("\\s+")[1])) {
+                ((MainPageManager) manager).addFriend(input.split("\\s+")[1]);
+                System.out.println(input.split("\\s+")[1] + "added to your friends.");
+            } else {
+                System.out.println("there is no player with this id requests to you :|");
+            }
+            showRequests();
+        } else if (input.startsWith("reject")) {
+            if (((MainPageManager) manager).isThisUserRequest(input.split("\\s+")[1])) {
+                ((MainPageManager) manager).addFriend(input.split("\\s+")[1]);
+                System.out.println("Oh! you put away " + input.split("\\s+")[1]);
+            } else {
+                System.out.println("there is no player with this id requests to you :|");
+            }
+            showRequests();
+        } else if (input.equalsIgnoreCase("back")) {
+            showMainPage();
+        } else {
+            System.err.println("invalid input!");
+            showRequests();
         }
-        showMainPage();
     }
 }

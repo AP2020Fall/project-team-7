@@ -39,20 +39,44 @@ public class MainPageManager extends Manager {
     }
 
     //this func must send request
-    public void addFriend(String username){
+    public void addFriend(String username) {
         for (Player player : currentPlayer.getFriendList()) {
-            if (player.getUsername().equals(username)){
+            if (player.getUsername().equals(username)) {
                 currentPlayer.getFriendList().add(player);
                 break;
             }
         }
     }
 
-    public void showFriendList(){
+    public void sendRequest(String username) {
+        for (Player player : currentPlayer.getFriendList()) {
+            if (player.getUsername().equals(username)) {
+                player.getRequests().add(currentPlayer.getUsername());
+                break;
+            }
+        }
+    }
+
+    public boolean isThisUserRequest(String username){
+        for (Player player : currentPlayer.getFriendList()) {
+            if (player.getUsername().equals(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void showRequests() {
+        for (int i = 0; i < currentPlayer.getRequests().size(); i++) {
+            System.out.println((i + 1) + currentPlayer.getRequests().get(i) + " wants to be your friend!");
+        }
+    }
+
+    public void showFriendList() {
         System.out.println(currentPlayer.getFriendList());
     }
 
-    public int getWins(){
+    public int getWins() {
         return currentPlayer.getWins();
     }
 
