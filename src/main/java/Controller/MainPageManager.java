@@ -13,7 +13,7 @@ public class MainPageManager extends Manager {
     }
 
     public void showPoints() {
-        System.out.println(currentPlayer.getScore());
+        System.out.println(getCurrentPlayer().getScore());
     }
 
     public ArrayList<Game> showFavoriteGame() {
@@ -21,43 +21,43 @@ public class MainPageManager extends Manager {
     }
 
     public ArrayList<String> showBotMessage() {
-        return currentPlayer.getPlatoBotMessage();
+        return getCurrentPlayer().getPlatoBotMessage();
     }
 
     public void viewLastPlayed() {
-        for (int i = currentPlayer.getLastPlayed().size() - 1; i >= 0; i--) {
-            System.out.println(currentPlayer.getLastPlayed().get(i).toString());
+        for (int i = getCurrentPlayer().getLastPlayed().size() - 1; i >= 0; i--) {
+            System.out.println(getCurrentPlayer().getLastPlayed().get(i).toString());
         }
     }
 
     public void setLastPlayed(Game game) {
-        currentPlayer.getLastPlayed().add(game);
+        getCurrentPlayer().getLastPlayed().add(game);
     }
 
     public void addFavoriteGame(Game game) {
-        currentPlayer.getFavoriteGame().add(game);
+        getCurrentPlayer().getFavoriteGame().add(game);
     }
 
     public void addFriend(String username) {
-        for (Player player : currentPlayer.getFriendList()) {
+        for (Player player : getCurrentPlayer().getFriendList()) {
             if (player.getUsername().equals(username)) {
-                currentPlayer.getFriendList().add(player);
+                getCurrentPlayer().getFriendList().add(player);
                 break;
             }
         }
     }
 
     public void sendRequest(String username) {
-        for (Player player : currentPlayer.getFriendList()) {
+        for (Player player : getCurrentPlayer().getFriendList()) {
             if (player.getUsername().equals(username)) {
-                player.getRequests().add(currentPlayer.getUsername());
+                player.getRequests().add(getCurrentPlayer().getUsername());
                 break;
             }
         }
     }
 
     public boolean isThisUserRequest(String username) {
-        for (Player player : currentPlayer.getFriendList()) {
+        for (Player player : getCurrentPlayer().getFriendList()) {
             if (player.getUsername().equals(username)) {
                 return true;
             }
@@ -66,14 +66,14 @@ public class MainPageManager extends Manager {
     }
 
     public void showRequests() {
-        for (int i = 0; i < currentPlayer.getRequests().size(); i++) {
-            System.out.println((i + 1) + ". " + currentPlayer.getRequests().get(i) + " wants to be your friend!");
+        for (int i = 0; i < getCurrentPlayer().getRequests().size(); i++) {
+            System.out.println((i + 1) + ". " + getCurrentPlayer().getRequests().get(i) + " wants to be your friend!");
         }
     }
 
     public void showFriendList() {
-        for (int i = 0; i < currentPlayer.getFriendList().size(); i++) {
-            System.out.println((i + 1) + ". " + currentPlayer.getFriendList().get(i));
+        for (int i = 0; i < getCurrentPlayer().getFriendList().size(); i++) {
+            System.out.println((i + 1) + ". " + getCurrentPlayer().getFriendList().get(i));
         }
     }
 
@@ -85,9 +85,9 @@ public class MainPageManager extends Manager {
         for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
                 if (accept) {
-                    player.getAcceptAndReject().add(currentPlayer.getUsername() + " accepted your request!");
+                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request!");
                 } else {
-                    player.getAcceptAndReject().add(currentPlayer.getUsername() + " put you away :(");
+                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " put you away :(");
                 }
                 break;
             }
@@ -95,13 +95,13 @@ public class MainPageManager extends Manager {
     }
 
     public ArrayList<String> showRequestResult() {
-        return currentPlayer.getAcceptAndReject();
+        return getCurrentPlayer().getAcceptAndReject();
     }
 
     public void showProfileToOtherUsers(String username) {
         boolean found = false;
         Player thisPlayer = null;
-        for (Player player : currentPlayer.getFriendList()) {
+        for (Player player : getCurrentPlayer().getFriendList()) {
             if (player.getUsername().equals(username)) {
                 thisPlayer = player;
                 found = true;
@@ -117,7 +117,7 @@ public class MainPageManager extends Manager {
     }
 
     public void reportUser(String username) {
-        for (Player player : players) {
+        for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
                 player.setReports(player.getReports() + 1);
             }

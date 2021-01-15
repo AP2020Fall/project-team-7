@@ -40,7 +40,6 @@ public class MainPage extends Menu {
         } else if (input.matches("^2$")) {
             showPoints();
 
-            //didn't check
         } else if (input.matches("^3$")) {
             showFavoriteGame();
 
