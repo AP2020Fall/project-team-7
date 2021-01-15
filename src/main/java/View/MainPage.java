@@ -21,7 +21,7 @@ public class MainPage extends Menu {
                         "Main page:\n" +
                         "wins: " + ((MainPageManager) manager).getWins() + "\n" +
                         "your requests result:\n" +
-                        ((MainPageManager) manager).showRequestResult() +
+                        ((MainPageManager) manager).showRequestResult() + "\n" +
                         "1. profile\n" +
                         "2. show points\n" +
                         "3. favorite games\n" +
@@ -173,11 +173,34 @@ public class MainPage extends Menu {
 
     private void showFriends() {
         ((MainPageManager) manager).showFriendList();
-        System.out.println("enter 'back' to return");
-        while (!scanner.nextLine().equalsIgnoreCase("back")) {
-            System.err.println("invalid command. enter back to return!");
+        System.out.println("" +
+                "1. profile [username]\n" +
+                "2. remove [username]\n" +
+                "3. search [username]\n" +
+                "4. back");
+        String input = scanner.nextLine();
+        if (input.startsWith("profile") || input.matches("^1$")){
+            System.out.println("enter username:");
+            input = scanner.nextLine();
+            showFriendProfile(input);
         }
         showMainPage();
+    }
+
+    private void showFriendProfile(String username){
+        ((MainPageManager)manager).showProfileToOtherUsers(username);
+        String input = scanner.nextLine();
+        System.out.println("1. report!");
+        System.out.println("2. back");
+        if (input.matches("^1$")){
+            ((MainPageManager)manager).reportUser(username);
+            System.out.println("thanks to report!");
+        } else if (input.matches("^2$")){
+            showFriends();
+        } else {
+            System.err.println("invalid input!");
+            showFriendProfile(username);
+        }
     }
 
     private void showRequests() {

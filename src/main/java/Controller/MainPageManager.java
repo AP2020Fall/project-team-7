@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.Game;
-import Model.Person;
 import Model.Player;
 import View.MainPage;
 
@@ -58,7 +57,7 @@ public class MainPageManager extends Manager {
         }
     }
 
-    public boolean isThisUserRequest(String username){
+    public boolean isThisUserRequest(String username) {
         for (Player player : currentPlayer.getFriendList()) {
             if (player.getUsername().equals(username)) {
                 return true;
@@ -69,22 +68,24 @@ public class MainPageManager extends Manager {
 
     public void showRequests() {
         for (int i = 0; i < currentPlayer.getRequests().size(); i++) {
-            System.out.println((i + 1) + currentPlayer.getRequests().get(i) + " wants to be your friend!");
+            System.out.println((i + 1)+ ". " + currentPlayer.getRequests().get(i) + " wants to be your friend!");
         }
     }
 
     public void showFriendList() {
-        System.out.println(currentPlayer.getFriendList());
+        for (int i = 0; i < currentPlayer.getFriendList().size(); i++) {
+            System.out.println((i + 1) + ". " + currentPlayer.getFriendList().get(i));
+        }
     }
 
     public int getWins() {
         return currentPlayer.getWins();
     }
 
-    public void acceptAndReject(String username, boolean accept){
+    public void acceptAndReject(String username, boolean accept) {
         for (Player player : getPlayers()) {
-            if (player.getUsername().equals(username)){
-                if (accept){
+            if (player.getUsername().equals(username)) {
+                if (accept) {
                     player.getAcceptAndReject().add(currentPlayer.getUsername() + " accepted your request!");
                 } else {
                     player.getAcceptAndReject().add(currentPlayer.getUsername() + " put you away :(");
@@ -94,8 +95,29 @@ public class MainPageManager extends Manager {
         }
     }
 
-    public ArrayList<String> showRequestResult(){
+    public ArrayList<String> showRequestResult() {
         return currentPlayer.getAcceptAndReject();
+    }
+
+    public String showProfileToOtherUsers(String username){
+        for (Player player : currentPlayer.getFriendList()) {
+            if (player.getUsername().equals(username)){
+                return "user: " + player.getUsername() + "\n" +
+                        "first name: " + player.getFirstName() + ", last name: " + player.getLastName() + "\n" +
+                        "friends: " + player.getFriendList().size() + "\n" +
+                        "wins: " + player.getWins() + "\n" +
+                        "plato age: " + player.getPlatoAge();
+            }
+        }
+        return "not found!";
+    }
+
+    public void reportUser(String username){
+        for (Player player : players) {
+            if (player.getUsername().equals(username)){
+                player.setReports(player.getReports()+1);
+            }
+        }
     }
 
 }

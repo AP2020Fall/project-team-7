@@ -7,6 +7,7 @@ public class Player extends Person {
     private int platoAge;
     private int score;
     private int wins;
+    private int reports;
     private ArrayList<Game> lastPlayed;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
@@ -35,6 +36,15 @@ public class Player extends Person {
         score = 0;
         wins = 0;
         lastPlayed = null;
+        reports = 0;
+    }
+
+    public int getReports() {
+        return reports;
+    }
+
+    public void setReports(int reports) {
+        this.reports = reports;
     }
 
     public int getScore() {
