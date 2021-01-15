@@ -32,7 +32,7 @@ public class MainPage extends Menu {
 
 
         String input = scanner.nextLine();
-        if (input.matches("^1$")) {
+        if (input.matches("^2$")) {
             manager = new ProfileManager();
         } else if (input.matches("^2$")) {
             //nullPointerException

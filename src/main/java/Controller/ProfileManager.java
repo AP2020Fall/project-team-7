@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.Person;
-import Model.Player;
 import View.Profile;
 
 public class ProfileManager extends Manager {
@@ -14,7 +13,6 @@ public class ProfileManager extends Manager {
         for (Person person : Person.getPeople()) {
             if (person.getUsername().equals(username) && person.getPassword().equals(password)) {
                 Person.getPeople().remove(person);
-                players.remove(person);
                 canDelete = true;
                 break;
             }
