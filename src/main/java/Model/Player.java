@@ -114,6 +114,16 @@ public class Player extends Person {
     }
 
     @Override
+    public ArrayList<Player> getRequests() {
+        return super.getRequests();
+    }
+
+    @Override
+    public void setRequests(ArrayList<Player> requests) {
+        super.setRequests(requests);
+    }
+
+    @Override
     public ArrayList<String> getAcceptAndReject() {
         return super.getAcceptAndReject();
     }
