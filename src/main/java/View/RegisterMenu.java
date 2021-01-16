@@ -12,7 +12,7 @@ public class RegisterMenu extends Menu {
         showRegisterMenu();
     }
 
-    private void showRegisterMenu(){
+    private void showRegisterMenu() {
         System.out.println("write back to return!");
         System.out.println("username:");
         String username = scanner.nextLine();

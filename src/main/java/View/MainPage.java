@@ -65,7 +65,7 @@ public class MainPage extends Menu {
         } else if (input.matches("^10$")) {
             requestToFriend();
 
-        }  else if (input.matches("^11$")) {
+        } else if (input.matches("^11$")) {
             logout();
         } else {
             System.err.println("invalid command");
@@ -173,7 +173,7 @@ public class MainPage extends Menu {
                 "3. search [username]\n" +
                 "4. back");
         String input = scanner.nextLine();
-        if (input.startsWith("profile") || input.matches("^1$")){
+        if (input.startsWith("profile") || input.matches("^1$")) {
             System.out.println("enter username:");
             input = scanner.nextLine();
             showFriendProfile(input);
@@ -181,15 +181,15 @@ public class MainPage extends Menu {
         showMainPage();
     }
 
-    private void showFriendProfile(String username){
-        ((MainPageManager)manager).showProfileToOtherUsers(username);
+    private void showFriendProfile(String username) {
+        ((MainPageManager) manager).showProfileToOtherUsers(username);
         String input = scanner.nextLine();
         System.out.println("1. report!");
         System.out.println("2. back");
-        if (input.matches("^1$")){
-            ((MainPageManager)manager).reportUser(username);
+        if (input.matches("^1$")) {
+            ((MainPageManager) manager).reportUser(username);
             System.out.println("thanks to report!");
-        } else if (input.matches("^2$")){
+        } else if (input.matches("^2$")) {
             showFriends();
         } else {
             System.err.println("invalid input!");

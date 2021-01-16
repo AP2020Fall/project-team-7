@@ -143,7 +143,7 @@ public class AdminPage extends Menu {
         showAdminMenu();
     }
 
-    private void putCommentInHome(){
+    private void putCommentInHome() {
         System.out.println("" +
                 "1. enter your command\n" +
                 "2. delete current comment\n" +
@@ -153,13 +153,13 @@ public class AdminPage extends Menu {
             comment = scanner.nextLine();
             AdminPageManager.comment = comment;
             showAdminMenu();
-        } else if (comment.matches("^2$")){
+        } else if (comment.matches("^2$")) {
             AdminPageManager.comment = "";
             showAdminMenu();
 
         } else if (comment.matches("^3$")) {
             showAdminMenu();
-        }else {
+        } else {
             System.err.println("invalid command!");
             putCommentInHome();
         }

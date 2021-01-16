@@ -1,6 +1,6 @@
 package Model;
 
-public class GameLog extends Player{
+public class GameLog extends Player {
     private int numberOfPlaying;
     private int numberOfWins;
     private String logId;

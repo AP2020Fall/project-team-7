@@ -1,19 +1,18 @@
 package Model;
 
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Person {
+    private static ArrayList<Person> people = new ArrayList<>();
     protected String firstName;
     protected String lastName;
     protected String username;
     protected String password;
     protected String Email;
     protected String phoneNumber;
-    protected HashMap<String , String> loginInfo;
-    private static ArrayList<Person> people = new ArrayList<>();
+    protected HashMap<String, String> loginInfo;
 
     public Person(String username, String password, String email, String fName, String lName, String phoneNum) {
         this.username = username;
@@ -22,12 +21,12 @@ public class Person {
         people.add(this);
     }
 
-    public static ArrayList<Person> getPeople() {
-        return people;
-    }
-
     public Person(String username) {
         this.username = username;
+    }
+
+    public static ArrayList<Person> getPeople() {
+        return people;
     }
 
     public String getFirstName() {
@@ -54,10 +53,6 @@ public class Person {
         this.username = username;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
         return Email;
     }
@@ -74,9 +69,12 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
-
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public HashMap<String, String> getLoginInfo() {

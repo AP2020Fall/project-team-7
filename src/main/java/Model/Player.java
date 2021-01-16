@@ -55,10 +55,6 @@ public class Player extends Person {
         this.score = score;
     }
 
-    private void participateInEvent(Event event) {
-        eventsParticipant.add(event);
-    }
-
     public int getWins() {
         return wins;
     }
@@ -69,10 +65,6 @@ public class Player extends Person {
 
     public ArrayList<GameLog> getGameLog() {
         return gameLog;
-    }
-
-    public void setGameLog(ArrayList<GameLog> gameLog) {
-        this.gameLog = gameLog;
     }
 
     public ArrayList<Player> getFriendList() {
@@ -135,7 +127,8 @@ public class Player extends Person {
         return acceptAndReject;
     }
 
-    public void setAcceptAndReject(ArrayList<String> acceptAndReject) {
+    public void
+    setAcceptAndReject(ArrayList<String> acceptAndReject) {
         this.acceptAndReject = acceptAndReject;
     }
 

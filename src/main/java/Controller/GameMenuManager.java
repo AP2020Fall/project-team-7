@@ -7,5 +7,4 @@ public class GameMenuManager extends Manager {
         menu = new GameMenu(this);
     }
 
-
 }

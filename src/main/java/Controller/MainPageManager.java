@@ -25,21 +25,24 @@ public class MainPageManager extends Manager {
     }
 
     public void viewLastPlayed() {
-            System.out.println(getCurrentPlayer().getLastPlayed());
+        System.out.println(getCurrentPlayer().getLastPlayed());
     }
 
     public void setLastPlayed(Game game) {
         getCurrentPlayer().getLastPlayed().add(game);
+        getCurrentPlayer().setLastPlayed(getCurrentPlayer().getLastPlayed());
     }
 
     public void addFavoriteGame(Game game) {
         getCurrentPlayer().getFavoriteGame().add(game);
+        getCurrentPlayer().setFavoriteGame(currentPlayer.getFavoriteGame());
     }
 
     public void addFriend(String username) {
         for (Player player : getCurrentPlayer().getFriendList()) {
             if (player.getUsername().equals(username)) {
                 getCurrentPlayer().getFriendList().add(player);
+                getCurrentPlayer().setFriendList(getCurrentPlayer().getFriendList());
                 break;
             }
         }
@@ -49,6 +52,7 @@ public class MainPageManager extends Manager {
         for (Player player : getCurrentPlayer().getFriendList()) {
             if (player.getUsername().equals(username)) {
                 player.getRequests().add(getCurrentPlayer());
+                player.setRequests(player.getRequests());
                 break;
             }
         }
@@ -87,6 +91,7 @@ public class MainPageManager extends Manager {
                 } else {
                     player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " put you away :(");
                 }
+                player.setAcceptAndReject(player.getAcceptAndReject());
                 break;
             }
         }

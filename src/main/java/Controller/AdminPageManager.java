@@ -7,12 +7,16 @@ import View.AdminPage;
 import java.util.Date;
 
 public class AdminPageManager extends Manager {
+    public static String comment = "";
     Game dotsAndBoxes = new Game("Dots And Boxes", 1);
     Game reversi = new Game("Reversi", 2);
-    public static String comment = "";
 
     public AdminPageManager() {
         menu = new AdminPage(this);
+    }
+
+    public static String getComment() {
+        return comment;
     }
 
     public void addEvent(String gameName, Date startDate, Date finishDate, int score) {
@@ -44,7 +48,7 @@ public class AdminPageManager extends Manager {
         }
     }
 
-    public void deleteGame(String gameName){
+    public void deleteGame(String gameName) {
         for (Game game : Game.getGames()) {
             if (game.getName().equalsIgnoreCase(gameName)) {
                 Game.games.remove(game);
@@ -62,10 +66,6 @@ public class AdminPageManager extends Manager {
             }
         }
         return find;
-    }
-
-    public static String getComment() {
-        return comment;
     }
 
 }

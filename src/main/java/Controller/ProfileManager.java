@@ -20,23 +20,23 @@ public class ProfileManager extends Manager {
         return canDelete;
     }
 
-    public void changePassword(String password){
+    public void changePassword(String password) {
         getCurrentPlayer().setPassword(password);
     }
 
-    public void changeEmail(String email){
+    public void changeEmail(String email) {
         getCurrentPlayer().setEmail(email);
     }
 
-    public void changePhoneNum(String phoneNum){
+    public void changePhoneNum(String phoneNum) {
         getCurrentPlayer().setPhoneNumber(phoneNum);
     }
 
-    public void changeFName(String fName){
+    public void changeFName(String fName) {
         getCurrentPlayer().setFirstName(fName);
     }
 
-    public void changeLName(String lName){
+    public void changeLName(String lName) {
         getCurrentPlayer().setLastName(lName);
     }
 }

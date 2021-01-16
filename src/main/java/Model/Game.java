@@ -3,14 +3,18 @@ package Model;
 import java.util.ArrayList;
 
 public class Game {
+    public static ArrayList<Game> games = new ArrayList<>();
     private String gameName;
     private int gameId;
-    public static ArrayList<Game> games = new ArrayList<>();
 
     public Game(String name, int gameId) {
         gameName = name;
         this.gameId = gameId;
         games.add(this);
+    }
+
+    public static ArrayList<Game> getGames() {
+        return games;
     }
 
     public String getName() {
@@ -29,12 +33,8 @@ public class Game {
         this.gameId = gameId;
     }
 
-    private void setScore(){
+    private void setScore() {
 
-    }
-
-    public static ArrayList<Game> getGames() {
-        return games;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.Person;
-import Model.Player;
 import View.LoginMenu;
 
 
@@ -12,7 +11,7 @@ public class LoginManager extends Manager{
 
     public boolean loginUser(String username, String password){
         for (Person person : Person.getPeople()) {
-            if (person.getUsername().equals(username) && person.getPassword().equals(password)){
+            if (person.getUsername().equals(username) && person.getPassword().equals(password)) {
                 return true;
             }
         }
