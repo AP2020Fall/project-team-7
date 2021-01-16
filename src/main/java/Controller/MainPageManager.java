@@ -86,7 +86,9 @@ public class MainPageManager extends Manager {
         for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
                 if (accept) {
-                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request!");
+                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request ;)");
+                    player.getFriendList().add(getCurrentPlayer());
+                    player.setFriendList(player.getFriendList());
                 } else {
                     player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " put you away :(");
                 }
