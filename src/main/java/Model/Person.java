@@ -99,6 +99,10 @@ public class Person {
         this.requests = requests;
     }
 
+    public void addRequest(String username){
+        this.requests.add(username);
+    }
+
     @Override
     public String toString() {
         return "Person{" +

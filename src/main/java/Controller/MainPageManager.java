@@ -49,8 +49,7 @@ public class MainPageManager extends Manager {
     public void sendRequest(String username) {
         for (Person person : Person.getPeople()) {
             if (person.getUsername().equals(username)) {
-                person.getRequests().add(getCurrentPlayer().getUsername());
-                person.setRequests(person.getRequests());
+                person.addRequest(getCurrentPlayer().getUsername());
                 break;
             }
         }
