@@ -43,6 +43,15 @@ public class MainPageManager extends Manager {
         currentPlayer.addFriend(player);
     }
 
+    public void removeFriend(String username){
+        for (Player player : currentPlayer.getFriendList()) {
+            if (player.getUsername().equals(username)){
+                currentPlayer.getFriendList().remove(player);
+                break;
+            }
+        }
+    }
+
     public void sendRequest(String username) {
         for (Person person : Person.getPeople()) {
             if (person.getUsername().equals(username)) {
@@ -85,7 +94,7 @@ public class MainPageManager extends Manager {
     }
 
     public ArrayList<String> showRequestResult() {
-        return getCurrentPlayer().getAcceptAndReject();
+        return currentPlayer.getAcceptAndReject();
     }
 
     public void showProfileToOtherUsers(String username) {

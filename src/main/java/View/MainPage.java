@@ -180,6 +180,12 @@ public class MainPage extends Menu {
             System.out.println("enter username:");
             input = scanner.nextLine();
             showFriendProfile(input);
+        } else if (input.matches("^2$") || input.startsWith("remove")){
+            System.out.println("enter username:");
+            input = scanner.nextLine();
+            ((MainPageManager)manager).removeFriend(input);
+            System.out.println("you put " + input + "away :(. " + input + " removed from your friendList!");
+            showFriends();
         }
         showMainPage();
     }
@@ -193,7 +199,6 @@ public class MainPage extends Menu {
             ((MainPageManager) manager).reportUser(username);
             System.out.println("thanks to report!");
         } else if (input.matches("^2$")) {
-            System.out.println("removed '" + username + "' from your friend list.");
             showFriends();
         } else {
             System.err.println("invalid input!");

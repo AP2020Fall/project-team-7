@@ -105,6 +105,7 @@ public class Person {
     public void removeRequest(String username){
         this.requests.remove(username);
     }
+
     @Override
     public String toString() {
         return "Person{" +
