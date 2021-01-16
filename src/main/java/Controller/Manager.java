@@ -23,8 +23,8 @@ public class Manager {
     @Test
     public void testCurrentPlayer(){
         Player currentPlayer = new Player("abc", "12345", "salam@yahoo.com", "a", "bc", "09131238787");
-        Player player1 = new Player("sdf", "acx", "sdf@kfe.cje", "sd", "ds", "09831243212");
-        Assert.assertNotEquals(player1, currentPlayer);
+        setCurrentPlayer(currentPlayer);
+        Assert.assertEquals(getCurrentPlayer(), currentPlayer);
     }
 
     public void setCurrentPlayer(Player current) {
