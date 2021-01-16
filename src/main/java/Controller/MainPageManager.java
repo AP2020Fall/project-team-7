@@ -79,7 +79,7 @@ public class MainPageManager extends Manager {
     }
 
     public int getWins() {
-        return currentPlayer.getWins();
+        return getCurrentPlayer().getWins();
     }
 
     public void acceptAndReject(String username, boolean accept) {

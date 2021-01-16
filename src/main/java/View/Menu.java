@@ -30,6 +30,7 @@ public class Menu {
     protected void logout() {
         System.out.println("logout");
         manager.setPerson(null);
+        manager.setCurrentPlayer(null);
         returnAccountMenu();
     }
 

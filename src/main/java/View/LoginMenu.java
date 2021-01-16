@@ -4,6 +4,7 @@ import Controller.AdminPageManager;
 import Controller.LoginManager;
 import Controller.MainPageManager;
 import Controller.Manager;
+import Model.Admin;
 import Model.Person;
 
 public class LoginMenu extends Menu {
@@ -21,7 +22,7 @@ public class LoginMenu extends Menu {
         }
         System.out.println("password:");
         String password = scanner.nextLine();
-        while (!((LoginManager) manager).loginUser(username, password)) {
+        while (!((LoginManager) manager).canLoginUser(username, password)) {
             System.err.println("username or password is wrong! try again or back to register!");
             System.out.println("username:");
             username = scanner.nextLine();
@@ -35,10 +36,8 @@ public class LoginMenu extends Menu {
             }
         }
         System.out.println("welcome " + username);
-        if (Person.getPeople().get(0).getUsername().equals(username)) {
-            manager = new AdminPageManager();
-        } else
-            manager = new MainPageManager();
+        ((LoginManager) manager).loginUser(username);
     }
+    //set user
 
 }

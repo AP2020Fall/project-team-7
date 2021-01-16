@@ -18,7 +18,7 @@ public class Manager {
         return currentPlayer;
     }
 
-    public static void setCurrentPlayer(Player current) {
+    public void setCurrentPlayer(Player current) {
         currentPlayer = current;
     }
 
