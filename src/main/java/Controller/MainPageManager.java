@@ -39,19 +39,16 @@ public class MainPageManager extends Manager {
         getCurrentPlayer().setFavoriteGame(getCurrentPlayer().getFavoriteGame());
     }
 
-    public void addFriend(String username) {
-        for (Player player : getCurrentPlayer().getFriendList()) {
-            if (player.getUsername().equals(username)) {
-                getCurrentPlayer().getFriendList().add(player);
-                getCurrentPlayer().setFriendList(getCurrentPlayer().getFriendList());
-                break;
-            }
-        }
+    public void addFriend(Player player, Player currentPlayer) {
+        player.getFriendList().add(currentPlayer);
+        player.setFriendList(player.getFriendList());
+        getCurrentPlayer().getFriendList().add(player);
+        getCurrentPlayer().setFriendList(getCurrentPlayer().getFriendList());
     }
 
     public void sendRequest(String username) {
         for (Person person : Person.getPeople()) {
-            if (person.getUsername().equals(username)){
+            if (person.getUsername().equals(username)) {
                 person.getRequests().add(getCurrentPlayer().getUsername());
                 person.setRequests(person.getRequests());
                 break;
@@ -86,14 +83,14 @@ public class MainPageManager extends Manager {
         for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
                 if (accept) {
-                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request ;)");
-                    player.getFriendList().add(getCurrentPlayer());
-                    player.setFriendList(player.getFriendList());
-                    getCurrentPlayer().getRequests().remove(player.getUsername());
+                    addFriend(player, getCurrentPlayer());
+                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request;) ");
+
                 } else {
-                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " put you away :(");
+                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " put you away:( ");
                 }
-                player.setAcceptAndReject(player.getAcceptAndReject());
+                getCurrentPlayer().getRequests().remove(username);//...
+                getCurrentPlayer().setAcceptAndReject(player.getAcceptAndReject());
                 break;
             }
         }

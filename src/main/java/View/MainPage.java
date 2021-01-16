@@ -202,7 +202,7 @@ public class MainPage extends Menu {
     }
 
     private void showRequests() {
-        System.out.println("your requests: " + ((MainPageManager) manager).showRequests());
+        System.out.println("your requests: " + ((MainPageManager) manager).showRequests() + " wants to be your friend!");
 
         System.out.println("" +
                 "1. accept [username]\n" +
@@ -211,7 +211,6 @@ public class MainPage extends Menu {
         String input = scanner.nextLine();
         if (input.startsWith("accept")) {
             if (((MainPageManager) manager).isThisUserRequest(input.split("\\s+")[1])) {
-                ((MainPageManager) manager).addFriend(input.split("\\s+")[1]);
                 ((MainPageManager) manager).acceptAndReject(input.split("\\s+")[1], true);
                 System.out.println(input.split("\\s+")[1] + " added to your friends.");
             } else {
