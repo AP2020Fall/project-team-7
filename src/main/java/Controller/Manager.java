@@ -20,21 +20,30 @@ public class Manager {
         return currentPlayer;
     }
 
+    public void setCurrentPlayer(Player current) {
+        currentPlayer = current;
+    }
+
     @Test
-    public void testCurrentPlayer(){
+    public void testCurrentPlayer() {
         Player currentPlayer = new Player("abc", "12345", "salam@yahoo.com", "a", "bc", "09131238787");
         setCurrentPlayer(currentPlayer);
         Assert.assertEquals(getCurrentPlayer(), currentPlayer);
-    }
-
-    public void setCurrentPlayer(Player current) {
-        currentPlayer = current;
     }
 
     public ArrayList<Player> getPlayers() {
         return players;
     }
 
+    @Test
+    public void getPlayerTest() {
+        ArrayList<Player> excepted = new ArrayList<>();
+        Player player = new Player("a", "a", "ab@AB.com", "ab", "ba", "09123211514");
+        excepted.add(player);
+        Assert.assertNotEquals(getPlayers(), excepted);
+        players.add(player);
+        Assert.assertEquals(excepted, getPlayers());
+    }
 
     public Person getPerson() {
         return currentPerson;
@@ -42,6 +51,17 @@ public class Manager {
 
     public void setPerson(Person person) {
         this.currentPerson = person;
+    }
+
+    @Test
+    public void getPersonTest() {
+        Person person = new Person("a", "a", "ab@AB.com", "ab", "ba", "09123211514");
+        setPerson(person);
+        Person actual = getPerson();
+        Assert.assertEquals(actual, person);
+        person = new Person("abi", "a", "ab@AB.com", "ab", "ba", "09123211514");
+
+        Assert.assertNotEquals(person, getPerson());
     }
 
     public Admin getAdmin() {
@@ -70,7 +90,7 @@ public class Manager {
     }
 
     @Test
-    public void checkEmailTest(){
+    public void checkEmailTest() {
         boolean actual = checkEmail("sara@gmail.com");
         Assert.assertEquals(true, actual);
         actual = checkEmail("dkhd");
@@ -83,14 +103,22 @@ public class Manager {
     }
 
     @Test
-    public void checkPhoneNumTest(){
+    public void checkPhoneNumTest() {
         boolean actual = checkPhoneNumber("09123214565");
-        Assert.assertEquals(true, actual);
+        Assert.assertTrue(actual);
         actual = checkPhoneNumber("030874");
-        Assert.assertEquals(false, actual);
+        Assert.assertFalse(actual);
+        Assert.assertFalse(checkPhoneNumber("ashljdh"));
     }
+
     public boolean checkDate(String date) {
         return date.matches("^dddd-dd-dd$");
+    }
+
+    @Test
+    public void dateTest() {
+        Assert.assertFalse(checkDate("2020-10-11"));
+        Assert.assertFalse(checkPassword("10/10/01"));
     }
 
     public boolean checkPassword(String password) {
@@ -100,7 +128,24 @@ public class Manager {
         return false;
     }
 
+    @Test
+    public void passwordTest() {
+        Assert.assertTrue(checkPassword("AB123Salam"));
+        Assert.assertFalse(checkPassword("1234"));
+        Assert.assertFalse(checkDate("ejhe"));
+    }
+
     public boolean isThisPasswordCorrect(String password) {
         return getCurrentPlayer().getPassword().equals(password);
     }
+
+    @Test
+    public void correctPassTest(){
+        String pass = "ABS1234abs";
+        Player player = new Player("a", "ABS1234abs", "ab@AB.com", "ab", "ba", "09123211514");
+        setCurrentPlayer(player);
+        Assert.assertTrue(isThisPasswordCorrect(pass));
+        Assert.assertFalse(isThisPasswordCorrect("chemidoonam"));
+    }
+
 }

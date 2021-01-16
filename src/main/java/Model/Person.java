@@ -2,7 +2,6 @@ package Model;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Person {
     private static ArrayList<Person> people = new ArrayList<>();
@@ -16,9 +15,9 @@ public class Person {
     protected ArrayList<String> requests;
 
     public Person(String username, String password, String email, String fName, String lName, String phoneNum) {
-        firstName = fName;
-        lastName = lName;
-        phoneNumber = phoneNum;
+        this.firstName = fName;
+        this.lastName = lName;
+        this.phoneNumber = phoneNum;
         this.username = username;
         this.password = password;
         this.Email = email;

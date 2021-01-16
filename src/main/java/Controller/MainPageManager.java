@@ -66,7 +66,7 @@ public class MainPageManager extends Manager {
     }
 
     public ArrayList<Player> showFriendList() {
-        return getCurrentPlayer().getFriendList();
+        return currentPlayer.getFriendList();
     }
 
     public int getWins() {
@@ -76,7 +76,7 @@ public class MainPageManager extends Manager {
     public void acceptAndReject(String username, boolean accept) {
         for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
-                player.requestResult(getCurrentPlayer(), accept);
+                player.requestResult(currentPlayer, accept);
                 break;
             }
         }

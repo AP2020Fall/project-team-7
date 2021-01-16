@@ -122,9 +122,9 @@ public class Player extends Person {
 
     public void requestResult(Player player, boolean accept) {
         if (accept)
-            player.acceptAndReject.add(this + " accept your request :) ");
+            player.acceptAndReject.add(this.getUsername() + " accept your request :) ");
         else
-            player.acceptAndReject.add(this + " puts you away :( ");
+            player.acceptAndReject.add(this.getUsername() + " puts you away :( ");
     }
 
     @Override
