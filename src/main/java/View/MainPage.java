@@ -29,8 +29,8 @@ public class MainPage extends Menu {
                         "5. view last played\n" +
                         "6. view Admin's suggestion\n" +
                         "7. games\n" +
-                        "8 .show friends\n" +
-                        "9 .show requests\n" +
+                        "8. show friends\n" +
+                        "9. show requests\n" +
                         "10. add friend\n" +
                         "11. logout"));
 
@@ -50,7 +50,7 @@ public class MainPage extends Menu {
             viewLastPlayed();
 
         } else if (input.matches("^6$")) {
-            System.out.println("VA");
+            System.out.println("admin suggestion");
             showMainPage();
 
         } else if (input.matches("^7$")) {
@@ -68,7 +68,7 @@ public class MainPage extends Menu {
         } else if (input.matches("^11$")) {
             logout();
         } else {
-            System.err.println("invalid command");
+            System.err.println("invalid input!");
             showMainPage();
         }
     }
@@ -198,8 +198,8 @@ public class MainPage extends Menu {
     }
 
     private void showRequests() {
-        System.out.println("your requests");
-        ((MainPageManager) manager).showRequests();
+        System.out.println("your requests: " + ((MainPageManager) manager).showRequests());
+
         System.out.println("" +
                 "1. accept [username]\n" +
                 "2. reject [username]");

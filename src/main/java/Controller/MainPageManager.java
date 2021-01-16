@@ -67,10 +67,8 @@ public class MainPageManager extends Manager {
         return false;
     }
 
-    public void showRequests() {
-        for (int i = 0; i < getCurrentPlayer().getRequests().size(); i++) {
-            System.out.println((i + 1) + ". " + getCurrentPlayer().getRequests().get(i) + " wants to be your friend!");
-        }
+    public ArrayList<Player> showRequests() {
+        return getCurrentPlayer().getRequests();
     }
 
     public void showFriendList() {
