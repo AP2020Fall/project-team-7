@@ -27,11 +27,7 @@ public class RegisterManager extends Manager {
             return player;
         }
     }
-    @Test
-    public void testCreateNewAccount(){
-        Person expected = new Person("ZsaraM", "1234", "sa@ks.com", "sara", "zahedi", "09121231212");
-        Assert.assertEquals(expected, createNewAccount("ZsaraM", "1234", "sa@ks.com", "sara", "zahedi", "09121231212"));
-    }
+
 
     public boolean isThisAdmin() {
         return Person.getPeople().isEmpty();

@@ -4,6 +4,8 @@ import Model.Admin;
 import Model.Person;
 import Model.Player;
 import View.Menu;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
@@ -18,6 +20,13 @@ public class Manager {
         return currentPlayer;
     }
 
+    @Test
+    public void testCurrentPlayer(){
+        Player currentPlayer = new Player("abc", "12345", "salam@yahoo.com", "a", "bc", "09131238787");
+        Player player1 = new Player("sdf", "acx", "sdf@kfe.cje", "sd", "ds", "09831243212");
+        Assert.assertNotEquals(player1, currentPlayer);
+    }
+
     public void setCurrentPlayer(Player current) {
         currentPlayer = current;
     }
@@ -25,6 +34,7 @@ public class Manager {
     public ArrayList<Player> getPlayers() {
         return players;
     }
+
 
     public Person getPerson() {
         return currentPerson;
@@ -59,10 +69,23 @@ public class Manager {
         return email.matches("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$");
     }
 
+    @Test
+    public void checkEmailTest(){
+        boolean actual = checkEmail("sara@gmail.com");
+        Assert.assertEquals(true, actual);
+    }
+
     public boolean checkPhoneNumber(String phoneNumber) {
         return phoneNumber.matches("09\\d{9}");
     }
 
+    @Test
+    public void checkPhoneNumTest(){
+        boolean actual = checkPhoneNumber("09123214565");
+        Assert.assertEquals(true, actual);
+        actual = checkPhoneNumber("030874");
+        Assert.assertEquals(false, actual);
+    }
     public boolean checkDate(String date) {
         return date.matches("^dddd-dd-dd$");
     }
