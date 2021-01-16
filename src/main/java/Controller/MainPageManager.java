@@ -60,8 +60,8 @@ public class MainPageManager extends Manager {
     }
 
     public boolean isThisUserRequest(String username) {
-        for (Player player : getCurrentPlayer().getFriendList()) {
-            if (player.getUsername().equals(username)) {
+        for (String req : getCurrentPlayer().getRequests()) {
+            if (req.equals(username)) {
                 return true;
             }
         }
@@ -89,6 +89,7 @@ public class MainPageManager extends Manager {
                     player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request ;)");
                     player.getFriendList().add(getCurrentPlayer());
                     player.setFriendList(player.getFriendList());
+                    getCurrentPlayer().getRequests().remove(player.getUsername());
                 } else {
                     player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " put you away :(");
                 }

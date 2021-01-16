@@ -213,7 +213,7 @@ public class MainPage extends Menu {
             if (((MainPageManager) manager).isThisUserRequest(input.split("\\s+")[1])) {
                 ((MainPageManager) manager).addFriend(input.split("\\s+")[1]);
                 ((MainPageManager) manager).acceptAndReject(input.split("\\s+")[1], true);
-                System.out.println(input.split("\\s+")[1] + "added to your friends.");
+                System.out.println(input.split("\\s+")[1] + " added to your friends.");
             } else {
                 System.out.println("there is no player with this id requests to you :|");
             }
