@@ -85,6 +85,16 @@ public class Manager {
         return getCurrentPlayer().getUsername().equals(username);
     }
 
+    @Test
+    public void isThisCurrentPlayerTest() {
+        Person person = new Person("salam", "simsim", "ab@AB.com", "ab", "ba", "09123211514");
+        setPerson(person);
+        String username = "salam";
+        Assert.assertEquals(person.getUsername(), username);
+        username = "mah";
+        Assert.assertNotEquals(person.getUsername(), username);
+    }
+
     public boolean checkEmail(String email) {
         return email.matches("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$");
     }

@@ -24,10 +24,10 @@ public class RegisterManager extends Manager {
             Player player = new Player(username, password, email, fName, lName, phoneNum);
             setPerson(player);
             setCurrentPlayer(player);
+            players.add(player);
             return player;
         }
     }
-
 
     public boolean isThisAdmin() {
         return Person.getPeople().isEmpty();
