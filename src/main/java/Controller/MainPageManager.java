@@ -39,11 +39,8 @@ public class MainPageManager extends Manager {
         getCurrentPlayer().setFavoriteGame(getCurrentPlayer().getFavoriteGame());
     }
 
-    public void addFriend(Player player, Player currentPlayer) {
-        player.getFriendList().add(currentPlayer);
-        player.setFriendList(player.getFriendList());
-        getCurrentPlayer().getFriendList().add(player);
-        getCurrentPlayer().setFriendList(getCurrentPlayer().getFriendList());
+    public void addFriend(Player player) {
+        currentPlayer.addFriend(player);
     }
 
     public void sendRequest(String username) {
@@ -80,7 +77,7 @@ public class MainPageManager extends Manager {
         for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
                 if (accept) {
-                    addFriend(player, getCurrentPlayer());
+                    addFriend(player);
                     player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request;) ");
 
                 } else {

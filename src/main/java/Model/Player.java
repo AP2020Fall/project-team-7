@@ -110,6 +110,10 @@ public class Player extends Person {
         return lastPlayed;
     }
 
+    public void addFriend(Player player){
+        player.friendList.add(this);
+    }
+
     public void setLastPlayed(ArrayList<Game> lastPlayed) {
         this.lastPlayed = lastPlayed;
     }
