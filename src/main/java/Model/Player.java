@@ -29,10 +29,11 @@ public class Player extends Person {
         platoBotMessage = new ArrayList<>();
         eventsParticipant = new ArrayList<>();
         acceptAndReject = new ArrayList<>();
+        favoriteGame = new ArrayList<>();
+        lastPlayed = new ArrayList<>();
         platoAge = 0;
         score = 0;
         wins = 0;
-        lastPlayed = null;
         reports = 0;
     }
 
@@ -114,12 +115,12 @@ public class Player extends Person {
     }
 
     @Override
-    public ArrayList<Player> getRequests() {
+    public ArrayList<String> getRequests() {
         return super.getRequests();
     }
 
     @Override
-    public void setRequests(ArrayList<Player> requests) {
+    public void setRequests(ArrayList<String> requests) {
         super.setRequests(requests);
     }
 

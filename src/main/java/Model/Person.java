@@ -12,11 +12,13 @@ public class Person {
     protected String password;
     protected String Email;
     protected String phoneNumber;
-    protected HashMap<String, String> loginInfo;
     protected ArrayList<String> acceptAndReject;
-    protected ArrayList<Player> requests;
+    protected ArrayList<String> requests;
 
     public Person(String username, String password, String email, String fName, String lName, String phoneNum) {
+        firstName = fName;
+        lastName = lName;
+        phoneNumber = phoneNum;
         this.username = username;
         this.password = password;
         this.Email = email;
@@ -81,14 +83,6 @@ public class Person {
         this.password = password;
     }
 
-    public HashMap<String, String> getLoginInfo() {
-        return loginInfo;
-    }
-
-    public void setLoginInfo(HashMap<String, String> loginInfo) {
-        this.loginInfo = loginInfo;
-    }
-
     public ArrayList<String> getAcceptAndReject() {
         return acceptAndReject;
     }
@@ -97,11 +91,11 @@ public class Person {
         this.acceptAndReject = acceptAndReject;
     }
 
-    public ArrayList<Player> getRequests() {
+    public ArrayList<String> getRequests() {
         return requests;
     }
 
-    public void setRequests(ArrayList<Player> requests) {
+    public void setRequests(ArrayList<String> requests) {
         this.requests = requests;
     }
 

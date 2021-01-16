@@ -26,7 +26,7 @@ public class MainPageManager extends Manager {
     }
 
     public void viewLastPlayed() {
-        System.out.println(getCurrentPlayer().getLastPlayed());
+        System.out.println(getCurrentPlayer().getLastPlayed().toString());
     }
 
     public void setLastPlayed(Game game) {
@@ -36,7 +36,7 @@ public class MainPageManager extends Manager {
 
     public void addFavoriteGame(Game game) {
         getCurrentPlayer().getFavoriteGame().add(game);
-        getCurrentPlayer().setFavoriteGame(currentPlayer.getFavoriteGame());
+        getCurrentPlayer().setFavoriteGame(getCurrentPlayer().getFavoriteGame());
     }
 
     public void addFriend(String username) {
@@ -50,17 +50,11 @@ public class MainPageManager extends Manager {
     }
 
     public void sendRequest(String username) {
-        for (Player player : getCurrentPlayer().getFriendList()) {
-            if (player.getUsername().equals(username)) {
-                player.getRequests().add(getCurrentPlayer());
-                player.setRequests(player.getRequests());
-                break;
-            }
-        }
-
         for (Person person : Person.getPeople()) {
             if (person.getUsername().equals(username)){
-
+                person.getRequests().add(getCurrentPlayer().getUsername());
+                person.setRequests(person.getRequests());
+                break;
             }
         }
     }
@@ -74,7 +68,7 @@ public class MainPageManager extends Manager {
         return false;
     }
 
-    public ArrayList<Player> showRequests() {
+    public ArrayList<String> showRequests() {
         return getCurrentPlayer().getRequests();
     }
 
