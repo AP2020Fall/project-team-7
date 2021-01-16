@@ -77,6 +77,7 @@ public class MainPageManager extends Manager {
         for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
                 player.requestResult(currentPlayer, accept);
+                player.addFriend(currentPlayer);
                 break;
             }
         }
