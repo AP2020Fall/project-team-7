@@ -3,7 +3,10 @@ package Controller;
 import Model.Event;
 import Model.Game;
 import View.AdminPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
+import java.beans.Transient;
 import java.util.Date;
 
 public class AdminPageManager extends Manager {
@@ -18,6 +21,7 @@ public class AdminPageManager extends Manager {
     public static String getComment() {
         return comment;
     }
+
 
     public void addEvent(String gameName, Date startDate, Date finishDate, int score) {
         Event event = new Event(gameName, startDate, finishDate, score);
@@ -67,5 +71,6 @@ public class AdminPageManager extends Manager {
         }
         return find;
     }
+
 
 }

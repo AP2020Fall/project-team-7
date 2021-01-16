@@ -73,6 +73,9 @@ public class Manager {
     public void checkEmailTest(){
         boolean actual = checkEmail("sara@gmail.com");
         Assert.assertEquals(true, actual);
+        actual = checkEmail("dkhd");
+        Assert.assertEquals(actual, false);
+
     }
 
     public boolean checkPhoneNumber(String phoneNumber) {
