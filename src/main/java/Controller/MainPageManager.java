@@ -80,6 +80,7 @@ public class MainPageManager extends Manager {
                 break;
             }
         }
+        getCurrentPlayer().removeRequest(username);
     }
 
     public ArrayList<String> showRequestResult() {
