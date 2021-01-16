@@ -69,10 +69,8 @@ public class MainPageManager extends Manager {
         return getCurrentPlayer().getRequests();
     }
 
-    public void showFriendList() {
-        for (int i = 0; i < getCurrentPlayer().getFriendList().size(); i++) {
-            System.out.println((i + 1) + ". " + getCurrentPlayer().getFriendList().get(i));
-        }
+    public ArrayList<Player> showFriendList() {
+        return getCurrentPlayer().getFriendList();
     }
 
     public int getWins() {

@@ -169,8 +169,7 @@ public class MainPage extends Menu {
     }
 
     private void showFriends() {
-        System.out.println("friends list:");
-        ((MainPageManager) manager).showFriendList();
+        System.out.println("friends list:\n" + ((MainPageManager) manager).showFriendList());
         System.out.println("" +
                 "1. profile [username]\n" +
                 "2. remove [username]\n" +
@@ -187,13 +186,14 @@ public class MainPage extends Menu {
 
     private void showFriendProfile(String username) {
         ((MainPageManager) manager).showProfileToOtherUsers(username);
-        String input = scanner.nextLine();
         System.out.println("1. report!");
         System.out.println("2. back");
+        String input = scanner.nextLine();
         if (input.matches("^1$")) {
             ((MainPageManager) manager).reportUser(username);
             System.out.println("thanks to report!");
         } else if (input.matches("^2$")) {
+            System.out.println("removed '" + username + "' from your friend list.");
             showFriends();
         } else {
             System.err.println("invalid input!");
