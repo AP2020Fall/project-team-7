@@ -76,15 +76,7 @@ public class MainPageManager extends Manager {
     public void acceptAndReject(String username, boolean accept) {
         for (Player player : getPlayers()) {
             if (player.getUsername().equals(username)) {
-                if (accept) {
-                    addFriend(player);
-                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " accepted your request;) ");
-
-                } else {
-                    player.getAcceptAndReject().add(getCurrentPlayer().getUsername() + " put you away:( ");
-                }
-                getCurrentPlayer().getRequests().remove(username);//...
-                getCurrentPlayer().setAcceptAndReject(player.getAcceptAndReject());
+                player.requestResult(getCurrentPlayer(), accept);
                 break;
             }
         }

@@ -9,12 +9,9 @@ public class Player extends Person {
     private int wins;
     private int reports;
     private ArrayList<Game> lastPlayed;
-    private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
-    private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
-    private ArrayList<Event> eventsParticipant;
 
     public Player(String userName, String password, String email, String fName, String lName, String phoneNum) {
         super(userName, password, email, fName, lName, phoneNum);
@@ -25,9 +22,7 @@ public class Player extends Person {
         setPassword(password);
         friendList = new ArrayList<>();
         requests = new ArrayList<>();
-        gamesHistory = new ArrayList<>();
         platoBotMessage = new ArrayList<>();
-        eventsParticipant = new ArrayList<>();
         acceptAndReject = new ArrayList<>();
         favoriteGame = new ArrayList<>();
         lastPlayed = new ArrayList<>();
@@ -61,25 +56,12 @@ public class Player extends Person {
         this.wins = wins;
     }
 
-    public ArrayList<GameLog> getGameLog() {
-        return gameLog;
-    }
-
     public ArrayList<Player> getFriendList() {
         return friendList;
     }
 
     public void setFriendList(ArrayList<Player> friendList) {
         this.friendList = friendList;
-    }
-
-
-    public ArrayList<Game> getGamesHistory() {
-        return gamesHistory;
-    }
-
-    public void setGamesHistory(ArrayList<Game> gamesHistory) {
-        this.gamesHistory = gamesHistory;
     }
 
     public ArrayList<Game> getFavoriteGame() {
@@ -110,12 +92,12 @@ public class Player extends Person {
         return lastPlayed;
     }
 
-    public void addFriend(Player player){
-        player.friendList.add(this);
-    }
-
     public void setLastPlayed(ArrayList<Game> lastPlayed) {
         this.lastPlayed = lastPlayed;
+    }
+
+    public void addFriend(Player player) {
+        player.friendList.add(this);
     }
 
     @Override
@@ -136,6 +118,13 @@ public class Player extends Person {
     @Override
     public void setAcceptAndReject(ArrayList<String> acceptAndReject) {
         super.setAcceptAndReject(acceptAndReject);
+    }
+
+    public void requestResult(Player player, boolean accept) {
+        if (accept)
+            player.acceptAndReject.add(this + " accept your request :) ");
+        else
+            player.acceptAndReject.add(this + " puts you away :( ");
     }
 
     @Override
