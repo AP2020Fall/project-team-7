@@ -14,7 +14,7 @@ public class Manager {
     protected Person currentPerson = null;
     protected Admin admin = null;
     protected Menu menu;
-    protected ArrayList<Player> players = new ArrayList<>();
+    protected static ArrayList<Player> players = new ArrayList<>();
 
     public static Player getCurrentPlayer() {
         return currentPlayer;

@@ -98,6 +98,7 @@ public class Player extends Person {
 
     public void addFriend(Player player) {
         player.friendList.add(this);
+        this.friendList.add(player);
     }
 
     @Override
