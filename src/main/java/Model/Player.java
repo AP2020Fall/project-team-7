@@ -11,8 +11,6 @@ public class Player extends Person {
     private ArrayList<Game> lastPlayed;
     private ArrayList<GameLog> gameLog;
     private ArrayList<Player> friendList;
-    private ArrayList<Player> requests;
-    private ArrayList<String> acceptAndReject;
     private ArrayList<Game> gamesHistory;
     private ArrayList<Game> favoriteGame;
     private ArrayList<String> platoBotMessage;
@@ -25,7 +23,6 @@ public class Player extends Person {
         phoneNumber = phoneNum;
         Email = email;
         setPassword(password);
-        eventsParticipant = new ArrayList<>();
         friendList = new ArrayList<>();
         requests = new ArrayList<>();
         gamesHistory = new ArrayList<>();
@@ -75,13 +72,6 @@ public class Player extends Person {
         this.friendList = friendList;
     }
 
-    public ArrayList<Player> getRequests() {
-        return requests;
-    }
-
-    public void setRequests(ArrayList<Player> requests) {
-        this.requests = requests;
-    }
 
     public ArrayList<Game> getGamesHistory() {
         return gamesHistory;
@@ -123,13 +113,14 @@ public class Player extends Person {
         this.lastPlayed = lastPlayed;
     }
 
+    @Override
     public ArrayList<String> getAcceptAndReject() {
-        return acceptAndReject;
+        return super.getAcceptAndReject();
     }
 
-    public void
-    setAcceptAndReject(ArrayList<String> acceptAndReject) {
-        this.acceptAndReject = acceptAndReject;
+    @Override
+    public void setAcceptAndReject(ArrayList<String> acceptAndReject) {
+        super.setAcceptAndReject(acceptAndReject);
     }
 
     @Override

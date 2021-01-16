@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Game;
+import Model.Person;
 import Model.Player;
 import View.MainPage;
 
@@ -54,6 +55,12 @@ public class MainPageManager extends Manager {
                 player.getRequests().add(getCurrentPlayer());
                 player.setRequests(player.getRequests());
                 break;
+            }
+        }
+
+        for (Person person : Person.getPeople()) {
+            if (person.getUsername().equals(username)){
+
             }
         }
     }
