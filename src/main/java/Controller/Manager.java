@@ -24,13 +24,6 @@ public class Manager {
         currentPlayer = current;
     }
 
-    @Test
-    public void testCurrentPlayer() {
-        Player currentPlayer = new Player("abc", "12345", "salam@yahoo.com", "a", "bc", "09131238787");
-        setCurrentPlayer(currentPlayer);
-        Assert.assertEquals(getCurrentPlayer(), currentPlayer);
-    }
-
     public ArrayList<Player> getPlayers() {
         return players;
     }
