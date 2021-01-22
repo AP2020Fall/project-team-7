@@ -1,9 +1,6 @@
 package View;
 
-import Controller.AccountManager;
-import Controller.MainPageManager;
-import Controller.Manager;
-import Controller.ProfileManager;
+import Controller.*;
 
 import java.util.Scanner;
 
@@ -32,6 +29,10 @@ public class Menu {
         manager.setPerson(null);
         manager.setCurrentPlayer(null);
         returnAccountMenu();
+    }
+
+    protected void returnGamePage(){
+        new GameMenuManager();
     }
 
 
