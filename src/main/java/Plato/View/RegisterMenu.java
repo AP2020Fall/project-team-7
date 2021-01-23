@@ -5,7 +5,7 @@ import Plato.Controller.Manager;
 import Plato.Controller.RegisterManager;
 import Plato.Model.Person;
 import Plato.Controller.MainPageManager;
-import Plato.View.Menu;
+//salam test
 
 public class RegisterMenu extends Menu {
     public RegisterMenu(Manager manager) {
