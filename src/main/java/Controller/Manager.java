@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Admin;
+import Model.Game;
 import Model.Person;
 import Model.Player;
 import View.Menu;
@@ -8,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Manager {
     protected static Player currentPlayer = null;
@@ -15,6 +17,7 @@ public class Manager {
     protected Admin admin = null;
     protected Menu menu;
     protected static ArrayList<Player> players = new ArrayList<>();
+
 
     public static Player getCurrentPlayer() {
         return currentPlayer;
@@ -77,6 +80,7 @@ public class Manager {
     public boolean isThisCurrentPlayer(String username) {
         return getCurrentPlayer().getUsername().equals(username);
     }
+
 
     @Test
     public void isThisCurrentPlayerTest() {

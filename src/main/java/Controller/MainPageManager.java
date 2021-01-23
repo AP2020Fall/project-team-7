@@ -29,11 +29,6 @@ public class MainPageManager extends Manager {
         System.out.println(getCurrentPlayer().getLastPlayed().toString());
     }
 
-    public void setLastPlayed(Game game) {
-        getCurrentPlayer().getLastPlayed().add(game);
-        getCurrentPlayer().setLastPlayed(getCurrentPlayer().getLastPlayed());
-    }
-
     public void addFavoriteGame(Game game) {
         getCurrentPlayer().getFavoriteGame().add(game);
         getCurrentPlayer().setFavoriteGame(getCurrentPlayer().getFavoriteGame());
@@ -50,6 +45,11 @@ public class MainPageManager extends Manager {
                 break;
             }
         }
+    }
+
+    public void setLastPlayed(Game game) {
+        getCurrentPlayer().getLastPlayed().add(game);
+        getCurrentPlayer().setLastPlayed(getCurrentPlayer().getLastPlayed());
     }
 
     public void sendRequest(String username) {

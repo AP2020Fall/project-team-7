@@ -1,10 +1,5 @@
 package View;
-
-import Controller.AdminPageManager;
-import Controller.MainPageManager;
-import Controller.Manager;
-import Controller.ProfileManager;
-import Model.Game;
+import Controller.*;
 
 public class MainPage extends Menu {
     public MainPage(Manager manager) {
@@ -54,7 +49,7 @@ public class MainPage extends Menu {
             showMainPage();
 
         } else if (input.matches("^7$")) {
-            returnGamePage();
+            returnGameMenu();
 
         } else if (input.matches("^8$")) {
             showFriends();
@@ -72,7 +67,6 @@ public class MainPage extends Menu {
             showMainPage();
         }
     }
-
 
     private void showPoints() {
         ((MainPageManager) manager).showPoints();

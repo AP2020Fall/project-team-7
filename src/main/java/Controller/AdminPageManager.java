@@ -12,7 +12,7 @@ import java.util.Date;
 public class AdminPageManager extends Manager {
     public static String comment = "";
     Game dotsAndBoxes = new Game("Dots And Boxes", 1);
-    Game reversi = new Game("Reversi", 2);
+    Game reversi= new Game("Reversi", 2);
 
     public AdminPageManager() {
         menu = new AdminPage(this);

@@ -24,6 +24,10 @@ public class Menu {
         new MainPageManager();
     }
 
+    protected void returnGameMenu() {
+        new GameMenuManager();
+    }
+
     protected void logout() {
         System.out.println("logout");
         manager.setPerson(null);
@@ -31,9 +35,6 @@ public class Menu {
         returnAccountMenu();
     }
 
-    protected void returnGamePage(){
-        new GameMenuManager();
-    }
 
 
 }
