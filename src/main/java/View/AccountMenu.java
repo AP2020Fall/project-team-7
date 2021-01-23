@@ -3,7 +3,7 @@ package View;
 import Controller.LoginManager;
 import Controller.Manager;
 import Controller.RegisterManager;
-
+//test
 public class AccountMenu extends Menu {
     public AccountMenu(Manager manager) {
         super(manager);
