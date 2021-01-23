@@ -2,18 +2,18 @@ package Controller;
 
 import Model.Event;
 import Model.Game;
-import View.AdminPage;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import View.*;
+
 
 import java.beans.Transient;
 import java.util.Date;
+
+import static javafx.scene.input.KeyCode.V;
 
 public class AdminPageManager extends Manager {
     public static String comment = "";
     Game dotsAndBoxes = new Game("Dots And Boxes", 1);
     Game reversi = new Game("Reversi", 2);
-
     public AdminPageManager() {
         menu = new AdminPage(this);
     }

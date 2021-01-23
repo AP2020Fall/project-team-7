@@ -2,9 +2,9 @@ package Controller;
 
 import Model.Person;
 import Model.Player;
-import View.Profile;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import View.*;
 
 public class ProfileManager extends Manager {
     public ProfileManager() {

@@ -3,9 +3,7 @@ package Controller;
 import Model.Admin;
 import Model.Person;
 import Model.Player;
-import View.RegisterMenu;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import View.*;
 
 public class RegisterManager extends Manager {
 
