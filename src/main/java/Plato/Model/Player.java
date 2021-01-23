@@ -1,0 +1,142 @@
+package Plato.Model;
+
+
+import java.util.ArrayList;
+
+public class Player extends Person {
+    private int platoAge;
+    private int score;
+    private int wins;
+    private int reports;
+    private ArrayList<Game> lastPlayed;
+    private ArrayList<Player> friendList;
+    private ArrayList<Game> favoriteGame;
+    private ArrayList<String> platoBotMessage;
+
+    public Player(String userName, String password, String email, String fName, String lName, String phoneNum) {
+        super(userName, password, email, fName, lName, phoneNum);
+        firstName = fName;
+        lastName = lName;
+        phoneNumber = phoneNum;
+        Email = email;
+        setPassword(password);
+        friendList = new ArrayList<>();
+        requests = new ArrayList<>();
+        platoBotMessage = new ArrayList<>();
+        acceptAndReject = new ArrayList<>();
+        favoriteGame = new ArrayList<>();
+        lastPlayed = new ArrayList<>();
+        platoAge = 0;
+        score = 0;
+        wins = 0;
+        reports = 0;
+    }
+
+    public int getReports() {
+        return reports;
+    }
+
+    public void setReports(int reports) {
+        this.reports = reports;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins;
+    }
+
+    public ArrayList<Player> getFriendList() {
+        return friendList;
+    }
+
+    public void setFriendList(ArrayList<Player> friendList) {
+        this.friendList = friendList;
+    }
+
+    public ArrayList<Game> getFavoriteGame() {
+        return favoriteGame;
+    }
+
+    public void setFavoriteGame(ArrayList<Game> favoriteGame) {
+        this.favoriteGame = favoriteGame;
+    }
+
+    public ArrayList<String> getPlatoBotMessage() {
+        return platoBotMessage;
+    }
+
+    public void setPlatoBotMessage(ArrayList<String> platoBotMessage) {
+        this.platoBotMessage = platoBotMessage;
+    }
+
+    public int getPlatoAge() {
+        return platoAge;
+    }
+
+    public void setPlatoAge(int platoAge) {
+        this.platoAge = platoAge;
+    }
+
+    public ArrayList<Game> getLastPlayed() {
+        return lastPlayed;
+    }
+
+    public void setLastPlayed(ArrayList<Game> lastPlayed) {
+        this.lastPlayed = lastPlayed;
+    }
+
+    public void addFriend(Player player) {
+        player.friendList.add(this);
+        this.friendList.add(player);
+    }
+
+    @Override
+    public ArrayList<String> getRequests() {
+        return super.getRequests();
+    }
+
+    @Override
+    public void setRequests(ArrayList<String> requests) {
+        super.setRequests(requests);
+    }
+
+    @Override
+    public ArrayList<String> getAcceptAndReject() {
+        return super.getAcceptAndReject();
+    }
+
+    @Override
+    public void setAcceptAndReject(ArrayList<String> acceptAndReject) {
+        super.setAcceptAndReject(acceptAndReject);
+    }
+
+    public void requestResult(Player player, boolean accept) {
+        if (accept)
+            player.acceptAndReject.add(this.getUsername() + " accept your request :) ");
+        else
+            player.acceptAndReject.add(this.getUsername() + " puts you away :( ");
+    }
+
+    @Override
+    public String toString() {
+        return "user: " + username + "\n" +
+                "firstName='" + firstName + '\'' + "\n" +
+                "lastName='" + lastName + '\'' + "\n" +
+                "username='" + username + '\'' + "\n" +
+                "Email='" + Email + '\'' + "\n" +
+                "phoneNumber='" + phoneNumber + '\'';
+    }
+
+
+}
