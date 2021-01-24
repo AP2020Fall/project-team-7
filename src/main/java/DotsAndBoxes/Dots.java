@@ -175,7 +175,7 @@ public class Dots extends JFrame implements MouseMotionListener, MouseListener {
     private void checkForGameOver() {
         int[] scores = calculateScores();
         if ((scores[0] + scores[1]) == ((DOT_NUMBER - 1) * (DOT_NUMBER - 1))) {
-            JOptionPane.showMessageDialog(this, currentPlayer +": " + scores[0] + "\nPlayer2: " + scores[1], "Game Over", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, currentPlayer.getUsername() +": " + scores[0] + "\nPlayer2: " + scores[1], "Game Over", JOptionPane.PLAIN_MESSAGE);
             startNewGame();
             repaint();
         }
@@ -292,7 +292,7 @@ public class Dots extends JFrame implements MouseMotionListener, MouseListener {
     public void paintStatus(Graphics g) {
         int[] scores = calculateScores();
         String status = "It is player" + activePlayer + "'s turn";
-        String status2 = currentPlayer + ": " + scores[0];
+        String status2 = currentPlayer.getUsername() + ": " + scores[0];
         String status3 = "Player 2: " + scores[1];
         g.setColor(Color.BLACK);
         g.setFont(new Font("", Font.BOLD,13));
