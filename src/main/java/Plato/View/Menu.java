@@ -1,6 +1,6 @@
 package Plato.View;
 
-import Plato.Controller.*;
+
 import Plato.Controller.*;
 
 import java.util.Scanner;
@@ -25,7 +25,7 @@ public class Menu {
         new MainPageManager();
     }
 
-    protected void returnGameMenu(){
+    protected void returnGameMenu() {
         new GameMenuManager();
     }
 
@@ -35,6 +35,4 @@ public class Menu {
         manager.setCurrentPlayer(null);
         returnAccountMenu();
     }
-
-
 }

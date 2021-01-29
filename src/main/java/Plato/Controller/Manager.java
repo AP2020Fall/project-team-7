@@ -4,8 +4,8 @@ import Plato.Model.Admin;
 import Plato.Model.Person;
 import Plato.Model.Player;
 import Plato.View.Menu;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.ArrayList;
 
@@ -16,19 +16,13 @@ public class Manager {
     protected Menu menu;
     protected static ArrayList<Player> players = new ArrayList<>();
 
+
     public static Player getCurrentPlayer() {
         return currentPlayer;
     }
 
     public void setCurrentPlayer(Player current) {
         currentPlayer = current;
-    }
-
-    @Test
-    public void testCurrentPlayer() {
-        Player currentPlayer = new Player("abc", "12345", "salam@yahoo.com", "a", "bc", "09131238787");
-        setCurrentPlayer(currentPlayer);
-        Assert.assertEquals(getCurrentPlayer(), currentPlayer);
     }
 
     public ArrayList<Player> getPlayers() {
@@ -84,6 +78,7 @@ public class Manager {
     public boolean isThisCurrentPlayer(String username) {
         return getCurrentPlayer().getUsername().equals(username);
     }
+
 
     @Test
     public void isThisCurrentPlayerTest() {

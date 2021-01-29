@@ -1,9 +1,10 @@
 package Plato.View;
 
+
 import Plato.Controller.AdminPageManager;
-import Plato.Controller.ProfileManager;
 import Plato.Controller.MainPageManager;
 import Plato.Controller.Manager;
+import Plato.Controller.ProfileManager;
 
 public class MainPage extends Menu {
     public MainPage(Manager manager) {
