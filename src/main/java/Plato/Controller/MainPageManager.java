@@ -47,10 +47,6 @@ public class MainPageManager extends Manager {
         }
     }
 
-    public void setLastPlayed(Game game) {
-        getCurrentPlayer().getLastPlayed().add(game);
-        getCurrentPlayer().setLastPlayed(getCurrentPlayer().getLastPlayed());
-    }
 
     public void sendRequest(String username) {
         for (Person person : Person.getPeople()) {

@@ -1,6 +1,7 @@
 package Plato.View;
 
 import DotsAndBoxes.Dots;
+import Plato.Controller.GameMenuManager;
 import Plato.Controller.MainPageManager;
 import Plato.Controller.Manager;
 import Plato.Model.Game;
@@ -28,8 +29,8 @@ public class GameMenu extends Menu {
             String choose = scanner.nextLine();
             if (choose.matches("^1$")) {
                 System.out.println("playing " + Game.getGames().get(Integer.parseInt(input)-1));
-                new Dots(manager.getCurrentPlayer());
-                ((MainPageManager) manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)-1));
+                ((GameMenuManager) manager).setLastPlayed(Game.getGames().get(Integer.parseInt(input)-1));
+                ((GameMenuManager) manager).runDotsAndBoxes();
                 System.out.println("enter 'back' to return.");
                 input = scanner.nextLine();
                 if (input.equalsIgnoreCase("back"))
